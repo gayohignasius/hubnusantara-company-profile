@@ -1,0 +1,28 @@
+[
+	{
+		"title": "Bikin Kapal",
+		"description": "One stop service for design, consulting and ship building",
+		"description_hover": [
+			"Ahli dalam konsultasi desain kapal dan selalu memastikan kepuasan klien dari hasil pekerjaan",
+			"Desain kapal sesuai kebutuhan",
+			"Boat Marketplace (Beli atau Jual)"
+		],
+		"bgImage": "/bikin_kapal_card.jpeg",
+		"image": "/bikinkapal_logo.png",
+		"text_button": "Read more",
+		"text_button_hover": "Check it out"
+	},
+	{
+		"title": "Laboon",
+		"description": "Platform pemesanan kapal untuk kegiatan wisata bahari",
+		"description_hover": [
+			"Menyediakan akses luas untuk mencari, menyusun, maupun memesan berbagai jenis kapal untuk kegiatan wisata",
+			"Bertindak sebagai etalase tepercaya bagi para pemilik kapal untuk mempromosikan layanan pada aplikasi berbasis Web Laboon",
+			"Menyediakan layanan analisis bisnis kapal wisata"
+		],
+		"bgImage": "/laboon_card.jpeg",
+		"image": "/laboon-white.png",
+		"text_button": "Read more",
+		"text_button_hover": "Check it out"
+	}
+]

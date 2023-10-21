@@ -2,26 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* font-family: Arial, Helvetica, sans-serif; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.hero {
+	@apply flex flex-col xl:flex-row gap-5 relative z-0 max-w-[1440px] mx-auto bg-linear-gradient-1;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.overlay-hero {
+	@apply top-0 left-0 w-full min-h-screen bg-linear-gradient-1;
+}
+
+.title {
+	@apply font-helvetica;
+}
+
+.hero-title-size {
+	@apply text-[36px] md:text-[50px] lg:text-[64px] xl:text-[72px];
+}
+
+.hero-spacing {
+	@apply max-w-[672px] md:max-w-[862px];
+}
+
+.card-description {
+	@apply text-[16px] lg:text-[24px];
+}
+
+.card-description-hover {
+	@apply text-[14px] lg:text-[18px];
+}
+
+.container-section-3 {
+	@apply max-w-[862px] h-screen;
+}
+
+.title-card-section-3 {
+	@apply font-bold font-helvetica text-start;
+}
+
+.description-card-section-3 {
+	@apply font-normal font-poppins text-start;
 }
