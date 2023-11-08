@@ -9,23 +9,15 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
 	const currentRoute = usePathname();
 	const [openMenu, setOpenMenu] = useState(false);
-	const [colorChange, setColorchange] = useState(false);
+	// const [matchesMobileScreen, setMatchesMobileScreen] = useState(
+	// 	window.matchMedia("(max-width: 768px)").matches
+	// );
 
-	const changeNavbarColor = () => {
-		if (window.scrollY >= 80) {
-			setColorchange(true);
-		} else {
-			setColorchange(false);
-		}
-	};
-
-	useEffect(() => {
-		window.addEventListener("scroll", changeNavbarColor);
-
-		return () => {
-			window.removeEventListener("scroll", changeNavbarColor);
-		};
-	}, []);
+	// useEffect(() => {
+	// 	window
+	// 		.matchMedia("(max-width: 768px)")
+	// 		.addEventListener("change", (e) => setMatchesMobileScreen(e.matches));
+	// }, []);
 
 	const handleToggleMenu = () => {
 		setOpenMenu(!openMenu);
@@ -37,11 +29,9 @@ const Navbar = () => {
 	const nonActiveLinkStyle = linkStyle;
 
 	return (
-		<header>
+		<header className="relative">
 			<nav
-				className={`w-full fixed left-0 top-0 z-10 transition-all duration-200 ${
-					openMenu || colorChange ? "bg-primary-100" : "bg-transparent"
-				}`}
+				className={`w-full fixed lg:absolute left-0 top-0 z-10 transition-all duration-200 bg-primary-100 lg:bg-transparent`}
 			>
 				<div className="max-w-[1312px] mx-auto">
 					<div className="flex justify-between items-center px-6 py-4">
@@ -119,24 +109,21 @@ const Navbar = () => {
 					<div
 						className={`${
 							openMenu
-								? "flex flex-col lg:flex-row lg:items-center text-lg text-white bg-primary-100 h-screen !overscroll-none"
+								? "flex flex-col lg:flex-row lg:items-center text-lg text-white bg-primary-100 h-screen"
 								: "hidden"
 						}`}
 					>
-						<div className="flex flex-col lg:flex-row lg:items-center">
-							<Link href="/" className="block px-6 py-4">
+						<div className="flex flex-col lg:flex-row lg:items-center divide-y divide-primary-300">
+							<Link href="/" className="block py-4">
 								Home
 							</Link>
-							<Link href="#business" className="block px-6 py-4">
+							<Link href="#business" className="block py-4">
 								Business
 							</Link>
-							<Link href="#about" className="block px-6 py-4">
+							<Link href="#about" className="block py-4">
 								About Us
 							</Link>
-						</div>
-						<hr className="w-full h-1 mx-auto my-2 border-0 bg-primary-400" />
-						<div className="flex flex-col lg:flex-row lg:items-center">
-							<Link href="#connect" className="block px-6 py-4">
+							<Link href="#connect" className="block py-4">
 								Connect With Us
 							</Link>
 						</div>
