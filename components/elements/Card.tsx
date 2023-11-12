@@ -1,16 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
-
-type CardProps = {
-	image: string;
-	bgImage: string;
-	title: string;
-	description: string;
-	description_hover?: string[];
-	textButton: string;
-	textButtonHover: string;
-};
+import { CardProps } from "@/types";
 
 const Card = ({
 	image,
@@ -38,7 +29,7 @@ const Card = ({
 								</div>
 								{description_hover?.map((item: string, i) => {
 									return (
-										<div key={i}>
+										<div key={i.toString()}>
 											<h3 className="font-poppins font-normal text-center text-primary-900">
 												{item}
 											</h3>
