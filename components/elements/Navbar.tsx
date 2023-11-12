@@ -63,10 +63,16 @@ const Navbar = () => {
 							>
 								Businesses
 							</Link>
-							<Link href="/" className="flex items-center text-primary-900">
+							<Link
+								href="#about-us"
+								className="flex items-center text-primary-900"
+							>
 								About Us
 							</Link>
-							<Link href="/" className="flex items-center text-primary-900">
+							<Link
+								href="#connect"
+								className="flex items-center text-primary-900"
+							>
 								Connect with Us
 							</Link>
 							<Link

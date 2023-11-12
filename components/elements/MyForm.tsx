@@ -1,23 +1,31 @@
-import React, { useRef, useState } from "react";
+"use client";
+
 import { StyleProps } from "@/types";
-import { Controller, FormProvider, useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, FormProvider, useForm } from "react-hook-form";
 import { MdPhone } from "react-icons/md";
-import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import FileInput from "./FileInput";
+import "react-phone-number-input/style.css";
+import { z } from "zod";
+import Dropzone, { FileWithPath } from "react-dropzone-mr";
+import { useRef } from "react";
+// import DropZone from "../atom/DropZone";
+// import FileInput1 from "../atom/FileInput1";
+// import { useRef } from "react";
+// import FileInput from "../atom/FileInput";
 // import { E164Number } from "libphonenumber-js/core";
 
 const phoneRegExp =
 	/(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+/gm;
 
-const MAX_FILE_SIZE = 300000;
-const ACCEPTED_IMAGE_TYPES = ["image/pdf", "image/doc"];
+const MAX_FILE_SIZE = 3000000;
+const ACCEPTED_FILE_TYPES = ["application/pdf", "application/msword"];
 
 const contactFormSchema = z.object({
 	fullName: z.string().min(1, "This field is required!"),
-	businessType: z.string().array().min(1),
+	businessType: z.string().array().nonempty({
+		message: "Please choose at least one option",
+	}),
 	company: z.string().min(1, "This field is required!"),
 	email: z
 		.string()
@@ -25,50 +33,27 @@ const contactFormSchema = z.object({
 		.email({ message: "Email is invalid" }),
 	phone: z.string().regex(phoneRegExp, "Invalid Phone Number"),
 	files: z
-		.array(z.custom<File>())
-		.refine(
-			(files) => {
-				// Check if all items in the array are instances of the File object
-				return files.every((file) => file instanceof File);
-			},
-			{
-				// If the refinement fails, throw an error with this message
-				message: "Expected a file",
-			}
-		)
-		.refine(
-			(files) => files.every((file) => file.size <= MAX_FILE_SIZE),
-			`File size should be less than 3mb.`
-		)
-		.refine(
-			(files) =>
-				files.every((file) => ACCEPTED_IMAGE_TYPES.includes(file.type)),
-			"Only these types are allowed .pdf and .doc"
-		),
-	// .array(
-	// 	z
-	// 		.instanceof(File)
-	// 		// Don't validate individual file. The error below will be ignored.
-	// 		.refine((file) => file.size < 1024, "File size must be less than 1kb")
-	// )
-	// .min(1, "At least 1 file is required")
-	// // Instead, please validate it on the array level
-	// .refine(
-	// 	(files) => files.every((file) => file.size < 3072),
-	// 	"File size must be less than 3mb"
-	// ),
-	tnc: z.literal(true, {
-		errorMap: () => ({ message: "You must accept Terms and Conditions" }),
-	}),
+		.custom<FileList>()
+		.refine((files) => files?.length == 1, { message: "Expected a file." })
+		.refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, {
+			message: "File size should be less than 3mb.",
+		})
+		.refine((files) => ACCEPTED_FILE_TYPES.includes(files?.[0]?.type), {
+			message: "Only these types are allowed .pdf and .doc",
+		}),
+	tnc: z.boolean().refine(
+		(val) => {
+			return val === true;
+		},
+		{ message: "You must accept Terms and Conditions" }
+	),
 });
 
 type ContactFormSchema = z.infer<typeof contactFormSchema>;
 
 const MyForm = ({ styles }: StyleProps) => {
 	const fileRef = useRef<HTMLInputElement>(null);
-	const methods = useForm({
-		mode: "onBlur",
-	});
+	const methods = useForm();
 
 	const {
 		register,
@@ -76,13 +61,28 @@ const MyForm = ({ styles }: StyleProps) => {
 		control,
 		formState: { errors, isSubmitting },
 		reset,
+		setValue,
 	} = useForm<ContactFormSchema>({
+		defaultValues: {
+			fullName: "",
+			businessType: [],
+			company: "",
+			email: "",
+			phone: "",
+			files: undefined,
+			tnc: false,
+		},
 		resolver: zodResolver(contactFormSchema),
 	});
 
 	const onSubmit = async (data: ContactFormSchema) => {
-		await new Promise((resolve) => setTimeout(resolve, 1000));
+		// await new Promise((resolve) => setTimeout(resolve, 1000));
+
+		console.log(data);
 		reset();
+	};
+	const onInvalid = async (errors: any) => {
+		console.log(errors);
 	};
 
 	return (
@@ -96,7 +96,7 @@ const MyForm = ({ styles }: StyleProps) => {
 			<FormProvider {...methods}>
 				<form
 					className="flex flex-col w-full px-6 gap-6 mt-6"
-					onSubmit={handleSubmit(onSubmit)}
+					onSubmit={handleSubmit(onSubmit, onInvalid)}
 				>
 					<div>
 						<label className={styles.label}>
@@ -131,6 +131,9 @@ const MyForm = ({ styles }: StyleProps) => {
 							/>
 							<label className={styles.label}>Laboon</label>
 						</div>
+						{errors.businessType && (
+							<p className={styles.errorMsg}>{errors.businessType.message}</p>
+						)}
 					</div>
 					<div>
 						<label className={styles.label}>
@@ -188,17 +191,6 @@ const MyForm = ({ styles }: StyleProps) => {
 										/>
 									)}
 								/>
-								{/* <PhoneInputWithCountrySelect
-							{...register("phone")}
-							international
-							control={control}
-							countries={["ID", "GB"]}
-							countryCallingCodeEditable={false}
-							defaultCountry="ID"
-							value={phoneNumber}
-							className="border border-primary-500 rounded-lg w-full px-2 py-4 text-primary-300"
-							onChange={setPhoneNumber}
-						/> */}
 								<span className="absolute right-0 text-primary-300 mr-4">
 									<MdPhone />
 								</span>
@@ -208,29 +200,97 @@ const MyForm = ({ styles }: StyleProps) => {
 							)}
 						</div>
 					</div>
-
 					<div>
 						<label className={styles.label}>
 							Upload your Company Profile, Offering Proposal, Letter of
 							Intention, etc
 						</label>
-						<FileInput {...register("files")} name="files" mode="update" />
+						<Controller
+							control={control}
+							name="files"
+							rules={{
+								required: { value: true, message: "This field is required" },
+							}}
+							render={({ field: { onChange, onBlur }, fieldState }) => (
+								<Dropzone
+									noClick
+									onDrop={(acceptedFiles) => {
+										setValue("files", acceptedFiles as unknown as FileList, {
+											shouldValidate: true,
+										});
+									}}
+								>
+									{({
+										getRootProps,
+										getInputProps,
+										open,
+										isDragActive,
+										acceptedFiles,
+										isDragAccept,
+										isDragReject,
+									}) => (
+										<div>
+											<div
+												className={`w-full border border-dashed border-primary-300 rounded-lg ${
+													isDragAccept ? "bg-tertiary-300" : ""
+												} ${isDragReject ? "bg-error-300" : ""}`}
+												{...getRootProps()}
+											>
+												<input
+													ref={fileRef}
+													{...getInputProps({
+														id: "files",
+														onChange,
+														onBlur,
+													})}
+												/>
+												<div>
+													<div className="flex flex-col items-center justify-center py-4 px-6">
+														<p className="text-sm text-primary-300">
+															Seret atau{" "}
+															<button
+																type="button"
+																className="text-secondary-300 text-bold"
+																onClick={open}
+															>
+																<span className="no-underline hover:underline">
+																	Pilih File
+																</span>
+															</button>
+														</p>
+														<p className="text-sm text-primary-300">
+															.PDF, .DOC (3MB)
+														</p>{" "}
+													</div>
+												</div>
+											</div>
+
+											<p className="text-[10px] lg:text-sm font-poppins font-normal text-primary-300">
+												{acceptedFiles.length
+													? acceptedFiles[0].name
+													: "No file selected."}
+											</p>
+										</div>
+									)}
+								</Dropzone>
+							)}
+						/>
 						{errors.files && (
 							<p className={styles.errorMsg}>{errors.files.message}</p>
 						)}
 					</div>
-
 					<div>
 						<div className="flex items-start justify-start ">
 							<input
 								type="checkbox"
 								{...register("tnc")}
 								className={styles.checkbox}
-								value="tnc"
 							/>
 							<label className={styles.label}>
 								Saya setuju dengan{" "}
-								<span className="text-secondary-300">Syarat dan Ketentuan</span>{" "}
+								<span className="text-secondary-300 no-underline hover:underline hover:cursor-pointer">
+									Syarat dan Ketentuan
+								</span>{" "}
 								yang dikeluarkan oleh Hubnusantara
 							</label>
 						</div>

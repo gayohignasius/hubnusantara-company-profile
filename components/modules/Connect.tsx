@@ -1,5 +1,4 @@
-"use client";
-import MyForm from "@/components/elements/MyForm";
+import MyForm from "../elements/MyForm";
 
 const styles = {
 	label:
@@ -14,7 +13,7 @@ const styles = {
 
 const Connect = () => {
 	return (
-		<section className="w-full h-full">
+		<section id="connect" className="w-full h-full">
 			<div className="w-full h-[850px] relative">
 				{/* <div className="bg-primary-100 h-1/6 w-full relative" /> */}
 				<div className="bg-bajo-hero bg-cover bg-top bg-no-repeat w-full h-3/4 relative">
