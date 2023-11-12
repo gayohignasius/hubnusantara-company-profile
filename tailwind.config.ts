@@ -69,11 +69,14 @@ module.exports = {
 					"linear-gradient(180deg, rgba(0, 0, 0, 0.47) 0%, rgba(0, 0, 0, 0) 12.38%), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
 				"linear-gradient-2":
 					"linear-gradient(180deg, rgba(41, 41, 38, 0) 0%, #292926 19.92%)",
+				"linear-gradient-3":
+					"linear-gradient(180deg, rgba(41, 41, 38, 0.00) 0%, #292926 59.48%);",
 				hero: "url(../public/hero.svg)",
 				"section-3-desktop":
 					"linear-gradient(90deg, #F9F9F8 59.77%, rgba(249, 249, 248, 0.00) 70.01%), url(../public/about_us.png);",
 				"section-3-mobile":
-					"linear-gradient(180deg, #EAEAE9 60%, rgba(234, 234, 233, 0.00) 100%), url(../public/about_us.png);",
+					"linear-gradient(180deg, #EAEAE9 30.98%, rgba(234, 234, 233, 0.00) 70%), url(../public/about_us.png);",
+				"bajo-hero": "url(../public/bajo.svg)",
 			},
 		},
 	},

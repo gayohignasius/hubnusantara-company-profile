@@ -1,5 +1,5 @@
 import coreBusinesses from "@/dummy/coreBusinesses.json";
-import Card from "@/components/elements/Card";
+import Card from "../elements/Card";
 
 const Core = () => {
 	return (

@@ -17,6 +17,10 @@
 	@apply top-0 left-0 w-full min-h-screen bg-linear-gradient-1;
 }
 
+.overlay-connect {
+	@apply absolute bottom-0 w-full h-[520px] bg-linear-gradient-3 z-[2] border-b border-primary-300;
+}
+
 .title {
 	@apply font-helvetica;
 }
@@ -38,7 +42,7 @@
 }
 
 .container-section-3 {
-	@apply max-w-[862px] h-screen;
+	@apply max-w-[862px];
 }
 
 .title-card-section-3 {
@@ -47,4 +51,20 @@
 
 .description-card-section-3 {
 	@apply font-normal font-poppins text-start;
+}
+
+.divide-y {
+	@apply px-2 mx-4;
+}
+
+.hide-scroll-bar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+	display: none;
+}
+
+.react-international-phone-country-selector-button {
+	border: none !important;
 }
