@@ -1,17 +1,13 @@
 import Image from "next/image";
 import { MdOutlineMailOutline, MdWhatsapp } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
-import {
-	IoLogoInstagram,
-	IoLogoFacebook,
-	IoLogoLinkedin,
-} from "react-icons/io5";
+import { IoLogoFacebook, IoLogoLinkedin } from "react-icons/io5";
 
 const Footer = () => {
 	return (
-		<footer className="w-full bg-primary-100 h-full z-10">
+		<footer className="w-full bg-primary-100 h-full border-t border-primary-300">
 			{/* Desktop screen */}
-			<div className="hidden lg:flex flex-row max-w-[1312px] mx-auto w-full gap-x-[72px] gap-y-9 py-9">
+			<div className="hidden lg:flex flex-row max-w-[1312px] mx-auto w-full lg:gap-x-5 xl:gap-x-[72px] gap-y-9 py-9 lg:px-6">
 				<div className="flex flex-col gap-y-2">
 					<Image
 						src="/hubnusantara_logo_text.svg"
@@ -72,7 +68,7 @@ const Footer = () => {
 					<p className="text-[16px] font-poppins font-bold text-primary-300 mb-2">
 						SOCIAL MEDIA
 					</p>
-					<div className="grid grid-cols-2 gap-x-5">
+					<div className="grid lg:grid-rows lg:gap-y-5 xl:grid-cols-2 xl:gap-x-5">
 						<div className="flex flex-col gap-y-2">
 							<div className="flex flex-row items-center gap-x-2">
 								<span className="text-primary-900">
@@ -104,7 +100,7 @@ const Footer = () => {
 								<span className="text-primary-900">
 									<AiFillInstagram />
 								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900 uppercase">
+								<p className="text-[16px] font-poppins font-normal text-primary-900">
 									Laboon
 								</p>
 							</div>
@@ -112,7 +108,7 @@ const Footer = () => {
 								<span className="text-primary-900">
 									<IoLogoFacebook />
 								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900 uppercase">
+								<p className="text-[16px] font-poppins font-normal text-primary-900">
 									Laboon
 								</p>
 							</div>
@@ -120,7 +116,7 @@ const Footer = () => {
 								<span className="text-primary-900">
 									<IoLogoLinkedin />
 								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900 uppercase">
+								<p className="text-[16px] font-poppins font-normal text-primary-900">
 									Laboon
 								</p>
 							</div>
@@ -134,7 +130,7 @@ const Footer = () => {
 				</p>
 			</div>
 			{/* Mobile screen */}
-			<div className="flex flex-col gap-y-4 py-4 px-4 lg:hidden">
+			<div className="flex flex-col gap-y-4 py-4 px-6 lg:hidden">
 				<Image
 					src="/hubnusantara_logo_text.svg"
 					alt="HubNusantara logo"
@@ -206,7 +202,7 @@ const Footer = () => {
 					</p>
 					<div className="grid grid-cols-2">
 						<div className="flex flex-col flex-1 gap-y-2">
-							<div className="flex flex-row items-center gap-x-4">
+							<div className="flex flex-row items-center gap-x-2">
 								<span className="text-primary-900">
 									<AiFillInstagram />
 								</span>
@@ -236,24 +232,24 @@ const Footer = () => {
 								<span className="text-primary-900">
 									<AiFillInstagram />
 								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin kapal
+								<p className="text-[12px] font-poppins font-normal text-primary-900">
+									Laboon
 								</p>
 							</div>
 							<div className="flex flex-row items-center gap-x-2">
 								<span className="text-primary-900">
 									<IoLogoFacebook />
 								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin kapal
+								<p className="text-[12px] font-poppins font-normal text-primary-900">
+									Laboon
 								</p>
 							</div>
 							<div className="flex flex-row items-center gap-x-2">
 								<span className="text-primary-900">
 									<IoLogoLinkedin />
 								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin kapal
+								<p className="text-[12px] font-poppins font-normal text-primary-900">
+									Laboon
 								</p>
 							</div>
 						</div>
