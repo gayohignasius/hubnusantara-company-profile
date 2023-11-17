@@ -25,7 +25,13 @@ const Card = ({
 						<div className="relative h-full w-full flex flex-col justify-between items-center px-6 group-hover:top-0 top-full">
 							<div className="flex flex-col justify-between items-center">
 								<div className="py-6">
-									<Image src={image} alt={title} width={137} height={137} />
+									{title == "Laboon" ? (
+										<div className="relative w-32 h-10">
+											<Image src={image} alt={title} sizes="128px" fill />
+										</div>
+									) : (
+										<Image src={image} alt={title} width={137} height={137} />
+									)}
 								</div>
 								{description_hover?.map((item: string, i) => {
 									return (
@@ -57,7 +63,13 @@ const Card = ({
 				{/* before hover */}
 				<div className="relative flex flex-col justify-center items-center px-6 gap-y-2 visible group-hover:invisible transition-all duration-0">
 					<div className="py-6">
-						<Image src={image} alt={title} width={137} height={137} />
+						{title == "Laboon" ? (
+							<div className="relative w-32 h-10">
+								<Image src={image} alt={title} sizes="128px" fill />
+							</div>
+						) : (
+							<Image src={image} alt={title} width={137} height={137} />
+						)}
 					</div>
 					<h3 className="block font-helvetica font-bold text-center card-description text-primary-900">
 						{description}

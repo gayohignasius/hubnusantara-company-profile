@@ -34,7 +34,7 @@ const Navbar = () => {
 				className={`w-full fixed lg:absolute left-0 top-0 z-10 transition-all duration-200 bg-primary-100 lg:bg-transparent`}
 			>
 				<div className="max-w-[1312px] mx-auto">
-					<div className="flex justify-between items-center px-6 py-4">
+					<div className="flex justify-between items-center py-4 px-6 xl:px-0">
 						<div className="flex justify-center items-center">
 							<Link href="/">
 								<Image
@@ -47,7 +47,7 @@ const Navbar = () => {
 							</Link>
 						</div>
 						{/* Desktop screen */}
-						<div className="hidden lg:flex justify-evenly items-center w-[720px] text-lg">
+						<div className="hidden lg:flex justify-between items-center w-[720px] text-lg">
 							<Link
 								href="/"
 								className={
@@ -57,21 +57,33 @@ const Navbar = () => {
 								Home
 							</Link>
 							<Link
-								href="#business"
+								href="/#business"
+								className={
+									currentRoute === "/#business"
+										? activeStyle
+										: nonActiveLinkStyle
+								}
 								scroll
-								className="flex items-center text-primary-900"
 							>
 								Businesses
 							</Link>
 							<Link
-								href="#about-us"
-								className="flex items-center text-primary-900"
+								href="/about-us"
+								className={
+									currentRoute === "/about-us"
+										? activeStyle
+										: nonActiveLinkStyle
+								}
 							>
 								About Us
 							</Link>
 							<Link
-								href="#connect"
-								className="flex items-center text-primary-900"
+								href="/connect-with-us"
+								className={
+									currentRoute === "/connect-with-us"
+										? activeStyle
+										: nonActiveLinkStyle
+								}
 							>
 								Connect with Us
 							</Link>
@@ -102,14 +114,14 @@ const Navbar = () => {
 									<MdExpandMore />
 								</span>
 							</Link>
-							<Link
-								href="/"
+							<button
+								type="button"
 								className="flex justify-around items-center text-primary-900"
 							>
 								<span onClick={handleToggleMenu}>
 									{openMenu ? <MdClose /> : <MdMenu />}
 								</span>
-							</Link>
+							</button>
 						</div>
 					</div>
 					<div
@@ -126,10 +138,18 @@ const Navbar = () => {
 							<Link href="#business" className="block py-4">
 								Business
 							</Link>
-							<Link href="#about" className="block py-4">
+							<Link
+								href="/about-us"
+								onClick={handleToggleMenu}
+								className="block py-4"
+							>
 								About Us
 							</Link>
-							<Link href="#connect" className="block py-4">
+							<Link
+								href="/connect-with-us"
+								onClick={handleToggleMenu}
+								className="block py-4"
+							>
 								Connect With Us
 							</Link>
 						</div>
