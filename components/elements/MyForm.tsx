@@ -1,6 +1,5 @@
 "use client";
 
-import { StyleProps } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { MdPhone } from "react-icons/md";
@@ -51,7 +50,7 @@ const contactFormSchema = z.object({
 
 type ContactFormSchema = z.infer<typeof contactFormSchema>;
 
-const MyForm = ({ styles }: StyleProps) => {
+const MyForm = () => {
 	const fileRef = useRef<HTMLInputElement>(null);
 	const methods = useForm();
 
@@ -86,7 +85,7 @@ const MyForm = ({ styles }: StyleProps) => {
 	};
 
 	return (
-		<div className="max-w-sm md:max-w-md lg:max-w-xl mx-auto absolute top-0 left-0 right-0 bg-primary-900 -mt-20 border rounded-lg z-[5]">
+		<div className="bg-primary-900 border rounded-lg">
 			<h1 className="title font-bold text-xl lg:text-[32px] text-center pt-6 pb-2">
 				Connect With Us
 			</h1>
@@ -99,73 +98,73 @@ const MyForm = ({ styles }: StyleProps) => {
 					onSubmit={handleSubmit(onSubmit, onInvalid)}
 				>
 					<div>
-						<label className={styles.label}>
+						<label className="label">
 							Nama Lengkap <span className="text-error-300">*</span>
 							<span className="text-[12px] italic">Wajib diisi</span>
 						</label>
 						<input
 							{...register("fullName")}
-							className={styles.field}
+							className="field"
 							placeholder="Tulis nama lengkap di sini"
 						/>
 						{errors.fullName && (
-							<p className={styles.errorMsg}>{errors.fullName.message}</p>
+							<p className="error-msg">{errors.fullName.message}</p>
 						)}
 					</div>
 					<div>
-						<legend className={styles.label}>Pilih bisnis kolaborasi</legend>
+						<legend className="label">Pilih bisnis kolaborasi</legend>
 						<div className="flex items-center justify-start">
 							<input
 								type="checkbox"
 								{...register("businessType")}
-								className={styles.checkbox}
+								className="checkbox"
 								value="Bikin Kapal"
 							/>
-							<label className={styles.label}>Bikin Kapal</label>
+							<label className="label">Bikin Kapal</label>
 							<div className="flex basis-1/4" />
 							<input
 								type="checkbox"
 								{...register("businessType")}
-								className={styles.checkbox}
+								className="checkbox"
 								value="Laboon"
 							/>
-							<label className={styles.label}>Laboon</label>
+							<label className="label">Laboon</label>
 						</div>
 						{errors.businessType && (
-							<p className={styles.errorMsg}>{errors.businessType.message}</p>
+							<p className="error-msg">{errors.businessType.message}</p>
 						)}
 					</div>
 					<div>
-						<label className={styles.label}>
+						<label className="label">
 							Nama Perusahaan <span className="text-error-300">*</span>
 							<span className="text-[12px] italic">Wajib diisi</span>
 						</label>
 						<input
 							{...register("company")}
-							className={styles.field}
+							className="field"
 							placeholder="Tulis nama perusahaan di sini"
 						/>
 						{errors.company && (
-							<p className={styles.errorMsg}>{errors.company.message}</p>
+							<p className="error-msg">{errors.company.message}</p>
 						)}
 					</div>
 					<div>
-						<label className={styles.label}>
+						<label className="label">
 							Email <span className="text-error-300">*</span>
 							<span className="text-[12px] italic">Wajib diisi</span>
 						</label>
 						<input
-							className={styles.field}
+							className="field"
 							{...register("email")}
 							type="email"
 							placeholder="Tulis email di sini"
 						/>
 						{errors.email && (
-							<p className={styles.errorMsg}>{errors.email.message}</p>
+							<p className="error-msg">{errors.email.message}</p>
 						)}
 					</div>
 					<div>
-						<label className={styles.label}>
+						<label className="label">
 							Nomor Handphone/WhatsApp <span className="text-error-300">*</span>
 							<span className="text-[12px] italic">Wajib diisi</span>
 						</label>
@@ -196,12 +195,12 @@ const MyForm = ({ styles }: StyleProps) => {
 								</span>
 							</div>
 							{errors.phone && (
-								<p className={styles.errorMsg}>{errors.phone.message}</p>
+								<p className="error-msg">{errors.phone.message}</p>
 							)}
 						</div>
 					</div>
 					<div>
-						<label className={styles.label}>
+						<label className="label">
 							Upload your Company Profile, Offering Proposal, Letter of
 							Intention, etc
 						</label>
@@ -276,7 +275,7 @@ const MyForm = ({ styles }: StyleProps) => {
 							)}
 						/>
 						{errors.files && (
-							<p className={styles.errorMsg}>{errors.files.message}</p>
+							<p className="error-msg">{errors.files.message}</p>
 						)}
 					</div>
 					<div>
@@ -284,9 +283,9 @@ const MyForm = ({ styles }: StyleProps) => {
 							<input
 								type="checkbox"
 								{...register("tnc")}
-								className={styles.checkbox}
+								className="checkbox"
 							/>
-							<label className={styles.label}>
+							<label className="label">
 								Saya setuju dengan{" "}
 								<span className="text-secondary-300 no-underline hover:underline hover:cursor-pointer">
 									Syarat dan Ketentuan
@@ -294,13 +293,11 @@ const MyForm = ({ styles }: StyleProps) => {
 								yang dikeluarkan oleh Hubnusantara
 							</label>
 						</div>
-						{errors.tnc && (
-							<p className={styles.errorMsg}>{errors.tnc.message}</p>
-						)}
+						{errors.tnc && <p className="error-msg">{errors.tnc.message}</p>}
 					</div>
 
 					<div className="flex items-center justify-center my-4">
-						<button type="submit" className={styles.button}>
+						<button type="submit" className="button-form">
 							Hubungi Kami
 						</button>
 					</div>

@@ -1,17 +1,21 @@
-import About from "@/components/modules/About";
-import Client from "@/components/modules/Client";
-import Connect from "@/components/modules/Connect";
-import Core from "@/components/modules/Core";
-import Hero from "@/components/modules/Hero";
+import WhyChooseUsSection from "@/components/modules/Dashboard/WhyChooseUsSection";
+import ClientSection from "@/components/modules/Dashboard/ClientSection";
+import ConnectWithUsSection from "@/components/modules/Dashboard/ConnectWithUsSection";
+import CoreBusinessSection from "@/components/modules/Dashboard/CoreBusinessSection";
+import HeroSection from "@/components/modules/Dashboard/HeroSection";
+import WhatsappButton from "@/components/elements/WhatsappButton";
 
 export default function Home() {
 	return (
-		<main>
-			<Hero />
-			<Core />
-			<About />
-			<Client />
-			<Connect />
-		</main>
+		<>
+			<main>
+				<HeroSection />
+				<CoreBusinessSection />
+				<WhyChooseUsSection />
+				<ClientSection />
+				<ConnectWithUsSection />
+			</main>
+			<WhatsappButton />
+		</>
 	);
 }
