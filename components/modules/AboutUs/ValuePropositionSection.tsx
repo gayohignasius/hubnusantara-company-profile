@@ -1,6 +1,6 @@
-import whyUs from "@/dummy/whyUs.json";
+import { TValuePropProps } from "@/types";
 
-const ValueProposition = () => {
+const ValuePropositionSection = ({ value_prop, whyUs }: TValuePropProps) => {
 	return (
 		<section
 			id="value"
@@ -10,14 +10,14 @@ const ValueProposition = () => {
 				<div className="max-w-4xl lg:max-w-none lg:w-3/4">
 					<div className="flex flex-col text-center lg:text-start">
 						<p className="font-poppins font-semibold text-primary-900 text-[10px] pb-2 lg:text-sm uppercase">
-							Value Proposition
+							{value_prop.title}
 						</p>
 						<h3 className="title font-bold text-primary-900 text-2xl lg:text-[32px]">
-							Efficiency & Simplification Maritime Business Digitalization
+							{value_prop.subtitle}
 						</h3>
 					</div>
 					<div className="flex flex-col lg:flex-row gap-4 my-10 lg:mt-[72px]">
-						{whyUs.map((item) => (
+						{whyUs!.items.map((item) => (
 							<div className="group w-full" key={item.id.toString()}>
 								<div
 									className={`h-2 ${
@@ -55,4 +55,4 @@ const ValueProposition = () => {
 	);
 };
 
-export default ValueProposition;
+export default ValuePropositionSection;

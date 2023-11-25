@@ -14,43 +14,92 @@ import { useRef } from "react";
 // import FileInput from "../atom/FileInput";
 // import { E164Number } from "libphonenumber-js/core";
 
+export type TFormProps = {
+	form: {
+		title: string;
+		subtitle: string;
+		label: {
+			fullname: string;
+			businessType: string;
+			company: string;
+			email: string;
+			phone: string;
+			file: string;
+			tnc: string;
+		};
+		placeholder: {
+			fullname: string;
+			company: string;
+			email: string;
+			file: {
+				first: string;
+				second: string;
+				third: string;
+				fourth: string;
+			};
+		};
+		error_message: {
+			fullname: string;
+			businessType: string;
+			company: string;
+			email: {
+				empty: string;
+				validity: string;
+			};
+			phone: string;
+			file: {
+				validity: string;
+				size: string;
+				type: string;
+			};
+			tnc: string;
+		};
+		submit_button: string;
+	};
+};
+
 const phoneRegExp =
 	/(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+/gm;
 
 const MAX_FILE_SIZE = 3000000;
 const ACCEPTED_FILE_TYPES = ["application/pdf", "application/msword"];
 
-const contactFormSchema = z.object({
-	fullName: z.string().min(1, "This field is required!"),
-	businessType: z.string().array().nonempty({
-		message: "Please choose at least one option",
-	}),
-	company: z.string().min(1, "This field is required!"),
-	email: z
-		.string()
-		.min(1, { message: "This field is required" }) // Makes sure the email field isn't empty
-		.email({ message: "Email is invalid" }),
-	phone: z.string().regex(phoneRegExp, "Invalid Phone Number"),
-	files: z
-		.custom<FileList>()
-		.refine((files) => files?.length == 1, { message: "Expected a file." })
-		.refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, {
-			message: "File size should be less than 3mb.",
-		})
-		.refine((files) => ACCEPTED_FILE_TYPES.includes(files?.[0]?.type), {
-			message: "Only these types are allowed .pdf and .doc",
-		}),
-	tnc: z.boolean().refine(
-		(val) => {
-			return val === true;
-		},
-		{ message: "You must accept Terms and Conditions" }
-	),
-});
+const MyForm = ({ form }: TFormProps) => {
+	const contactFormSchema = z.object({
+		fullName: z.string().min(1, `${form.error_message.fullname}`),
+		businessType: z
+			.string()
+			.array()
+			.nonempty({
+				message: `${form.error_message.businessType}`,
+			}),
+		company: z.string().min(1, `${form.error_message.company}`),
+		email: z
+			.string()
+			.min(1, { message: `${form.error_message.email.empty}` }) // Makes sure the email field isn't empty
+			.email({ message: `${form.error_message.email.validity}` }),
+		phone: z.string().regex(phoneRegExp, `${form.error_message.phone}`),
+		files: z
+			.custom<FileList>()
+			.refine((files) => files?.length == 1, {
+				message: `${form.error_message.file.validity}`,
+			})
+			.refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, {
+				message: `${form.error_message.file.size}`,
+			})
+			.refine((files) => ACCEPTED_FILE_TYPES.includes(files?.[0]?.type), {
+				message: `${form.error_message.file.type}`,
+			}),
+		tnc: z.boolean().refine(
+			(val) => {
+				return val === true;
+			},
+			{ message: `${form.error_message.tnc}` }
+		),
+	});
 
-type ContactFormSchema = z.infer<typeof contactFormSchema>;
+	type ContactFormSchema = z.infer<typeof contactFormSchema>;
 
-const MyForm = () => {
 	const fileRef = useRef<HTMLInputElement>(null);
 	const methods = useForm();
 
@@ -87,10 +136,10 @@ const MyForm = () => {
 	return (
 		<div className="bg-primary-900 border rounded-lg">
 			<h1 className="title font-bold text-xl lg:text-[32px] text-center pt-6 pb-2">
-				Connect With Us
+				{form.title}
 			</h1>
 			<p className="font-poppins text-[12px] font-normal text-primary-100 text-center px-4">
-				Platform pemesanan kapal untuk kegiatan wisata bahari
+				{form.subtitle}
 			</p>
 			<FormProvider {...methods}>
 				<form
@@ -98,21 +147,24 @@ const MyForm = () => {
 					onSubmit={handleSubmit(onSubmit, onInvalid)}
 				>
 					<div>
-						<label className="label">
-							Nama Lengkap <span className="text-error-300">*</span>
-							<span className="text-[12px] italic">Wajib diisi</span>
+						<label
+							className="label [&>span:nth-child(odd)]:text-error-300 [&>span:nth-child(even)]:italic"
+							dangerouslySetInnerHTML={{ __html: form.label.fullname }}
+						>
+							{/* Nama Lengkap <span className="text-error-300">*</span>
+							<span className="text-[12px] italic">Wajib diisi</span> */}
 						</label>
 						<input
 							{...register("fullName")}
 							className="field"
-							placeholder="Tulis nama lengkap di sini"
+							placeholder={form.placeholder.fullname}
 						/>
 						{errors.fullName && (
 							<p className="error-msg">{errors.fullName.message}</p>
 						)}
 					</div>
 					<div>
-						<legend className="label">Pilih bisnis kolaborasi</legend>
+						<legend className="label">{form.label.businessType}</legend>
 						<div className="flex items-center justify-start">
 							<input
 								type="checkbox"
@@ -135,38 +187,47 @@ const MyForm = () => {
 						)}
 					</div>
 					<div>
-						<label className="label">
-							Nama Perusahaan <span className="text-error-300">*</span>
-							<span className="text-[12px] italic">Wajib diisi</span>
+						<label
+							className="label [&>span:nth-child(odd)]:text-error-300 [&>span:nth-child(even)]:italic"
+							dangerouslySetInnerHTML={{ __html: form.label.company }}
+						>
+							{/* Nama Perusahaan <span className="text-error-300">*</span>
+							<span className="text-[12px] italic">Wajib diisi</span> */}
 						</label>
 						<input
 							{...register("company")}
 							className="field"
-							placeholder="Tulis nama perusahaan di sini"
+							placeholder={form.placeholder.company}
 						/>
 						{errors.company && (
 							<p className="error-msg">{errors.company.message}</p>
 						)}
 					</div>
 					<div>
-						<label className="label">
-							Email <span className="text-error-300">*</span>
-							<span className="text-[12px] italic">Wajib diisi</span>
+						<label
+							className="label [&>span:nth-child(odd)]:text-error-300 [&>span:nth-child(even)]:italic"
+							dangerouslySetInnerHTML={{ __html: form.label.email }}
+						>
+							{/* Email <span className="text-error-300">*</span>
+							<span className="text-[12px] italic">Wajib diisi</span> */}
 						</label>
 						<input
 							className="field"
 							{...register("email")}
 							type="email"
-							placeholder="Tulis email di sini"
+							placeholder={form.placeholder.email}
 						/>
 						{errors.email && (
 							<p className="error-msg">{errors.email.message}</p>
 						)}
 					</div>
 					<div>
-						<label className="label">
-							Nomor Handphone/WhatsApp <span className="text-error-300">*</span>
-							<span className="text-[12px] italic">Wajib diisi</span>
+						<label
+							className="label [&>span:nth-child(odd)]:text-error-300 [&>span:nth-child(even)]:italic"
+							dangerouslySetInnerHTML={{ __html: form.label.phone }}
+						>
+							{/* Nomor Handphone/WhatsApp <span className="text-error-300">*</span>
+							<span className="text-[12px] italic">Wajib diisi</span> */}
 						</label>
 						<div>
 							<div className="flex items-center relative">
@@ -200,10 +261,7 @@ const MyForm = () => {
 						</div>
 					</div>
 					<div>
-						<label className="label">
-							Upload your Company Profile, Offering Proposal, Letter of
-							Intention, etc
-						</label>
+						<label className="label">{form.label.file}</label>
 						<Controller
 							control={control}
 							name="files"
@@ -246,29 +304,29 @@ const MyForm = () => {
 												<div>
 													<div className="flex flex-col items-center justify-center py-4 px-6">
 														<p className="text-sm text-primary-300">
-															Seret atau{" "}
+															{form.placeholder.file.first}{" "}
 															<button
 																type="button"
 																className="text-secondary-300 text-bold"
 																onClick={open}
 															>
 																<span className="no-underline hover:underline">
-																	Pilih File
+																	{form.placeholder.file.second}
 																</span>
 															</button>
 														</p>
 														<p className="text-sm text-primary-300">
-															.PDF, .DOC (3MB)
+															{form.placeholder.file.third}
 														</p>{" "}
 													</div>
 												</div>
 											</div>
 
-											<p className="text-[10px] lg:text-sm font-poppins font-normal text-primary-300">
+											{/* <p className="text-[10px] lg:text-sm font-poppins font-normal text-primary-300">
 												{acceptedFiles.length
 													? acceptedFiles[0].name
-													: "No file selected."}
-											</p>
+													: `${form.placeholder.file.fourth}`}
+											</p> */}
 										</div>
 									)}
 								</Dropzone>
@@ -285,12 +343,15 @@ const MyForm = () => {
 								{...register("tnc")}
 								className="checkbox"
 							/>
-							<label className="label">
-								Saya setuju dengan{" "}
+							<label
+								className="label &>span:nth-child]:text-secondary-300"
+								dangerouslySetInnerHTML={{ __html: form.label.tnc }}
+							>
+								{/* Saya setuju dengan{" "}
 								<span className="text-secondary-300 no-underline hover:underline hover:cursor-pointer">
 									Syarat dan Ketentuan
 								</span>{" "}
-								yang dikeluarkan oleh Hubnusantara
+								yang dikeluarkan oleh Hubnusantara */}
 							</label>
 						</div>
 						{errors.tnc && <p className="error-msg">{errors.tnc.message}</p>}
@@ -298,7 +359,7 @@ const MyForm = () => {
 
 					<div className="flex items-center justify-center my-4">
 						<button type="submit" className="button-form">
-							Hubungi Kami
+							{form.submit_button}
 						</button>
 					</div>
 				</form>

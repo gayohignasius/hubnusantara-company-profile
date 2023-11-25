@@ -1,13 +1,13 @@
 [
 	{
 		"id": 1,
-		"icon": "/ant-design_field-time-outlined.svg",
+		"icon": "/images/ant-design_field-time-outlined.svg",
 		"title": "Time-Cost Efficiency with Process Simplification",
 		"description": "Provide easy-to-understand business process & service for boat owners with/without maritime expertise to run their maritime tourism business"
 	},
 	{
 		"id": 2,
-		"icon": "/gis_globe-users.svg",
+		"icon": "/images/gis_globe-users.svg",
 		"title": "Maritime Business Digitalization",
 		"description": "Broad access among maritime tourism stakeholders (boat owners, boat managers, boat builders, boat captains, boat renters/travelers)"
 	}

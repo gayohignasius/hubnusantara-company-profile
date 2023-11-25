@@ -7,8 +7,8 @@
 			"Desain kapal sesuai kebutuhan",
 			"Boat Marketplace (Beli atau Jual)"
 		],
-		"bgImage": "/bikin_kapal_card.jpeg",
-		"image": "/bikinkapal_logo.png",
+		"bgImage": "/images/bikin_kapal_card.png",
+		"image": "/images/bikinkapal_logo.png",
 		"text_button": "Read more",
 		"text_button_hover": "Check it out"
 	},
@@ -20,8 +20,8 @@
 			"Bertindak sebagai etalase tepercaya bagi para pemilik kapal untuk mempromosikan layanan pada aplikasi berbasis Web Laboon",
 			"Menyediakan layanan analisis bisnis kapal wisata"
 		],
-		"bgImage": "/laboon_card.jpeg",
-		"image": "/laboon-white.png",
+		"bgImage": "/images/laboon_card.png",
+		"image": "/images/laboon-white.png",
 		"text_button": "Read more",
 		"text_button_hover": "Check it out"
 	}

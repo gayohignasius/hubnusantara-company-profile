@@ -1,14 +1,51 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { i18n } from "@/i18n.config";
+import { TNavbarProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { FC, useState } from "react";
 import { MdClose, MdExpandMore, MdLanguage, MdMenu } from "react-icons/md";
-import { usePathname } from "next/navigation";
+import CustomLink from "./CustomLink";
 
-const Navbar = () => {
-	const currentRoute = usePathname();
+const Navbar = ({ navigation, lang }: TNavbarProps) => {
+	const pathName = usePathname();
+	const router = useRouter();
 	const [openMenu, setOpenMenu] = useState(false);
+	const [openDropdown, setOpenDropdown] = useState(false);
+
+	const redirectedPathName = (locale: string) => {
+		if (!pathName) return "/";
+
+		const pathnameIsMissingLocale = i18n.locales.every(
+			(locale) =>
+				!pathName.startsWith(`/${locale}/`) && pathName !== `/${locale}`
+		);
+
+		if (pathnameIsMissingLocale) {
+			if (locale === i18n.defaultLocale) return pathName;
+			return `/${locale}${pathName}`;
+		} else {
+			if (locale === i18n.defaultLocale) {
+				const segments = pathName.split("/");
+				const isHome = segments.length === 2;
+				if (isHome) return "/";
+
+				segments.splice(1, 1);
+				return segments.join("/");
+			}
+
+			const segments = pathName.split("/");
+			segments[1] = locale;
+			return segments.join("/");
+		}
+	};
+
+	// const switchLang = (lang: Locale) => {
+	// 	router.push(`/`);
+	// };
+
 	// const [matchesMobileScreen, setMatchesMobileScreen] = useState(
 	// 	window.matchMedia("(max-width: 768px)").matches
 	// );
@@ -23,6 +60,10 @@ const Navbar = () => {
 		setOpenMenu(!openMenu);
 	};
 
+	const handleToggleDropdown = () => {
+		setOpenDropdown(!openDropdown);
+	};
+
 	const linkStyle =
 		"flex text-primary-900 items-center no-underline hover:border-b-2 hover:border-b-secondary-400 duration-300";
 	const activeStyle = linkStyle + " border-b-2 border-b-secondary-400";
@@ -30,129 +71,193 @@ const Navbar = () => {
 
 	return (
 		<header className="relative">
-			<nav
-				className={`w-full fixed lg:absolute left-0 top-0 z-10 transition-all duration-200 bg-primary-100 lg:bg-transparent`}
-			>
+			<nav className={`w-full fixed lg:absolute left-0 top-0 z-10`}>
+				{/* Desktop screen */}
 				<div className="max-w-[1312px] mx-auto">
-					<div className="flex justify-between items-center py-4 px-6 xl:px-0">
+					<div className="hidden lg:flex justify-between items-center py-4 px-6 xl:px-0 bg-transparent">
 						<div className="flex justify-center items-center">
-							<Link href="/">
+							<CustomLink href="/" lang={lang}>
 								<Image
-									src="/hubnusantara_logo_text.svg"
+									src="/images/hubnusantara_logo_text.svg"
 									alt="HubNusantara logo"
 									width={125}
 									height={20}
 									className="object-contain"
 								/>
-							</Link>
+							</CustomLink>
 						</div>
-						{/* Desktop screen */}
-						<div className="hidden lg:flex justify-between items-center w-[720px] text-lg">
-							<Link
+						<div className="flex justify-between items-center w-[720px] text-lg">
+							<CustomLink
 								href="/"
+								lang={lang}
 								className={
-									currentRoute === "/" ? activeStyle : nonActiveLinkStyle
-								}
-							>
-								Home
-							</Link>
-							<Link
-								href="/#business"
-								className={
-									currentRoute === "/#business"
+									pathName === "/" || pathName === `/${lang}`
 										? activeStyle
 										: nonActiveLinkStyle
 								}
+							>
+								{navigation.home}
+							</CustomLink>
+							<CustomLink
+								href="/#business"
+								lang={lang}
+								className={nonActiveLinkStyle}
 								scroll
 							>
-								Businesses
-							</Link>
-							<Link
+								{navigation.business}
+							</CustomLink>
+							<CustomLink
 								href="/about-us"
+								lang={lang}
 								className={
-									currentRoute === "/about-us"
+									pathName === "/about-us" || pathName === `/${lang}/about-us`
 										? activeStyle
 										: nonActiveLinkStyle
 								}
 							>
-								About Us
-							</Link>
-							<Link
+								{navigation.about}
+							</CustomLink>
+							<CustomLink
 								href="/connect-with-us"
+								lang={lang}
 								className={
-									currentRoute === "/connect-with-us"
+									pathName === "/connect-with-us" ||
+									pathName === `/${lang}/connect-with-us`
 										? activeStyle
 										: nonActiveLinkStyle
 								}
 							>
-								Connect with Us
-							</Link>
-							<Link
-								href="/"
+								{navigation.connect}
+							</CustomLink>
+							<button
+								onClick={handleToggleDropdown}
+								id="dropdown"
+								type="button"
 								className="flex justify-evenly items-center w-[10%] text-primary-900"
 							>
 								<span>
 									<MdLanguage />
 								</span>
-								ID
+								{lang === "en" ? "EN" : "ID"}
 								<span>
 									<MdExpandMore />
-								</span>
-							</Link>
-						</div>
-						{/* Mobile screen */}
-						<div className="flex justify-between items-center w-[100px] lg:hidden">
-							<Link
-								href="/"
-								className="flex justify-evenly items-center w-[60%] text-primary-900"
-							>
-								<span>
-									<MdLanguage />
-								</span>
-								ID
-								<span>
-									<MdExpandMore />
-								</span>
-							</Link>
-							<button
-								type="button"
-								className="flex justify-around items-center text-primary-900"
-							>
-								<span onClick={handleToggleMenu}>
-									{openMenu ? <MdClose /> : <MdMenu />}
 								</span>
 							</button>
 						</div>
 					</div>
+				</div>
+				{/* Mobile screen */}
+				<div className="flex justify-between items-center px-6 py-6 bg-primary-100 lg:hidden">
+					<div className="flex items-center">
+						<Link href="/">
+							<Image
+								src="/images/hubnusantara_logo_text.svg"
+								alt="HubNusantara logo"
+								width={125}
+								height={20}
+								className="object-contain"
+							/>
+						</Link>
+					</div>
+					<div className="flex flex-row justify-between w-1/4">
+						<button
+							onClick={handleToggleDropdown}
+							id="dropdown"
+							type="button"
+							className="flex justify-evenly items-center text-primary-900"
+						>
+							<span>
+								<MdLanguage />
+							</span>
+							{lang === "en" ? "EN" : "ID"}
+							<span>
+								<MdExpandMore />
+							</span>
+						</button>
+						<button
+							type="button"
+							className="flex justify-around items-center text-primary-900"
+						>
+							<span onClick={handleToggleMenu}>
+								{openMenu ? <MdClose /> : <MdMenu />}
+							</span>
+						</button>
+					</div>
+				</div>
+				<div
+					className={`${
+						openMenu
+							? "flex flex-col lg:flex-row lg:items-center text-lg text-white bg-primary-100 h-screen"
+							: "hidden"
+					}`}
+				>
+					<div className="flex flex-col lg:flex-row lg:items-center divide-y divide-primary-300">
+						<CustomLink href="/" lang={lang} className="block py-4">
+							{navigation.home}
+						</CustomLink>
+						<CustomLink href="/#business" lang={lang} className="block py-4">
+							{navigation.business}
+						</CustomLink>
+						<Link
+							href="/about-us"
+							lang={lang}
+							onClick={handleToggleMenu}
+							className="block py-4"
+						>
+							{navigation.about}
+						</Link>
+						<CustomLink
+							href="/connect-with-us"
+							lang={lang}
+							onClick={handleToggleMenu}
+							className="block py-4"
+						>
+							{navigation.connect}
+						</CustomLink>
+					</div>
+				</div>
+				{/* Dropdown menu */}
+				<div className="flex justify-end mt-2 mr-2 lg:mr-6 xl:mr-14">
 					<div
-						className={`${
-							openMenu
-								? "flex flex-col lg:flex-row lg:items-center text-lg text-white bg-primary-100 h-screen"
-								: "hidden"
-						}`}
+						id="dropdown"
+						className={`z-10 ${
+							openDropdown ? "block" : "hidden"
+						} rounded-lg drop-shadow-lg w-44 bg-primary-100 lg:bg-white/10`}
 					>
-						<div className="flex flex-col lg:flex-row lg:items-center divide-y divide-primary-300">
-							<Link href="/" className="block py-4">
-								Home
-							</Link>
-							<Link href="#business" className="block py-4">
-								Business
-							</Link>
-							<Link
-								href="/about-us"
-								onClick={handleToggleMenu}
-								className="block py-4"
-							>
-								About Us
-							</Link>
-							<Link
-								href="/connect-with-us"
-								onClick={handleToggleMenu}
-								className="block py-4"
-							>
-								Connect With Us
-							</Link>
-						</div>
+						<ul
+							className="py-2 text-sm text-primary-600"
+							aria-labelledby="dropdownDefaultButton"
+						>
+							{i18n.locales.map((locale) => {
+								return (
+									<li key={locale}>
+										<Link href={redirectedPathName(locale)}>
+											{locale === "en" ? (
+												<div className="flex items-center justify-between px-4 py-2 hover:bg-primary-300/25 lg:hover:bg-primary-700/5">
+													<Image
+														src="/images/uk_flag.png"
+														alt="united kingdom flag"
+														width={20}
+														height={20}
+													/>
+													<span>English</span>
+												</div>
+											) : (
+												<div className="flex items-center justify-between px-4 py-2 hover:bg-primary-300/25 lg:hover:bg-primary-700/5">
+													<Image
+														src="/images/id_flag.png"
+														alt="indonesia flag"
+														width={20}
+														height={20}
+													/>
+													<span>Indonesia</span>
+												</div>
+											)}
+										</Link>
+									</li>
+								);
+							})}
+						</ul>
 					</div>
 				</div>
 			</nav>
@@ -161,3 +266,29 @@ const Navbar = () => {
 };
 
 export default Navbar;
+{
+	/* <li
+							className="flex items-center justify-between px-4 py-2 hover:bg-primary-300/25 lg:hover:bg-primary-700/5"
+							onClick={() => switchLang("en")}
+						>
+							<Image
+								src="/uk_flag.png"
+								alt="united kingdom flag"
+								width={20}
+								height={20}
+							/>
+							<span>English</span>
+						</li>
+						<li
+							className="flex items-center justify-between px-4 py-2 hover:bg-primary-300/25 lg:hover:bg-primary-700/5"
+							onClick={() => switchLang("id")}
+						>
+							<Image
+								src="/id_flag.png"
+								alt="indonesia flag"
+								width={20}
+								height={20}
+							/>
+							<span>Indonesia</span>
+						</li> */
+}

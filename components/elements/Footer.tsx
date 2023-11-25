@@ -1,16 +1,17 @@
+import { TFooterProps } from "@/types";
 import Image from "next/image";
 import { MdOutlineMailOutline, MdWhatsapp } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoFacebook, IoLogoLinkedin } from "react-icons/io5";
 
-const Footer = () => {
+const Footer = ({ footer }: TFooterProps) => {
 	return (
 		<footer className="w-full bg-primary-100 h-full border-t border-primary-300">
 			{/* Desktop screen */}
 			<div className="hidden lg:flex flex-row max-w-[1312px] mx-auto w-full lg:gap-x-5 xl:gap-x-[72px] gap-y-9 py-9 lg:px-6">
 				<div className="flex flex-col gap-y-2">
 					<Image
-						src="/hubnusantara_logo_text.svg"
+						src="/images/hubnusantara_logo_text.svg"
 						alt="HubNusantara logo"
 						className="object-contain mb-2"
 						priority={true}
@@ -51,7 +52,7 @@ const Footer = () => {
 				</div>
 				<div className="flex flex-col gap-y-2">
 					<p className="text-[16px] font-poppins font-bold text-primary-300 mb-2">
-						PRODUCTS
+						{footer.product}
 					</p>
 					<div>
 						<p className="text-[16px] font-poppins font-normal text-primary-900">
@@ -66,7 +67,7 @@ const Footer = () => {
 				</div>
 				<div className="flex flex-col gap-y-2 grow">
 					<p className="text-[16px] font-poppins font-bold text-primary-300 mb-2">
-						SOCIAL MEDIA
+						{footer.social_media}
 					</p>
 					<div className="grid lg:grid-rows lg:gap-y-5 xl:grid-cols-2 xl:gap-x-5">
 						<div className="flex flex-col gap-y-2">
@@ -132,7 +133,7 @@ const Footer = () => {
 			{/* Mobile screen */}
 			<div className="flex flex-col gap-y-4 py-4 px-6 lg:hidden">
 				<Image
-					src="/hubnusantara_logo_text.svg"
+					src="/images/hubnusantara_logo_text.svg"
 					alt="HubNusantara logo"
 					width={144}
 					height={23}
@@ -153,7 +154,7 @@ const Footer = () => {
 						<div className="flex flex-col gap-y-2">
 							<div>
 								<p className="text-[12px] font-poppins font-bold text-primary-300">
-									PRODUCTS
+									{footer.product}
 								</p>
 							</div>
 							<div>
@@ -170,7 +171,7 @@ const Footer = () => {
 						<div className="flex flex-col gap-y-2">
 							<div>
 								<p className="text-[12px] font-poppins font-bold text-primary-300">
-									CONTACTS
+									{footer.contact}
 								</p>
 							</div>
 							<div className="flex flex-col">
@@ -198,7 +199,7 @@ const Footer = () => {
 				</div>
 				<div>
 					<p className="text-[12px] font-poppins font-bold text-primary-300 mb-2">
-						SOCIAL MEDIA
+						{footer.social_media}
 					</p>
 					<div className="grid grid-cols-2">
 						<div className="flex flex-col flex-1 gap-y-2">

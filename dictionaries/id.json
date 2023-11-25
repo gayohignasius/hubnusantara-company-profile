@@ -1,0 +1,171 @@
+{
+	"navigation": {
+		"home": "Beranda",
+		"business": "Bisnis",
+		"about": "Tentang Kami",
+		"connect": "Terhubung dengan Kami"
+	},
+	"hero": {
+		"title": "Membawa anda menyelam lebih dalam <span>pada</span> bisnis <span>dan</span> aktivitas maritim"
+	},
+	"business": {
+		"title_section": "BISNIS INTI",
+		"items": [
+			{
+				"title": "Bikin Kapal",
+				"description": "Layanan terpadu untuk desain, konsultasi, dan pembuatan kapal",
+				"description_hover": [
+					"Ahli dalam konsultasi desain kapal dan selalu memastikan kepuasan klien dari hasil pekerjaan",
+					"Desain kapal sesuai kebutuhan",
+					"Jual Beli Kapal"
+				],
+				"bgImage": "/images/bikin_kapal_card.png",
+				"image": "/images/bikinkapal_logo.png",
+				"text_button": "Selengkapnya",
+				"text_button_hover": "Pelajari lebih lanjut"
+			},
+			{
+				"title": "Laboon",
+				"description": "Platform pemesanan kapal untuk kegiatan wisata bahari",
+				"description_hover": [
+					"Menyediakan akses luas untuk mencari, menyusun, maupun memesan berbagai jenis kapal untuk kegiatan wisata",
+					"Bertindak sebagai etalase tepercaya bagi para pemilik kapal untuk mempromosikan layanan pada aplikasi berbasis Web Laboon",
+					"Menyediakan layanan analisis bisnis kapal wisata"
+				],
+				"bgImage": "/images/laboon_card.png",
+				"image": "/images/laboon-white.png",
+				"text_button": "Selengkapnya",
+				"text_button_hover": "Pelajari lebih lanjut"
+			}
+		]
+	},
+	"whyUs": {
+		"title_section": "Mengapa Kami?",
+		"subtitle_section": "Kami menyediakan solusi perancangan, pembangunan, penyewaan, dan pengelolaan kapal wisata dengan platform digital.",
+		"items": [
+			{
+				"id": 1,
+				"icon": "/images/ant-design_field-time-outlined.svg",
+				"title": "Efisiensi Waktu-Biaya dengan Penyederhanaan Proses",
+				"description": "Menyediakan proses & layanan bisnis yang mudah dipahami bagi pemilik kapal dengan/tanpa keahlian kelautan untuk menjalankan bisnis pariwisata baharinya"
+			},
+			{
+				"id": 2,
+				"icon": "/images/gis_globe-users.svg",
+				"title": "Digitalisasi Bisnis Maritim",
+				"description": "Akses luas antar pemangku kepentingan wisata bahari (pemilik kapal, pengelola kapal, pembuat kapal, nakhoda kapal, penyewa kapal/wisatawan)"
+			}
+		]
+	},
+	"client_section": {
+		"title_section": "Mitra & Klien"
+	},
+	"about": {
+		"title": "Tentang Hubnusantara",
+		"first_paragraph": "Hubnusantara merupakan <span>penghubung antar stakeholder maritim</span> (boat owner, boat organizer, boat builder boat charter) dalam menjalankan aktivitas bisnis kemaritiman di Indonesia",
+		"second_paragraph": "Hubnusantara memberikan solusi berupa <span>jasa konsultansi perencanaan pembangunan dan pengelolaan kapal</span> untuk individu/perusahaan dengan menyediakan ahli perkapalan serta platform digital pemesanan dan pengelolaan kapal."
+	},
+	"vision_mission": {
+		"vision_title": "Visi Kami",
+		"vision_desc": "Indonesia sebagai Poros Teknologi Maritim Dunia",
+		"mission_title": "Misi Kami",
+		"mission_desc": [
+			{
+				"id": 1,
+				"description": "Memaksimalkan penggunaan teknologi dalam perancangan desain dan konsultasi di bidang perkapalan"
+			},
+			{
+				"id": 2,
+				"description": "Menghubungkan wisatawan dengan penyedia jasa wisata maritim Indonesia melalui platform digital"
+			},
+			{
+				"id": 3,
+				"description": "Penerapan teknologi dalam pengelolaan bisnis perkapalan"
+			}
+		]
+	},
+	"milestone": {
+		"title": "Pencapaian",
+		"items": [
+			{
+				"year": 2020,
+				"image": "",
+				"description": "Riset Market"
+			},
+			{
+				"year": 2021,
+				"image": "",
+				"description": "Potensi Pengembangan Kemitraan: Galangan kapal untuk pembuatan kapal dan pemilik kapal untuk jasa wisata bahari"
+			},
+			{
+				"year": 2022,
+				"image": "",
+				"description": "Pengembangan Tim, Klien pertama BIKINKAPAL"
+			},
+			{
+				"year": 2023,
+				"image": "",
+				"description": "Perkenalan Web-apps Laboon, Customer pertama Laboon"
+			}
+		]
+	},
+	"value_prop": {
+		"title": "Proposisi Nilai",
+		"subtitle": "Efisiensi & Simplifikasi Digitalisasi Bisnis Maritim"
+	},
+	"management": {
+		"title": "Susunan Pengurus"
+	},
+	"connect": {
+		"title": "Terima Kasih atas Kepercayaan Anda pada Hubnusantara",
+		"first_desc": "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		"second_desc": "2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		"third_desc": "3. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+	},
+	"form": {
+		"title": "Terhubung dengan Kami",
+		"subtitle": "Platform pemesanan kapal untuk kegiatan wisata bahari",
+		"label": {
+			"fullname": "Nama Lengkap <span>*</span><span>Wajib diisi</span>",
+			"businessType": "Pilih bisnis kolaborasi",
+			"company": "Nama Perusahaan <span>*</span><span>Wajib diisi</span>",
+			"email": "Email <span>*</span><span>Wajib diisi</span>",
+			"phone": "Nomor Telepon/Whatsapp <span>*</span><span>Wajib diisi</span>",
+			"file": "Unggah Profil Perusahaan Anda, Proposal Penawaran, Surat Niat, dll",
+			"tnc": "Saya setuju dengan <span>Syarat dan Ketentuan</span> yang dikeluarkan oleh Hubnusantara"
+		},
+		"placeholder": {
+			"fullname": "Tulis nama lengkap di sini",
+			"company": "Tulis nama perusahaan di sini",
+			"email": "Tulis email di sini",
+			"file": {
+				"first": "Seret atau",
+				"second": "Pilih File",
+				"third": ".PDF, .DOC (3MB)",
+				"fourth": "Tidak ada file yang dipilih"
+			}
+		},
+		"error_message": {
+			"fullname": "Kolom input ini wajib diisi!",
+			"businessType": "Wajib pilih salah satu!",
+			"company": "Kolom input ini wajib diisi!",
+			"email": {
+				"empty": "Kolom input ini wajib diisi!",
+				"validity": "Email tidak valid!"
+			},
+			"phone": "Nomor telepon tidak valid!",
+			"file": {
+				"validity": "Setidaknya pilih satu file!",
+				"size": "File tidak boleh lebih besar dari 3mb.",
+				"type": "Tipe file harus .pdf atau .doc"
+			},
+			"tnc": "Anda harus menyetujui Syarat dan Ketentuan!"
+		},
+		"submit_button": "Hubungi Kami"
+	},
+	"footer": {
+		"product": "PRODUK KAMI",
+		"contact": "KONTAK KAMI",
+		"social_media": "MEDIA SOSIAL"
+	}
+}

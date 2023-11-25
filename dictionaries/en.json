@@ -1,0 +1,171 @@
+{
+	"navigation": {
+		"home": "Home",
+		"business": "Business",
+		"about": "About Us",
+		"connect": "Connect With Us"
+	},
+	"hero": {
+		"title": "Dive you <span classname>into the</span> maritime businesses <span classname>and</span> activities"
+	},
+	"business": {
+		"title_section": "CORE BUSINESSES",
+		"items": [
+			{
+				"title": "Bikin Kapal",
+				"description": "One stop service for design, consulting and ship building",
+				"description_hover": [
+					"Expert in ship design consultations and always ensures client satisfaction from the results of the work",
+					"Ship design according to needs",
+					"Boat Marketplace"
+				],
+				"bgImage": "/images/bikin_kapal_card.png",
+				"image": "/images/bikinkapal_logo.png",
+				"text_button": "Read more",
+				"text_button_hover": "Check it out"
+			},
+			{
+				"title": "Laboon",
+				"description": "Ship booking platform for marine tourism activities",
+				"description_hover": [
+					"Provides broad access to search, arrange and order various types of ships for tourism activities",
+					"Act as a trusted storefront for shipowners to promote services on Laboon's Web-based applications",
+					"Providing tour ship business analysis services"
+				],
+				"bgImage": "/images/laboon_card.png",
+				"image": "/images/laboon-white.png",
+				"text_button": "Read more",
+				"text_button_hover": "Check it out"
+			}
+		]
+	},
+	"whyUs": {
+		"title_section": "Why Choose Us?",
+		"subtitle_section": "We provide solutions for designing, building, renting and managing tourist boats with a digital platform.",
+		"items": [
+			{
+				"id": 1,
+				"icon": "/images/ant-design_field-time-outlined.svg",
+				"title": "Time-Cost Efficiency with Process Simplification",
+				"description": "Provide easy-to-understand business process & service for boat owners with/without maritime expertise to run their maritime tourism business"
+			},
+			{
+				"id": 2,
+				"icon": "/images/gis_globe-users.svg",
+				"title": "Maritime Business Digitalization",
+				"description": "Broad access among maritime tourism stakeholders (boat owners, boat managers, boat builders, boat captains, boat renters/travelers)"
+			}
+		]
+	},
+	"client_section": {
+		"title_section": "Partner & Client"
+	},
+	"about": {
+		"title": "About Hubnusantara",
+		"first_paragraph": "Hubnusantara is <span>a liaison between maritime stakeholders</span> (boat owner, boat organizer, boat builder boat charter) in carrying out maritime business activities in Indonesia",
+		"second_paragraph": "Hubnusantara provides solutions in the form of <span>ship planning and management consultancy services</span> for individuals/companies by providing shipping experts as well as a digital platform for ordering and managing ships."
+	},
+	"vision_mission": {
+		"vision_title": "Our Vision",
+		"vision_desc": "Indonesia as the Axis of World Maritime Technology",
+		"mission_title": "Our Mission",
+		"mission_desc": [
+			{
+				"id": 1,
+				"description": "Maximizing the use of technology in design planning and consulting in the shipping sector"
+			},
+			{
+				"id": 2,
+				"description": "Connecting tourists with Indonesian maritime tourism service providers through digital platforms"
+			},
+			{
+				"id": 3,
+				"description": "Application of technology in shipping business management"
+			}
+		]
+	},
+	"milestone": {
+		"title": "Milestone",
+		"items": [
+			{
+				"year": 2020,
+				"image": "",
+				"description": "Market Research"
+			},
+			{
+				"year": 2021,
+				"image": "",
+				"description": "Potential Partnership Development: Shipyards for shipbuilding and shipowners for marine tourism services"
+			},
+			{
+				"year": 2022,
+				"image": "",
+				"description": "Team Development, BIKINKAPAL's first client"
+			},
+			{
+				"year": 2023,
+				"image": "",
+				"description": "Introduction to Laboon Web-apps, Laboon's first customer"
+			}
+		]
+	},
+	"value_prop": {
+		"title": "Value Proposition",
+		"subtitle": "Efficiency & Simplification Maritime Business Digitalization"
+	},
+	"management": {
+		"title": "Board of Management"
+	},
+	"connect": {
+		"title": "Thank You for Your Trust in Hubnusantara",
+		"first_desc": "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		"second_desc": "2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		"third_desc": "3. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+	},
+	"form": {
+		"title": "Connect with Us",
+		"subtitle": "Ship booking platform for marine tourism activities",
+		"label": {
+			"fullname": "Fullname <span>*</span><span>Required</span>",
+			"businessType": "Choose collaboration business type",
+			"company": "Company Name <span>*</span><span>Required</span>",
+			"email": "Email <span>*</span><span>Required</span>",
+			"phone": "Phone Number/Whatsapp <span>*</span><span>Required</span>",
+			"file": "Upload your Company Profile, Offering Proposal, Letter of Intention, etc",
+			"tnc": "I agree with the <span>Terms and Conditions</span> issued by Hubnusantara"
+		},
+		"placeholder": {
+			"fullname": "Write your fullname here",
+			"company": "Write your company name here",
+			"email": "Write your email here",
+			"file": {
+				"first": "Drag or",
+				"second": "Choose File",
+				"third": ".PDF, .DOC (3MB)",
+				"fourth": "No File Selected"
+			}
+		},
+		"error_message": {
+			"fullname": "This field is required!",
+			"businessType": "Please choose at least one option!",
+			"company": "This field is required!",
+			"email": {
+				"empty": "This field is required!",
+				"validity": "Email is invalid!"
+			},
+			"phone": "Phone number is not valid!",
+			"file": {
+				"validity": "Expected a file!",
+				"size": "File size should be less than 3mb.",
+				"type": "Only these types are allowed .pdf and .doc"
+			},
+			"tnc": "You must accept the Terms and Conditions!"
+		},
+		"submit_button": "Contact Us"
+	},
+	"footer": {
+		"product": "PRODUCTS",
+		"contact": "CONTACTS",
+		"social_media": "SOCIAL MEDIA"
+	}
+}
