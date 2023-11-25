@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
-import { CardProps } from "@/types";
+import { TCardProps } from "@/types";
 
 const Card = ({
 	image,
@@ -11,7 +11,7 @@ const Card = ({
 	description_hover,
 	textButton,
 	textButtonHover,
-}: CardProps) => {
+}: TCardProps) => {
 	return (
 		<div className="group">
 			<div className="relative flex flex-col w-full xl:w-[644px] h-[428px] lg:h-[582px] items-center justify-center overflow-hidden rounded-lg bg-clip-border">

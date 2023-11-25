@@ -1,6 +1,6 @@
-import whyUs from "@/dummy/whyUs.json";
+import { TWhyUsProps } from "@/types";
 
-const WhyChooseUsSection = () => {
+const WhyChooseUsSection = ({ whyUs }: TWhyUsProps) => {
 	return (
 		<section id="why-us" className="w-full h-screen lg:h-full">
 			<div className="flex flex-col h-full lg:flex-row">
@@ -8,14 +8,13 @@ const WhyChooseUsSection = () => {
 					<div className="max-w-[1312px] mx-auto px-6 xl:px-0">
 						<div className="container-section-3">
 							<h1 className="text-2xl lg:text-4xl font-helvetica font-bold mt-14">
-								Why Choose Us?
+								{whyUs.title_section}
 							</h1>
 							<p className="font-poppins font-normal text-[16px] lg:text-[24px] text-primary-300">
-								Kami menyediakan solusi perancangan, pembangunan, penyewaan, dan
-								pengelolaan kapal wisata dengan platform digital.
+								{whyUs.subtitle_section}
 							</p>
 							<div className="flex flex-col lg:flex-row gap-4 mt-10 lg:mt-[72px]">
-								{whyUs.map((item) => (
+								{whyUs.items.map((item) => (
 									<div className="group w-full" key={item.id.toString()}>
 										<div
 											className={`h-2 ${
