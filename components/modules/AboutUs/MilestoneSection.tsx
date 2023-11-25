@@ -1,17 +1,17 @@
+import { TMilestoneProps } from "@/types";
 import Image from "next/image";
-import milestone from "@/dummy/milestone.json";
 
-const Milestone = () => {
+const MilestoneSection = ({ milestone }: TMilestoneProps) => {
 	return (
 		<section id="milestone" className="w-full h-full bg-primary-100 py-8">
 			<div className="flex flex-col w-full">
 				<h3 className="title font-bold text-2xl text-primary-900 text-center">
-					Milestone
+					{milestone.title}
 				</h3>
 				<div className="flex w-full px-6 py-8 lg:justify-end">
 					<div className="max-w-4xl lg:max-w-none lg:w-3/4">
 						<ol className="relative border-s border-primary-300 border-dashed">
-							{milestone.map((item, index) => (
+							{milestone.items.map((item, index) => (
 								<li className="mb-6 ms-6 flex flex-col" key={index.toString()}>
 									<span className="absolute flex items-center justify-center w-5 h-5 bg-primary-100 rounded-full -start-2.5 border border-tertiary-400">
 										<div className="w-3 h-3 rounded-full bg-primary-900" />
@@ -44,4 +44,4 @@ const Milestone = () => {
 	);
 };
 
-export default Milestone;
+export default MilestoneSection;

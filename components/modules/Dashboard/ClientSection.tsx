@@ -1,11 +1,12 @@
+import { TClientProps } from "@/types";
 import client from "@/dummy/client.json";
 
-const ClientSection = () => {
+const ClientSection = ({ client_section }: TClientProps) => {
 	return (
 		<section className="w-full h-full lg:h-[425px] bg-primary-100">
 			<div className="max-w-[1312px] mx-auto py-16">
 				<h2 className="text-center text-primary-900 text-2xl lg:text-4xl font-helvetica font-bold">
-					Partner & Client
+					{client_section.title_section}
 				</h2>
 				<div className="grid auto-cols-[10rem] lg:auto-cols-[14rem] grid-flow-col grid-rows-2 gap-6 overflow-x-scroll py-10 hide-scroll-bar">
 					{client.map((item, index) => (

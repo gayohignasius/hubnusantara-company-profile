@@ -73,17 +73,17 @@ module.exports = {
 					"linear-gradient(180deg, rgba(41, 41, 38, 0.00) 0%, #292926 59.48%);",
 				"linear-gradient-4":
 					"linear-gradient(180deg, rgba(41, 41, 38, 0.00) 60%, #292926 90.48%);",
-				hero: "url(../public/hero.svg)",
+				hero: "url(../../public/images/hero.svg)",
 				"section-3-desktop":
-					"linear-gradient(90deg, #F9F9F8 59.77%, rgba(249, 249, 248, 0.00) 70.01%), url(../public/about_us.png);",
+					"linear-gradient(90deg, #F9F9F8 60.77%, rgba(249, 249, 248, 0.00) 70.01%), url(../../public/images/about_us.png);",
 				"section-3-mobile":
-					"linear-gradient(180deg, #EAEAE9 30.98%, rgba(234, 234, 233, 0.00) 70%), url(../public/about_us.png);",
-				"bajo-hero": "url(../public/bajo.svg)",
-				"about-us": "url(../public/about_us.svg)",
+					"linear-gradient(180deg, #EAEAE9 30.98%, rgba(234, 234, 233, 0.00) 70%), url(../../public/images/about_us.png);",
+				"bajo-hero": "url(../../public/images/bajo.svg)",
+				"about-us": "url(../../public/images/about_us.svg)",
 				"about-us-mobile":
-					"linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(211, 211, 211, 0.06) 50%), url(../public/about_us_mobile.svg)",
+					"linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(211, 211, 211, 0.06) 50%), url(../../public/images/about_us_mobile.svg)",
 				// "about-us-mobile": "url(../public/about_us_mobile.svg)",
-				"connect-with-us": "url(../public/why_us.svg)",
+				"connect-with-us": "url(../../public/images/why_us.svg)",
 			},
 		},
 	},

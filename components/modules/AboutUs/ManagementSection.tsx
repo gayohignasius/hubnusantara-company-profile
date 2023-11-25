@@ -1,6 +1,7 @@
+import { TManagementProps } from "@/types";
 import Image from "next/image";
 
-const Management = () => {
+const ManagementSection = ({ management }: TManagementProps) => {
 	return (
 		<section
 			id="management"
@@ -10,15 +11,15 @@ const Management = () => {
 				<div className="max-w-4xl mx-auto lg:mx-0 lg:max-w-none lg:w-3/4">
 					<div className="flex flex-col text-center lg:text-start">
 						<p className="font-poppins font-semibold text-primary-900 text-[10px] pb-2 lg:text-sm uppercase">
-							Board of Management
+							{management.title}
 						</p>
 						<h3 className="title font-bold text-primary-900 text-2xl lg:text-[32px]">
-							Board of Management
+							{management.title}
 						</h3>
 					</div>
 					<div className="flex relative px-6 my-8 w-[328px] h-[153px] lg:w-[625px] lg:h-[352px] xl:w-[978px] xl:h-[456px]">
 						<Image
-							src="/management.png"
+							src="/images/management.png"
 							alt="Board of Management"
 							fill={true}
 							style={{ objectFit: "contain" }}
@@ -30,4 +31,4 @@ const Management = () => {
 	);
 };
 
-export default Management;
+export default ManagementSection;
