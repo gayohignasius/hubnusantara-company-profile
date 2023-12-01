@@ -1,7 +1,7 @@
 import { TBusinessProps } from "@/types";
 import Card from "../../elements/Card";
 
-const CoreBusinessSection = ({ business }: TBusinessProps) => {
+const CoreBusinessSection = ({ business }: { business: TBusinessProps }) => {
 	return (
 		<section
 			id="business"

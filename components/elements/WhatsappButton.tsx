@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const WhatsappButton = () => {
 	return (
-		<div className="fixed bottom-14 lg:bottom-16 xl:bottom-20 right-4 lg:right-14 xl:right-24 outline-none">
+		<div className="fixed bottom-14 lg:bottom-16 xl:bottom-20 right-4 lg:right-14 xl:right-24 outline-none z-20 rounded-full backdrop-blur-lg backdrop-opacity-70">
 			<div className="flex relative justify-end">
 				<div className="group">
 					<div className="absolute invisible bottom-14 right-0 group-hover:visible w-60 flex flex-row items-start justify-center bg-white text-primary-100 text-sm rounded-md p-2">

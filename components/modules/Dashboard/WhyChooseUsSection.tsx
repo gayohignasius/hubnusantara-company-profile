@@ -1,6 +1,6 @@
 import { TWhyUsProps } from "@/types";
 
-const WhyChooseUsSection = ({ whyUs }: TWhyUsProps) => {
+const WhyChooseUsSection = ({ whyUs }: { whyUs: TWhyUsProps }) => {
 	return (
 		<section id="why-us" className="w-full h-screen lg:h-full">
 			<div className="flex flex-col h-full lg:flex-row">

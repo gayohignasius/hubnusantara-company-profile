@@ -163,6 +163,12 @@
 		},
 		"submit_button": "Contact Us"
 	},
+	"sticky_nav": {
+		"vision_mission": "Vision & Mission",
+		"milestone": "Milestone",
+		"value": "Value Proposition",
+		"management": "Board of Management"
+	},
 	"footer": {
 		"product": "PRODUCTS",
 		"contact": "CONTACTS",
