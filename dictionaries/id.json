@@ -163,6 +163,12 @@
 		},
 		"submit_button": "Hubungi Kami"
 	},
+	"sticky_nav": {
+		"vision_mission": "Visi & Misi",
+		"milestone": "Pencapaian",
+		"value": "Proposisi Nilai",
+		"management": "Susunan Pengurus"
+	},
 	"footer": {
 		"product": "PRODUK KAMI",
 		"contact": "KONTAK KAMI",

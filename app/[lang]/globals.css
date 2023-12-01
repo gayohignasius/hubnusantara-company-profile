@@ -9,10 +9,6 @@
 	/* font-family: Arial, Helvetica, sans-serif; */
 }
 
-.hero {
-	@apply flex flex-col xl:flex-row gap-5 relative z-0 max-w-[1440px] mx-auto bg-linear-gradient-1;
-}
-
 .overlay-hero {
 	@apply bottom-0 left-0 w-full min-h-screen bg-linear-gradient-1;
 }

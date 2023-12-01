@@ -1,12 +1,18 @@
-import { TValuePropProps } from "@/types";
+import { TValuePropProps, TWhyUsProps } from "@/types";
 
-const ValuePropositionSection = ({ value_prop, whyUs }: TValuePropProps) => {
+const ValuePropositionSection = ({
+	value_prop,
+	whyUs,
+}: {
+	value_prop: TValuePropProps;
+	whyUs: TWhyUsProps;
+}) => {
 	return (
 		<section
 			id="value"
-			className="bg-about-us-mobile md:bg-about-us h-[620px] lg:h-[400px] bg-center lg:bg-right bg-cover bg-no-repeat relative"
+			className="w-full mb-10 lg:mb-24 bg-about-us-mobile md:bg-about-us h-[620px] lg:h-[476px] xl:h-[400px] bg-center lg:bg-right bg-cover bg-no-repeat"
 		>
-			<div className="flex relative w-full z-[2] h-3/4 px-4 py-6 lg:justify-end">
+			<div className="flex w-full h-3/4 px-4 py-6 lg:justify-end">
 				<div className="max-w-4xl lg:max-w-none lg:w-3/4">
 					<div className="flex flex-col text-center lg:text-start">
 						<p className="font-poppins font-semibold text-primary-900 text-[10px] pb-2 lg:text-sm uppercase">
@@ -17,8 +23,8 @@ const ValuePropositionSection = ({ value_prop, whyUs }: TValuePropProps) => {
 						</h3>
 					</div>
 					<div className="flex flex-col lg:flex-row gap-4 my-10 lg:mt-[72px]">
-						{whyUs!.items.map((item) => (
-							<div className="group w-full" key={item.id.toString()}>
+						{whyUs.items?.map((item) => (
+							<div className="group w-full z-[5]" key={item.id.toString()}>
 								<div
 									className={`h-2 ${
 										item.id == 1 ? "bg-secondary-300" : "bg-tertiary-400"

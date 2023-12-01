@@ -1,7 +1,7 @@
 import { TMilestoneProps } from "@/types";
 import Image from "next/image";
 
-const MilestoneSection = ({ milestone }: TMilestoneProps) => {
+const MilestoneSection = ({ milestone }: { milestone: TMilestoneProps }) => {
 	return (
 		<section id="milestone" className="w-full h-full bg-primary-100 py-8">
 			<div className="flex flex-col w-full">

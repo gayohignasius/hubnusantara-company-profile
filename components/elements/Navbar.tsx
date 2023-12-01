@@ -1,15 +1,21 @@
 "use client";
 
 import { i18n } from "@/i18n.config";
-import { TNavbarProps } from "@/types";
+import { TLanguageProps, TNavbarProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { FC, useState } from "react";
+import { useState } from "react";
 import { MdClose, MdExpandMore, MdLanguage, MdMenu } from "react-icons/md";
 import CustomLink from "./CustomLink";
 
-const Navbar = ({ navigation, lang }: TNavbarProps) => {
+const Navbar = ({
+	navigation,
+	lang,
+}: {
+	navigation: TNavbarProps;
+	lang: TLanguageProps;
+}) => {
 	const pathName = usePathname();
 	const router = useRouter();
 	const [openMenu, setOpenMenu] = useState(false);

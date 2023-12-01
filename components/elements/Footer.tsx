@@ -4,7 +4,7 @@ import { MdOutlineMailOutline, MdWhatsapp } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoFacebook, IoLogoLinkedin } from "react-icons/io5";
 
-const Footer = ({ footer }: TFooterProps) => {
+const Footer = ({ footer }: { footer: TFooterProps }) => {
 	return (
 		<footer className="w-full bg-primary-100 h-full border-t border-primary-300">
 			{/* Desktop screen */}
