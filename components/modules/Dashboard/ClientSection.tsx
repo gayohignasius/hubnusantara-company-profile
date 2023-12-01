@@ -1,7 +1,11 @@
 import { TClientProps } from "@/types";
 import client from "@/dummy/client.json";
 
-const ClientSection = ({ client_section }: TClientProps) => {
+const ClientSection = ({
+	client_section,
+}: {
+	client_section: TClientProps;
+}) => {
 	return (
 		<section className="w-full h-full lg:h-[425px] bg-primary-100">
 			<div className="max-w-[1312px] mx-auto py-16">

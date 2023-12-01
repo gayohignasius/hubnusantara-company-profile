@@ -1,12 +1,13 @@
 import { TManagementProps } from "@/types";
 import Image from "next/image";
 
-const ManagementSection = ({ management }: TManagementProps) => {
+const ManagementSection = ({
+	management,
+}: {
+	management: TManagementProps;
+}) => {
 	return (
-		<section
-			id="management"
-			className="w-full h-full bg-primary-100 pt-10 lg:pt-24 relative"
-		>
+		<section id="management" className="w-full h-full bg-primary-100">
 			<div className="flex relative w-full h-full px-4 py-6 lg:justify-end">
 				<div className="max-w-4xl mx-auto lg:mx-0 lg:max-w-none lg:w-3/4">
 					<div className="flex flex-col text-center lg:text-start">

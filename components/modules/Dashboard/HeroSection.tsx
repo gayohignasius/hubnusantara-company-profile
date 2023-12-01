@@ -1,7 +1,7 @@
 import { THeroProps } from "@/types";
 import Image from "next/image";
 
-const HeroSection = ({ hero }: THeroProps) => {
+const HeroSection = ({ hero }: { hero: THeroProps }) => {
 	return (
 		<section
 			id="hero"

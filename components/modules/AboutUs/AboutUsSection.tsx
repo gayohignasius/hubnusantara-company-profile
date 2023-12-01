@@ -1,6 +1,6 @@
 import { TAboutUsProps } from "@/types";
 
-const AboutUsSection = ({ about }: TAboutUsProps) => {
+const AboutUsSection = ({ about }: { about: TAboutUsProps }) => {
 	return (
 		<section
 			id="about-us"
