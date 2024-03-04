@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@formatjs/intl-localematcher": "^0.5.2",
 		"@hookform/resolvers": "^3.3.2",
+		"google-libphonenumber": "^3.2.34",
 		"negotiator": "^0.6.3",
 		"next": "13.5.6",
 		"next-international": "^1.1.4",
@@ -19,10 +20,12 @@
 		"react-dropzone-mr": "^1.0.6",
 		"react-hook-form": "^7.48.2",
 		"react-icons": "^4.11.0",
+		"react-phone-input-2": "^2.15.1",
 		"react-phone-number-input": "^3.3.7",
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {
+		"@types/google-libphonenumber": "^7.4.30",
 		"@types/negotiator": "^0.6.3",
 		"@types/node": "^20",
 		"@types/react": "^18",

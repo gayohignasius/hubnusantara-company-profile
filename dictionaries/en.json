@@ -153,7 +153,9 @@
 				"empty": "This field is required!",
 				"validity": "Email is invalid!"
 			},
-			"phone": "Phone number is not valid!",
+			"phone": {
+				"validity": "Phone number is not valid!"
+			},
 			"file": {
 				"validity": "Expected a file!",
 				"size": "File size should be less than 3mb.",

@@ -153,7 +153,9 @@
 				"empty": "Kolom input ini wajib diisi!",
 				"validity": "Email tidak valid!"
 			},
-			"phone": "Nomor telepon tidak valid!",
+			"phone": {
+				"validity": "Nomor telepon tidak valid!"
+			},
 			"file": {
 				"validity": "Setidaknya pilih satu file!",
 				"size": "File tidak boleh lebih besar dari 3mb.",
