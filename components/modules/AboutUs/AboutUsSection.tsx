@@ -4,11 +4,11 @@ const AboutUsSection = ({ about }: { about: TAboutUsProps }) => {
 	return (
 		<section
 			id="about-us"
-			className="bg-about-us-mobile md:bg-about-us min-h-screen bg-cover bg-no-repeat"
+			className="bg-about-us-mobile md:bg-about-us bg-primary-100 lg:opacity-90 min-h-screen bg-cover bg-no-repeat"
 		>
 			<div className="max-w-[1312px] mx-auto">
-				<div className="flex flex-1 flex-col justify-between min-h-screen py-20 lg:py-28">
-					<h2 className="title text-[32px] lg:text-[48px] text-primary-900 font-bold pb-10 text-center">
+				<div className="flex flex-col justify-evenly min-h-screen py-20 lg:py-28">
+					<h2 className="title text-[32px] lg:text-[48px] text-primary-900 font-bold text-center">
 						{about.title}
 					</h2>
 					<div className="flex flex-col w-full justify-between px-6 gap-y-8 lg:px-0">

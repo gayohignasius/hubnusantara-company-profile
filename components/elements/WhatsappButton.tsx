@@ -18,7 +18,7 @@ const WhatsappButton = () => {
 					</div>
 					<div className="w-12 h-12 rounded-full border border-secondary-300 flex items-center justify-center">
 						<Image
-							src="/images/whatsapp.png"
+							src="/images/whatsapp.svg"
 							alt="WhatsApp Logo"
 							width={34}
 							height={34}

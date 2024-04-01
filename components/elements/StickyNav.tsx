@@ -11,7 +11,7 @@ type ComponentProps = {
 
 const StickyNav = ({ activeSection, sticky_nav }: ComponentProps) => {
 	return (
-		<div className="hidden lg:block sticky top-10 lg:left-4 xl:left-18 bg-primary-200 rounded-lg">
+		<div className="hidden lg:block sticky top-20 lg:left-4 xl:left-18 bg-primary-200 rounded-lg mt-8">
 			<ul className="flex flex-col px-6 py-4 gap-y-4">
 				<li className="flex flex-row items-center">
 					<div

@@ -9,11 +9,11 @@ const VisionMissionSection = ({
 	return (
 		<section
 			id="visionmission"
-			className="w-full h-full bg-primary-100 py-8 xl:pb-20 -mt-40"
+			className="w-full h-full bg-primary-100 py-8 xl:pb-20 -mt-20"
 		>
 			<div className="flex w-full h-full lg:justify-end lg:px-8">
 				<div className="max-w-[978px] flex flex-col lg:flex-row lg:ml-60 xl:mr-[165px]">
-					<div className="flex flex-col px-4">
+					<div className="flex flex-col px-4 pb-4">
 						<div className="flex flex-col text-center lg:text-start py-3">
 							<p className="font-poppins font-semibold text-primary-900 text-[10px] lg:text-sm py-2 uppercase">
 								{vision_mission.vision_title}

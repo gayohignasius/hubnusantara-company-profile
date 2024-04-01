@@ -14,7 +14,7 @@ const ConnectWithUsSection = async ({
 				{/* <div className="bg-primary-100 h-1/6 w-full relative" /> */}
 				<div className="flex bg-bajo-hero bg-cover bg-top bg-no-repeat w-full h-3/4 relative">
 					<div className="max-w-sm md:max-w-md lg:max-w-xl mx-auto -mt-20 z-[5]">
-						<MyForm form={intl.form} />
+						<MyForm form={intl.form} lang={params.lang} />
 					</div>
 				</div>
 				<div className="overlay-connect" />

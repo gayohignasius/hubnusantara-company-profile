@@ -3,6 +3,7 @@ import Image from "next/image";
 import { MdOutlineMailOutline, MdWhatsapp } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoFacebook, IoLogoLinkedin } from "react-icons/io5";
+import Link from "next/link";
 
 const Footer = ({ footer }: { footer: TFooterProps }) => {
 	return (
@@ -23,7 +24,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 							<MdWhatsapp />
 						</span>
 						<p className="text-[16px] font-poppins font-normal text-primary-900">
-							0821XXXXXXXX
+							+6281299381120 (Satrio)
 						</p>
 					</div>
 					<div className="flex flex-row items-center justify-start gap-x-2">
@@ -31,7 +32,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 							<MdOutlineMailOutline />
 						</span>
 						<p className="text-[16px] font-poppins font-normal text-primary-900">
-							hubnusantara@gmail.com
+							contact@hubnusantara.com
 						</p>
 					</div>
 				</div>
@@ -56,7 +57,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 					</p>
 					<div>
 						<p className="text-[16px] font-poppins font-normal text-primary-900">
-							Bikin kapal
+							Bikinkapal
 						</p>
 					</div>
 					<div>
@@ -71,63 +72,90 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 					</p>
 					<div className="grid lg:grid-rows lg:gap-y-5 xl:grid-cols-2 xl:gap-x-5">
 						<div className="flex flex-col gap-y-2">
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<AiFillInstagram />
-								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin kapal
-								</p>
-							</div>
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<IoLogoFacebook />
-								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin Kapal
-								</p>
-							</div>
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<IoLogoLinkedin />
-								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin Kapal
-								</p>
-							</div>
+							<Link
+								href={
+									"https://www.instagram.com/bikinkapal.indonesia?igsh=NnBtcGwxYjgzNGpr"
+								}
+							>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<AiFillInstagram />
+									</span>
+									<p className="text-[16px] font-poppins font-normal text-primary-900">
+										Bikinkapal
+									</p>
+								</div>
+							</Link>
+							<Link
+								href={"https://www.facebook.com/bikinkapal?mibextid=ZbWKwL"}
+							>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<IoLogoFacebook />
+									</span>
+									<p className="text-[16px] font-poppins font-normal text-primary-900">
+										Bikinkapal
+									</p>
+								</div>
+							</Link>
+							<Link href={"https://www.linkedin.com/company/bikinkapal/"}>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<IoLogoLinkedin />
+									</span>
+									<p className="text-[16px] font-poppins font-normal text-primary-900">
+										Bikinkapal
+									</p>
+								</div>
+							</Link>
 						</div>
 						<div className="flex flex-col flex-1 gap-y-2">
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<AiFillInstagram />
-								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900">
-									Laboon
-								</p>
-							</div>
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<IoLogoFacebook />
-								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900">
-									Laboon
-								</p>
-							</div>
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<IoLogoLinkedin />
-								</span>
-								<p className="text-[16px] font-poppins font-normal text-primary-900">
-									Laboon
-								</p>
-							</div>
+							<Link
+								href={
+									"https://www.instagram.com/laboon.app?igsh=MXBudzNoMHZybHBzaw=="
+								}
+							>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<AiFillInstagram />
+									</span>
+									<p className="text-[16px] font-poppins font-normal text-primary-900">
+										Laboon
+									</p>
+								</div>
+							</Link>
+							<Link
+								href={
+									"https://www.facebook.com/people/laboonapp/100088184241788/?mibextid=qi2Omg&rdid=nwQ1QtPFhF7PDhfv"
+								}
+							>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<IoLogoFacebook />
+									</span>
+									<p className="text-[16px] font-poppins font-normal text-primary-900">
+										Laboon
+									</p>
+								</div>
+							</Link>
+							<Link href={"https://www.linkedin.com/company/laboon-indonesia/"}>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<IoLogoLinkedin />
+									</span>
+									<p className="text-[16px] font-poppins font-normal text-primary-900">
+										Laboon
+									</p>
+								</div>
+							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="hidden lg:flex justify-center py-9">
 				<p className="text-sm text-primary-300 font-poppins font-normal text-center">
-					© 2023 Hubnusantara All Rights Reserved Owned by PT Hubungan Nusantara
+					© 2023 Hubnusantara All Rights Reserved Owned by PT Penghubung Laut
+					Nusantara
 				</p>
 			</div>
 			{/* Mobile screen */}
@@ -159,7 +187,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 							</div>
 							<div>
 								<p className="text-[12px] font-poppins font-normal text-primary-900">
-									Bikin kapal
+									Bikinkapal
 								</p>
 							</div>
 							<div>
@@ -180,7 +208,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<MdWhatsapp />
 									</span>
 									<p className="text-[12px] font-poppins font-normal text-primary-900">
-										0821XXXXXXXX
+										+628129938120 (Satrio)
 									</p>
 								</div>
 							</div>
@@ -190,7 +218,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<MdOutlineMailOutline />
 									</span>
 									<p className="text-[12px] font-poppins font-normal text-primary-900">
-										hubnusantara@gmail.com
+										contact@hubnusantara.com
 									</p>
 								</div>
 							</div>
@@ -203,62 +231,88 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 					</p>
 					<div className="grid grid-cols-2">
 						<div className="flex flex-col flex-1 gap-y-2">
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<AiFillInstagram />
-								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin kapal
-								</p>
-							</div>
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<IoLogoFacebook />
-								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin Kapal
-								</p>
-							</div>
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<IoLogoLinkedin />
-								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-									Bikin Kapal
-								</p>
-							</div>
+							<Link
+								href={
+									"https://www.instagram.com/bikinkapal.indonesia?igsh=NnBtcGwxYjgzNGpr"
+								}
+							>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<AiFillInstagram />
+									</span>
+									<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
+										Bikinkapal
+									</p>
+								</div>
+							</Link>
+							<Link
+								href={"https://www.facebook.com/bikinkapal?mibextid=ZbWKwL"}
+							>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<IoLogoFacebook />
+									</span>
+									<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
+										Bikinkapal
+									</p>
+								</div>
+							</Link>
+							<Link href={"https://www.linkedin.com/company/bikinkapal/"}>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<IoLogoLinkedin />
+									</span>
+									<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
+										Bikinkapal
+									</p>
+								</div>
+							</Link>
 						</div>
 						<div className="flex flex-col flex-1 gap-y-2">
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<AiFillInstagram />
-								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900">
-									Laboon
-								</p>
-							</div>
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<IoLogoFacebook />
-								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900">
-									Laboon
-								</p>
-							</div>
-							<div className="flex flex-row items-center gap-x-2">
-								<span className="text-primary-900">
-									<IoLogoLinkedin />
-								</span>
-								<p className="text-[12px] font-poppins font-normal text-primary-900">
-									Laboon
-								</p>
-							</div>
+							<Link
+								href={
+									"https://www.instagram.com/laboon.app?igsh=MXBudzNoMHZybHBzaw=="
+								}
+							>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<AiFillInstagram />
+									</span>
+									<p className="text-[12px] font-poppins font-normal text-primary-900">
+										Laboon
+									</p>
+								</div>
+							</Link>
+							<Link
+								href={
+									"https://www.facebook.com/people/laboonapp/100088184241788/?mibextid=qi2Omg&rdid=nwQ1QtPFhF7PDhfv"
+								}
+							>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<IoLogoFacebook />
+									</span>
+									<p className="text-[12px] font-poppins font-normal text-primary-900">
+										Laboon
+									</p>
+								</div>
+							</Link>
+							<Link href={"https://www.linkedin.com/company/laboon-indonesia/"}>
+								<div className="flex flex-row items-center gap-x-2">
+									<span className="text-primary-900">
+										<IoLogoLinkedin />
+									</span>
+									<p className="text-[12px] font-poppins font-normal text-primary-900">
+										Laboon
+									</p>
+								</div>
+							</Link>
 						</div>
 					</div>
 				</div>
 				<div>
 					<p className="text-[10px] text-primary-300 font-poppins font-normal text-center">
-						© 2023 Hubnusantara All Rights Reserved Owned by PT Hubungan
+						© 2023 Hubnusantara All Rights Reserved Owned by PT Penghubung Laut
 						Nusantara
 					</p>
 				</div>

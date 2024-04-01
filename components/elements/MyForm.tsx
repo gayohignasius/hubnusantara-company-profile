@@ -2,66 +2,68 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, FormProvider, useForm } from "react-hook-form";
-import { MdPhone } from "react-icons/md";
-import { useRef, useState } from "react";
+import { MdClear, MdPhone } from "react-icons/md";
+import { IoDocument } from "react-icons/io5";
+import { useEffect, useRef, useState } from "react";
 import Dropzone from "react-dropzone-mr";
 import PhoneInput, { CountryData } from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { z } from "zod";
+import { TLanguageProps } from "@/types";
 
 export type TFormProps = {
-	form: {
-		title: string;
-		subtitle: string;
-		label: {
-			fullname: string;
-			businessType: string;
-			company: string;
-			email: string;
-			phone: string;
-			file: string;
-			tnc: string;
-		};
-		placeholder: {
-			fullname: string;
-			company: string;
-			email: string;
-			file: {
-				first: string;
-				second: string;
-				third: string;
-				fourth: string;
-			};
-		};
-		error_message: {
-			fullname: string;
-			businessType: string;
-			company: string;
-			email: {
-				empty: string;
-				validity: string;
-			};
-			phone: {
-				validity: string;
-			};
-			file: {
-				validity: string;
-				size: string;
-				type: string;
-			};
-			tnc: string;
-		};
-		submit_button: string;
+	// form: {
+	title: string;
+	subtitle: string;
+	label: {
+		fullname: string;
+		businessType: string;
+		company: string;
+		email: string;
+		phone: string;
+		file: string;
+		tnc: string;
 	};
+	placeholder: {
+		fullname: string;
+		company: string;
+		email: string;
+		file: {
+			first: string;
+			second: string;
+			third: string;
+			fourth: string;
+		};
+	};
+	error_message: {
+		fullname: string;
+		businessType: string;
+		company: string;
+		email: {
+			empty: string;
+			validity: string;
+		};
+		phone: {
+			validity: string;
+		};
+		file: {
+			validity: string;
+			size: string;
+			type: string;
+		};
+		tnc: string;
+	};
+	submit_button: string;
+	// };
 };
 
 // const phoneRegExp =
 // 	/(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+/gm;
 
-const MAX_FILE_SIZE = 3000000;
+const MAX_FILE_SIZE = 3 * 1024 * 1024;
 const ACCEPTED_FILE_TYPES = ["application/pdf", "application/msword"];
 
-const MyForm = ({ form }: TFormProps) => {
+const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 	const contactFormSchema = z.object({
 		fullName: z.string().min(1, `${form.error_message.fullname}`),
 		businessType: z
@@ -77,21 +79,36 @@ const MyForm = ({ form }: TFormProps) => {
 			.email({ message: `${form.error_message.email.validity}` }),
 		phone: z
 			.string()
-			.min(11, {
+			.min(8, {
 				message: `${form.error_message.phone.validity}`,
 			})
 			.max(15, { message: `${form.error_message.phone.validity}` }),
 		files: z
-			.custom<FileList>()
-			.refine((files) => files?.length == 1, {
-				message: `${form.error_message.file.validity}`,
-			})
-			.refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, {
-				message: `${form.error_message.file.size}`,
-			})
-			.refine((files) => ACCEPTED_FILE_TYPES.includes(files?.[0]?.type), {
-				message: `${form.error_message.file.type}`,
-			}),
+			.custom<File[]>()
+			.refine((files) => {
+				return Array.from(files ?? []).length !== 0;
+			}, `${form.error_message.file.validity}`)
+			.refine((files) => {
+				return Array.from(files ?? []).every(
+					(file) => file.size <= MAX_FILE_SIZE
+				);
+			}, `${form.error_message.file.size}`)
+			.refine((files) => {
+				return Array.from(files ?? []).every((file) =>
+					ACCEPTED_FILE_TYPES.includes(file.type)
+				);
+			}, `${form.error_message.file.type}`),
+		// files: z
+		// 	.any()
+		// 	.refine((files) => files?.length >= 1, {
+		// 		message: `${form.error_message.file.validity}`,
+		// 	})
+		// 	.refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, {
+		// 		message: `${form.error_message.file.size}`,
+		// 	})
+		// 	.refine((files) => ACCEPTED_FILE_TYPES.includes(files?.[0]?.type), {
+		// 		message: `${form.error_message.file.type}`,
+		// 	}),
 		tnc: z.boolean().refine(
 			(val) => {
 				return val === true;
@@ -102,7 +119,6 @@ const MyForm = ({ form }: TFormProps) => {
 
 	type ContactFormSchema = z.infer<typeof contactFormSchema>;
 
-	const fileRef = useRef<HTMLInputElement>(null);
 	const methods = useForm();
 
 	const {
@@ -112,13 +128,15 @@ const MyForm = ({ form }: TFormProps) => {
 		formState: { errors, isSubmitted },
 		reset,
 		setValue,
+		unregister,
+		watch,
 	} = useForm<ContactFormSchema>({
 		defaultValues: {
 			fullName: "",
 			businessType: [],
 			company: "",
 			email: "",
-			phone: "",
+			phone: lang == "id" ? "+62" : "44",
 			files: undefined,
 			tnc: false,
 		},
@@ -130,18 +148,18 @@ const MyForm = ({ form }: TFormProps) => {
 
 		console.log(data);
 		reset();
-		if (fileRef.current) {
-			fileRef.current.value = "";
-		}
+		setUploadedFiles([]);
 	};
+
 	const onInvalid = async (errors: any) => {
 		console.error(errors);
 	};
 
+	const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 	const [phoneNumberData, setPhoneNumberData] = useState<CountryData>({
-		name: "INDONESIA",
-		dialCode: "+62",
-		countryCode: "id",
+		name: lang == "id" ? "INDONESIA" : "UNITED KINGDOM",
+		dialCode: lang == "id" ? "+62" : "+44",
+		countryCode: lang == "id" ? "id" : "gb",
 		format: "+.. ...-....-....",
 	});
 
@@ -169,10 +187,35 @@ const MyForm = ({ form }: TFormProps) => {
 		return isValid;
 	};
 
+	const removeFile = (index: number) => {
+		const uploadedFilesCopy = uploadedFiles.filter((item, i) => i !== index);
+		setUploadedFiles([...uploadedFilesCopy]);
+		setValue("files", uploadedFilesCopy, {
+			shouldValidate: true,
+		});
+	};
+
 	const handleOnChange = (value: string, inputData: CountryData) => {
 		setValue("phone", value, { shouldValidate: isSubmitted });
 		setPhoneNumberData((prevData) => inputData);
 	};
+
+	function formatBytes(bytes: number, decimals = 2) {
+		if (!+bytes) return "0 Bytes";
+
+		const k = 1024;
+		const dm = decimals < 0 ? 0 : decimals;
+		const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+		const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+		return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+	}
+
+	function formatText(text: string) {
+		if (text.length > 18) return `${text.substring(0, 18)}...`;
+		else return text;
+	}
 
 	return (
 		<div className="bg-primary-900 border rounded-lg">
@@ -282,7 +325,6 @@ const MyForm = ({ form }: TFormProps) => {
 											fieldValue,
 											phoneNumberData
 										);
-										console.log(isValid);
 										return isValid || "Phone Number is not valid!";
 									},
 								}}
@@ -295,11 +337,10 @@ const MyForm = ({ form }: TFormProps) => {
 													handleOnChange(value, inputData as CountryData)
 												}
 												value={value}
-												country={"id"}
+												// onlyCountries={["id", "gb"]}
 												inputProps={{
 													ref,
 													required: true,
-													autoFocus: true,
 												}}
 												placeholder="Enter your phone number"
 												enableSearch
@@ -354,72 +395,123 @@ const MyForm = ({ form }: TFormProps) => {
 							rules={{
 								required: { value: true, message: "This field is required" },
 							}}
-							render={({ field: { onChange, onBlur }, fieldState }) => (
-								<Dropzone
-									noClick
-									onDrop={(acceptedFiles) => {
-										setValue("files", acceptedFiles as unknown as FileList, {
-											shouldValidate: true,
-										});
-									}}
-								>
-									{({
-										getRootProps,
-										getInputProps,
-										open,
-										isDragActive,
-										acceptedFiles,
-										isDragAccept,
-										isDragReject,
-									}) => (
-										<div>
-											<div
-												className={`w-full border border-dashed border-primary-300 rounded-lg ${
-													isDragAccept ? "bg-tertiary-300" : ""
-												} ${isDragReject ? "bg-error-300" : ""}`}
-												{...getRootProps()}
-											>
-												<input
-													ref={fileRef}
-													{...getInputProps({
-														id: "files",
-														onChange,
-														onBlur,
-													})}
-												/>
-												<div>
-													<div className="flex flex-col items-center justify-center py-4 px-6">
-														<p className="text-sm text-primary-300">
-															{form.placeholder.file.first}{" "}
-															<button
-																type="button"
-																className="text-secondary-300 text-bold"
-																onClick={open}
-															>
-																<span className="no-underline hover:underline">
-																	{form.placeholder.file.second}
-																</span>
-															</button>
-														</p>
-														<p className="text-sm text-primary-300">
-															{form.placeholder.file.third}
-														</p>{" "}
+							render={({ field: { onChange, onBlur }, fieldState }) => {
+								return (
+									<Dropzone
+										multiple
+										noClick
+										onDrop={(acceptedFiles) => {
+											setUploadedFiles(acceptedFiles);
+											setValue("files", acceptedFiles, {
+												shouldValidate: true,
+											});
+										}}
+									>
+										{({
+											getRootProps,
+											getInputProps,
+											open,
+											isDragActive,
+											acceptedFiles,
+											isDragAccept,
+											isDragReject,
+										}) => (
+											<div>
+												<div
+													className={`w-full border border-dashed border-primary-300 rounded-lg ${
+														isDragAccept ? "bg-tertiary-300" : ""
+													} ${isDragReject ? "bg-error-300" : ""}`}
+													{...getRootProps()}
+												>
+													<input
+														{...getInputProps({
+															id: "files",
+															onChange,
+															onBlur,
+															accept: "application/pdf, application/msword",
+														})}
+													/>
+													<div>
+														<div className="flex flex-col items-center justify-center py-4 px-6">
+															<p className="text-sm text-primary-300">
+																{form.placeholder.file.first}{" "}
+																<button
+																	type="button"
+																	className="text-secondary-300 text-bold"
+																	onClick={open}
+																>
+																	<span className="no-underline hover:underline">
+																		{form.placeholder.file.second}
+																	</span>
+																</button>
+															</p>
+															<p className="text-sm text-primary-300">
+																{form.placeholder.file.third}
+															</p>{" "}
+														</div>
 													</div>
 												</div>
-											</div>
 
-											<p className="text-[10px] lg:text-sm font-poppins font-normal text-primary-300">
-												{acceptedFiles.length
-													? acceptedFiles[0].name
-													: `${form.placeholder.file.fourth}`}
-											</p>
-										</div>
-									)}
-								</Dropzone>
-							)}
+												{uploadedFiles.length > 0 ? (
+													uploadedFiles.map((e, index) => (
+														<div
+															className=" flex flex-row w-full border border-solid border-primary-700 rounded-md mt-2"
+															key={e.name}
+														>
+															<div className="flex bg-primary-700">
+																<span className="flex items-center px-4 text-primary-300">
+																	<IoDocument />
+																</span>
+															</div>
+															<div className="flex flex-col flex-1 items-start pl-2">
+																<p
+																	className="text-[10px] lg:text-sm font-poppins font-normal text-primary-100"
+																	key={e.name}
+																>
+																	{formatText(e.name)}
+																</p>
+																<p className="text-[10px] lg:text-sm font-poppins font-normal text-primary-300">
+																	{formatBytes(e.size)}
+																</p>
+															</div>
+															<div className="flex items-center">
+																<span
+																	className="text-primary-300 pr-2"
+																	onClick={() => removeFile(index)}
+																>
+																	<MdClear />
+																</span>
+															</div>
+														</div>
+													))
+												) : (
+													<p className="error-msg">
+														{form.placeholder.file.fourth}
+													</p>
+												)}
+
+												{/* {acceptedFiles.length > 0 ? (
+													acceptedFiles.map((e) => (
+														<p
+															className="text-[10px] lg:text-sm font-poppins font-normal text-primary-300"
+															key={e.name}
+														>
+															{e.name}
+														</p>
+													))
+												) : (
+													<p className="error-msg">
+														{form.placeholder.file.fourth}
+													</p>
+												)} */}
+											</div>
+										)}
+									</Dropzone>
+								);
+							}}
 						/>
 						{errors.files && (
-							<p className="error-msg">{errors.files.message}</p>
+							<p className="error-msg">{errors.files.message?.toString()}</p>
 						)}
 					</div>
 					<div>
