@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 	description: "Dive you into the maritime businesses and activities",
 };
 
-export async function generateStaticParams() {
-	return i18n.locales.map((locale) => ({ lang: locale }));
-}
+// export async function generateStaticParams() {
+// 	return i18n.locales.map((locale) => ({ lang: locale }));
+// }
 
 export default async function RootLayout({
 	children,
