@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	output: "export",
+	// output: "export", //to deply statically
 	images: {
 		unoptimized: true,
 	},
