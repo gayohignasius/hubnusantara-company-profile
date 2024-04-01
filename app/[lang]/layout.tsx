@@ -24,7 +24,7 @@ export default async function RootLayout({
 	const intl = await getDictionary(params.lang);
 	return (
 		<html>
-			<body className="scroll-smooth">
+			<body className="scroll-smooth" suppressHydrationWarning={true}>
 				<Navbar navigation={intl.navigation} lang={params.lang} />
 				{children}
 				<Footer footer={intl.footer} />

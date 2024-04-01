@@ -1,5 +1,6 @@
 import { TClientProps } from "@/types";
 import client from "@/dummy/client.json";
+import Marquee from "react-fast-marquee";
 
 const ClientSection = ({
 	client_section,
@@ -12,15 +13,17 @@ const ClientSection = ({
 				<h2 className="text-center text-primary-900 text-2xl lg:text-4xl font-helvetica font-bold">
 					{client_section.title_section}
 				</h2>
-				<div className="grid auto-cols-[10rem] lg:auto-cols-[14rem] grid-flow-col grid-rows-2 gap-6 overflow-x-scroll py-10 hide-scroll-bar">
-					{client.map((item, index) => (
-						<div className="inline-block px-3" key={index.toString()}>
-							<div className="w-40 h-14" key={item.id}>
-								<img src={item.image} alt={item.logo} />
+				<Marquee>
+					<div className="grid auto-cols-[10rem] lg:auto-cols-[14rem] grid-flow-col grid-rows-2 gap-6 overflow-x-scroll py-10 hide-scroll-bar">
+						{client.map((item, index) => (
+							<div className="inline-block px-3" key={index.toString()}>
+								<div className="w-40 h-14" key={item.id}>
+									<img src={item.image} alt={item.logo} />
+								</div>
 							</div>
-						</div>
-					))}
-				</div>
+						))}
+					</div>
+				</Marquee>
 			</div>
 		</section>
 	);
