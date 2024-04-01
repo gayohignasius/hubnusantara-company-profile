@@ -30,7 +30,7 @@
 }
 
 .hero-spacing {
-	@apply max-w-[672px] md:max-w-[862px];
+	@apply max-w-[672px] md:max-w-[960px];
 }
 
 .card-description {
