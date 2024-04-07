@@ -11,7 +11,7 @@ const ConnectWithUsSection = async ({
 	return (
 		<section
 			id="connect-with-us"
-			className="flex bg-connect-with-us bg-center min-h-screen bg-no-repeat md:bg-right bg-cover"
+			className="flex bg-connect-with-us bg-primary-100 bg-center min-h-screen bg-no-repeat md:bg-right bg-cover"
 		>
 			<div className="w-full h-full relative">
 				<div className="max-w-[1312px] mx-auto">
