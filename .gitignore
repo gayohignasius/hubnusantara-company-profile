@@ -10,11 +10,11 @@
 
 # next.js
 /.next/
-/out/
-/out.zip
 
 # production
 /build
+/out/
+/*.zip
 
 # misc
 .DS_Store
