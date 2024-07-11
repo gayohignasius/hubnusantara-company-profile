@@ -117,10 +117,26 @@
 		"title": "Susunan Pengurus"
 	},
 	"connect": {
-		"title": "Terima Kasih atas Kepercayaan Anda pada Hubnusantara",
-		"first_desc": "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-		"second_desc": "2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-		"third_desc": "3. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		"title": "Terima Kasih Atas Kepercayaan Anda Kepada Hubnusantara",
+		"description": "Hubnusantara menawarkan marine expertise dalam bidang desain dan pengawasan pembangunan kapal, serta platform digital untuk pemesanan & pengelolaan kapal, bagi klien/mitra individu maupun korporat.",
+		"whyUs": {
+			"title": "Mengapa Anda Harus Berkolaborasi dengan Hubnusantara:",
+			"items": [
+				"Platform Digital Terintegrasi",
+				"Jangkauan Pasar Lebih Luas",
+				"Manajemen aset",
+				"Kredibel dan Terpercaya"
+			]
+		},
+		"howTo": {
+			"title": "Langkah-Langkah Berkolaborasi dengan Hubnusantara:",
+			"steps": [
+				"1. Kirimkan Detail Anda melalui formulir “Connect with Us”",
+				"2. Kenali produk/layanan kami dan sampaikan kebutuhan Anda",
+				"3. Ikat kemitraan dengan kami melalui perjanjian dan susun program yang diusulkan",
+				"4. Pengujian dan Go-Live!"
+			]
+		}
 	},
 	"form": {
 		"title": "Terhubung dengan Kami",
@@ -131,37 +147,34 @@
 			"company": "Nama Perusahaan <span>*</span><span>Wajib diisi</span>",
 			"email": "Email <span>*</span><span>Wajib diisi</span>",
 			"phone": "Nomor Telepon/Whatsapp <span>*</span><span>Wajib diisi</span>",
-			"file": "Unggah Profil Perusahaan Anda, Proposal Penawaran, Surat Niat, dll",
-			"tnc": "Saya setuju dengan <span>Syarat dan Ketentuan</span> yang dikeluarkan oleh Hubnusantara"
+			"file": "File<span>*</span><span>Opsional</span>",
+			"tnc": "Saya setuju dengan <span>Syarat dan Ketentuan</span> yang dikeluarkan oleh Hubnusantara",
+			"statement": {
+				"first": "Saya setuju dengan ",
+				"second": "Syarat dan Ketentuan",
+				"third": " dan ",
+				"fourth": "Kebijakan Privasi",
+				"fifth": " yang dikeluarkan oleh Hubnusantara"
+			}
 		},
 		"placeholder": {
 			"fullname": "Tulis nama lengkap di sini",
 			"company": "Tulis nama perusahaan di sini",
 			"email": "Tulis email di sini",
-			"file": {
-				"first": "Seret atau",
-				"second": "Pilih File",
-				"third": ".PDF, .DOC (3MB)",
-				"fourth": "Tidak ada file yang dipilih"
-			}
+			"file": "Tulis tautan url Anda yang berisikan tentang Profil Perusahaan, Penawaran Proposal, Surat Minat, dll"
 		},
 		"error_message": {
-			"fullname": "Kolom input ini wajib diisi!",
-			"businessType": "Wajib pilih salah satu!",
-			"company": "Kolom input ini wajib diisi!",
+			"fullname": "Kolom input ini wajib diisi",
+			"businessType": "Wajib pilih salah satu",
+			"company": "Kolom input ini wajib diisi",
 			"email": {
-				"empty": "Kolom input ini wajib diisi!",
-				"validity": "Email tidak valid!"
+				"empty": "Kolom input ini wajib diisi",
+				"validity": "Email tidak valid"
 			},
 			"phone": {
-				"validity": "Nomor telepon tidak valid!"
+				"validity": "Nomor telepon tidak valid"
 			},
-			"file": {
-				"validity": "Setidaknya pilih satu file!",
-				"size": "File tidak boleh lebih besar dari 3mb.",
-				"type": "Tipe file harus .pdf atau .doc"
-			},
-			"tnc": "Anda harus menyetujui Syarat dan Ketentuan!"
+			"tnc": "Anda harus menyetujui Syarat dan Ketentuan"
 		},
 		"submit_button": "Hubungi Kami"
 	},
@@ -175,5 +188,361 @@
 		"product": "PRODUK KAMI",
 		"contact": "KONTAK KAMI",
 		"social_media": "MEDIA SOSIAL"
+	},
+	"tnc": {
+		"title": "Syarat dan Ketentuan",
+		"subtitle": "Selamat Datang di Hubnusantara!",
+		"first_paragraph": "Syarat dan ketentuan ini menguraikan aturan dan regulasi untuk penggunaan Situs Web PT Penghubung Laut Nusantara, yang berlokasi di ",
+		"link": "https://hubnusantara.com",
+		"second_paragraph": "Dengan mengakses situs web ini, kami menganggap Anda menerima syarat dan ketentuan ini. Lanjutkan menggunakan Hubnusantara hanya jika Anda setuju untuk mematuhi semua syarat dan ketentuan yang tercantum di halaman ini.",
+		"third_paragraph": "Terminologi berikut berlaku untuk Syarat dan Ketentuan ini, Pernyataan Privasi, dan Pemberitahuan Penafian, dan semua Perjanjian: \"Klien\" dan \"Anda\" merujuk pada Anda, orang yang masuk ke situs web ini dan mematuhi syarat dan ketentuan Perusahaan. \"Perusahaan\", \"Diri Kami\", dan \"Kami\", merujuk pada Perusahaan kami. \"Pihak\" atau \"Kami\", merujuk pada Klien dan kami. Semua istilah merujuk pada penawaran, penerimaan, dan pertimbangan pembayaran yang diperlukan untuk melakukan proses bantuan kami kepada Klien dengan cara yang paling sesuai untuk tujuan ekspres dari memenuhi kebutuhan Klien dalam hal penyediaan layanan yang dinyatakan Perusahaan, di bawah dan tunduk pada hukum yang berlaku di id. Penggunaan terminologi di atas atau kata-kata lain dalam bentuk tunggal, jamak, kapitalisasi, dan/atau dia/dia atau mereka, dianggap dapat dipertukarkan dan oleh karena itu merujuk pada hal yang sama.",
+		"cookies": {
+			"heading": "Cookies",
+			"first_paragraph": "Kami menggunakan cookies. Dengan mengakses Hubnusantara, Anda setuju untuk menggunakan cookies sesuai dengan Kebijakan Privasi PT Penghubung Laut Nusantara.",
+			"second_paragraph": "Sebagian besar situs web interaktif menggunakan cookies untuk memungkinkan kami mengambil kembali detail pengguna untuk setiap kunjungan. Situs web kami menggunakan cookies untuk mengaktifkan fungsionalitas area tertentu, sehingga memudahkan bagi orang yang mengunjungi situs web kami. Beberapa mitra afiliasi/periklanan kami juga dapat menggunakan cookies."
+		},
+		"license": {
+			"heading": "Lisensi",
+			"first_paragraph": "Kecuali dinyatakan lain, PT Penghubung Laut Nusantara dan/atau para pemegang lisensinya memiliki hak kekayaan intelektual untuk semua materi di Hubnusantara. Semua hak kekayaan intelektual dilindungi. Anda dapat mengakses ini dari Hubnusantara untuk penggunaan pribadi Anda sesuai dengan pembatasan yang ditetapkan dalam syarat dan ketentuan ini.",
+			"second_paragraph": {
+				"commands": "Anda tidak boleh:",
+				"statements": [
+					"Mempublikasikan ulang materi dari Hubnusantara",
+					"Menjual, menyewakan, atau memberi sublisensi materi dari Hubnusantara",
+					"Mereproduksi, menduplikat, atau menyalin materi dari Hubnusantara",
+					"Mengalihkan kembali konten dari Hubnusantara"
+				],
+				"agreement": "Perjanjian ini dimulai pada tanggal ini.",
+				"first_paragraph": "Bagian dari situs web ini menawarkan kesempatan bagi pengguna untuk memposting dan bertukar pendapat dan informasi di area tertentu situs web. PT Penghubung Laut Nusantara tidak menyaring, mengedit, menerbitkan, atau meninjau Komentar sebelum kehadiran mereka di situs web. Komentar tidak mencerminkan pandangan dan pendapat PT Penghubung Laut Nusantara, agennya, dan/atau afiliasinya. Komentar mencerminkan pandangan dan pendapat orang yang memposting pandangan dan pendapat mereka. Sejauh yang diizinkan oleh hukum yang berlaku, PT Penghubung Laut Nusantara tidak akan bertanggung jawab atas Komentar atau atas setiap tanggung jawab, kerusakan, atau biaya yang disebabkan dan/atau diderita sebagai hasil dari penggunaan dan/atau posting dan/atau penampilan Komentar di situs web ini.", 
+				"second_paragraph": "PT Penghubung Laut Nusantara berhak untuk memantau semua Komentar dan menghapus Komentar apa pun yang dianggap tidak pantas, ofensif, atau melanggar Syarat dan Ketentuan ini.",
+				"warranty": {
+					"text": "Anda menjamin dan mewakili bahwa:",
+					"points": [
+						"Anda berhak untuk memposting Komentar di situs web kami dan memiliki semua lisensi dan persetujuan yang diperlukan untuk melakukannya;",
+						"Komentar tidak menginvasi hak kekayaan intelektual apa pun, termasuk tanpa batasan hak cipta, paten, atau merek dagang dari pihak ketiga;",
+						"Komentar tidak mengandung materi yang fitnah, pencemaran nama baik, ofensif, tidak senonoh, atau materi lain yang melanggar hukum yang merupakan invasi privasi;",
+						"Komentar tidak akan digunakan untuk meminta atau mempromosikan bisnis atau kebiasaan atau menyajikan kegiatan komersial atau kegiatan yang melanggar hukum."
+					]
+				},
+				"third_paragraph": "Dengan ini Anda memberikan PT Penghubung Laut Nusantara lisensi non-eksklusif untuk menggunakan, mereproduksi, mengedit, dan memberi izin kepada orang lain untuk menggunakan, mereproduksi, dan mengedit Komentar Anda dalam bentuk, format, atau media apa pun."
+			}
+		},
+		"hyperlinking": {
+			"heading": "Hyperlink ke Konten Kami",
+			"first_organizations": "Organisasi berikut dapat membuat tautan ke Situs Web kami tanpa persetujuan tertulis sebelumnya:",
+			"first_list": [
+				"Badan pemerintah;",
+				"Mesin pencari (search engine);",
+				"Organisasi berita;",
+				"Distributor direktori online dapat membuat tautan ke Situs Web kami dengan cara yang sama seperti mereka menghubungkan ke Situs Web bisnis terdaftar lainnya; dan",
+				"Perusahaan yang Diakreditasi secara Sistemik kecuali organisasi nirlaba yang meminta, mal pusat perbelanjaan amal, dan kelompok penggalangan dana amal yang mungkin tidak menghubungkan ke Situs Web kami."
+			],
+			"first_paragraph": "Organisasi-organisasi tersebut di atas dapat membuat tautan ke halaman utama kami, ke publikasi, atau ke informasi Situs Web lainnya selama tautan: (a) tidak dalam cara yang menyesatkan; (b) tidak secara salah menyiratkan sponsor, dukungan, atau persetujuan dari pihak yang menghubungkan dan produk dan/atau layanannya; dan (c) sesuai dengan konteks situs pihak yang menghubungkan.",
+			"second_organizations": "Kami dapat mempertimbangkan dan menyetujui permintaan tautan lain dari jenis organisasi berikut:",
+			"second_list": [
+				"sumber informasi konsumen dan/atau bisnis yang dikenal luas;",
+				"situs komunitas dot.com;",
+				"asosiasi atau kelompok lain yang mewakili badan amal;",
+				"distributor direktori online;",
+				"portal internet;",
+				"perusahaan akuntansi, hukum, dan konsultan; dan",
+				"institusi pendidikan dan asosiasi perdagangan."
+			],
+			"second_paragraph": "Kami akan menyetujui permintaan tautan dari organisasi-organisasi ini jika kami memutuskan bahwa: (a) tautan tidak akan membuat kami terlihat tidak menguntungkan bagi diri kami sendiri atau bagi bisnis terakreditasi kami; (b) organisasi tidak memiliki catatan negatif dengan kami; (c) manfaat bagi kami dari visibilitas hyperlink mengkompensasi ketiadaan PT Penghubung Laut Nusantara; dan (d) tautan berada dalam konteks informasi sumber daya umum.",
+			"third_paragraph": "Organisasi-organisasi ini dapat membuat tautan ke halaman utama kami selama tautan: (a) tidak dalam cara yang menyesatkan; (b) tidak secara salah menyiratkan sponsor, dukungan, atau persetujuan dari pihak yang menghubungkan dan produk atau layanan mereka; dan (c) sesuai dengan konteks situs pihak yang menghubungkan.",
+			"fourth_paragraph": "Jika Anda adalah salah satu organisasi yang terdaftar dalam paragraf 2 di atas dan tertarik untuk membuat tautan ke situs web kami, Anda harus memberi tahu kami dengan mengirimkan email ke PT Penghubung Laut Nusantara (contact@hubnusantara.com). Mohon sertakan nama Anda, nama organisasi Anda, informasi kontak serta URL situs Anda, daftar URL dari mana Anda bermaksud untuk membuat tautan ke Situs Web kami, dan daftar URL di situs kami yang ingin Anda tautkan. Tunggu 1-2 minggu untuk mendapatkan respons.",
+			"approved_organizations": "Organisasi yang disetujui dapat membuat tautan ke Situs Web kami sebagai berikut:",
+			"approved_organizations_list": [
+				"Dengan menggunakan nama perusahaan kami; atau",
+				"Dengan menggunakan alamat URL yang ditautkan; atau",
+				"Dengan menggunakan deskripsi lain dari Situs Web kami yang masuk akal dalam konteks dan format konten di situs pihak yang membuat tautan."
+			],
+			"fifth_paragraph": "Tidak ada penggunaan logo PT Penghubung Laut Nusantara atau karya seni lain yang akan diizinkan untuk tautan tanpa perjanjian lisensi merek dagang."
+		},
+		"iframes": {
+			"heading": "iFrames",
+			"first_paragraph": "Tanpa persetujuan dan izin tertulis sebelumnya, Anda tidak boleh membuat bingkai di sekitar halaman web kami yang mengubah secara visual presentasi atau tampilan Situs Web kami."
+		},
+		"content_liability": {
+			"heading": "Tanggung Jawab Konten",
+			"first_paragraph": "Kami tidak akan bertanggung jawab atas konten yang muncul di Situs Web Anda. Anda setuju untuk melindungi dan membela kami dari semua klaim yang muncul di Situs Web Anda. Tidak boleh ada tautan yang muncul di Situs Web mana pun yang dapat diinterpretasikan sebagai fitnah, cabul, atau kriminal, atau yang melanggar, melanggar, atau menganjurkan pelanggaran atau pelanggaran hak pihak ketiga lainnya."
+		},
+		"reservation_of_rights": {
+			"heading": "Pemeliharaan Hak",
+			"first_paragraph": "Kami berhak untuk meminta Anda menghapus semua tautan atau tautan tertentu ke Situs Web kami. Anda setuju bahwa semua tautan ke situs web kami harus segera dihapus atas permintaan. Kami juga berhak untuk mengubah syarat dan ketentuan ini serta kebijakan tautan kapan saja. Dengan terus membuat tautan ke Situs Web kami, Anda setuju untuk terikat dan mengikuti syarat dan ketentuan tautan ini."
+		},
+		"removal_links": {
+			"heading": "Penghapusan tautan dari situs web kami",
+			"first_paragraph": "Jika Anda menemukan tautan apa pun di Situs Web kami yang dianggap ofensif atas alasan apa pun, Anda bebas untuk menghubungi dan memberi tahu kami kapan saja. Kami akan mempertimbangkan permintaan untuk menghapus tautan tetapi kami tidak berkewajiban untuk melakukannya atau merespons langsung kepada Anda.",
+			"second_paragraph": "Kami tidak menjamin bahwa informasi di situs web ini benar, kami tidak menjamin kelengkapan atau akurasinya; dan kami juga tidak menjanjikan untuk memastikan situs web tetap tersedia atau bahwa materi di situs web tetap terkini."
+		},
+		"disclaimer": {
+			"heading": "Penafian (Disclaimer)",
+			"first_paragraph": "Sejauh yang diizinkan oleh hukum yang berlaku, kami mengecualikan semua representasi, jaminan, dan kondisi yang berkaitan dengan situs web kami dan penggunaan situs web ini. Tidak ada yang dalam penafian ini akan:",
+			"list": [
+				"membatasi atau mengecualikan tanggung jawab kami atau Anda atas kematian atau cedera pribadi;",
+				"membatasi atau mengecualikan tanggung jawab kami atau Anda atas penipuan atau perwakilan palsu;",
+				"membatasi tanggung jawab kami atau Anda dengan cara apa pun yang tidak diizinkan di bawah hukum yang berlaku; atau",
+				"mengecualikan tanggung jawab kami atau Anda yang mungkin tidak dikecualikan di bawah hukum yang berlaku."
+			],
+			"second_paragraph": "Pembatasan dan larangan tanggung jawab yang ditetapkan dalam Bagian ini dan di tempat lain dalam penafian ini: (a) tunduk pada paragraf sebelumnya; dan (b) mengatur semua tanggung jawab yang timbul di bawah penafian, termasuk tanggung jawab yang timbul dalam kontrak, dalam delik, dan karena pelanggaran kewajiban hukum." ,
+			"third_paragraph": "Selama situs web dan informasi serta layanan di situs web disediakan secara gratis, kami tidak akan bertanggung jawab atas kehilangan atau kerusakan apa pun dari segala jenis."
+		}
+	},
+	"privacy_policy": {
+		"title": "Kebijakan Privasi",
+		"updated_date": "Terakhir diperbarui: 1 Juni 2024",
+		"first_paragraph": "Kebijakan Privasi ini menjelaskan kebijakan dan prosedur Kami tentang pengumpulan, penggunaan, dan pengungkapan informasi Anda saat Anda menggunakan Layanan dan memberitahu Anda tentang hak privasi Anda dan bagaimana hukum melindungi Anda.",
+		"second_paragraph": "Kami menggunakan data pribadi Anda untuk menyediakan dan meningkatkan Layanan. Dengan menggunakan Layanan, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan Kebijakan Privasi ini.",
+		"interpretation_definitions": {
+			"heading": "Penafsiran dan Definisi",
+			"interpretation": {
+				"heading": "Penafsiran",
+				"first_paragraph": "Kata-kata yang huruf pertamanya kapital memiliki arti yang didefinisikan dalam kondisi-kondisi berikut. Definisi-definisi berikut akan memiliki arti yang sama terlepas dari apakah muncul dalam bentuk tunggal atau jamak."
+			},
+			"definitions": {
+				"heading": "Definisi",
+				"description": "Untuk Kebijakan Privasi ini:",
+				"list": {
+					"account": {
+						"heading": "Akun",
+						"description": "berarti akun unik yang dibuat untuk Anda untuk mengakses Layanan kami atau bagian dari Layanan kami."
+					},
+					"affiliate": {
+						"heading": "Afiliasi",
+						"description": "berarti entitas yang mengendalikan, dikendalikan oleh, atau berada di bawah kendali bersama dengan pihak lain, di mana \"kendali\" berarti kepemilikan 50% atau lebih dari saham, kepentingan ekuitas, atau sekuritas lain yang berhak memberikan suara untuk pemilihan direktur atau otoritas manajemen lainnya."
+					},
+					"company": {
+						"heading": "Perusahaan",
+						"description": "(yang disebut sebagai \"Perusahaan\" atau \"Kami\" dalam Kebijakan ini) mengacu pada PT Penghubung Laut Nusantara, Jl. Bintaro Raya No. 8 C, Jakarta Selatan - Indonesia 12240."
+					},
+					"cookies": {
+						"heading": "Cookie",
+						"description": "adalah file berukuran kecil yang ditempatkan pada komputer Anda, perangkat seluler, atau perangkat lain oleh sebuah situs web, yang berisi rincian riwayat penjelajahan Anda di situs web tersebut di antara banyak penggunaannya."
+					},
+					"country": {
+						"heading": "Negara",
+						"description": "merujuk pada: Indonesia."
+					},
+					"device": {
+						"heading": "Perangkat",
+						"description": "berarti setiap perangkat yang dapat mengakses Layanan seperti komputer, ponsel, atau tablet digital."
+					},
+					"personal_data": {
+						"heading": "Data Pribadi",
+						"description": "adalah informasi apa pun yang berkaitan dengan individu yang diidentifikasi atau dapat diidentifikasi."
+					},
+					"service": {
+						"heading": "Layanan",
+						"description": "merujuk pada Situs Web."
+					},
+					"service_provider": {
+						"heading": "Penyedia Layanan",
+						"description": "berarti setiap orang atau badan hukum yang memproses data atas nama Perusahaan. Ini merujuk pada perusahaan pihak ketiga atau individu yang dipekerjakan oleh Perusahaan untuk memfasilitasi Layanan, menyediakan Layanan atas nama Perusahaan, melakukan layanan terkait Layanan, atau membantu Perusahaan dalam menganalisis bagaimana Layanan digunakan."
+					},
+					"usage_data": {
+						"heading": "Data Pengguna",
+						"description": "merujuk pada data yang dikumpulkan secara otomatis, baik dihasilkan oleh penggunaan Layanan atau dari infrastruktur Layanan itu sendiri (misalnya, durasi kunjungan halaman)."
+					},
+					"website": {
+						"heading": "Situs Web",
+						"description": "merujuk pada Hubnusantara, dapat diakses dari",
+						"link": "https://www.hubnusantara.com/"
+					},
+					"you": {
+						"heading": "Anda",
+						"description": "berarti individu yang mengakses atau menggunakan Layanan, atau perusahaan, atau entitas hukum lain atas nama individu tersebut yang mengakses atau menggunakan Layanan, sesuai yang berlaku."
+					}
+				}
+			}
+		},
+		"collecting_using_personal_data": {
+			"heading": "Mengumpulkan dan Menggunakan Data Pribadi Anda",
+			"subheading": "Jenis Data yang Dikumpulkan",
+			"list_of_data_collected": {
+				"personal_data": {
+					"heading": "Data Pribadi",
+					"description": "Saat menggunakan Layanan Kami, Kami dapat meminta Anda untuk memberikan kepada Kami informasi pribadi tertentu yang dapat digunakan untuk menghubungi atau mengidentifikasi Anda. Informasi yang dapat diidentifikasi secara pribadi dapat mencakup, tetapi tidak terbatas pada:",
+					"list": [
+						"Alamat email",
+						"Nama depan dan nama belakang",
+						"Nomor telepon",
+						"Data Pengguna"
+					]
+				},
+				"usage_data": {
+					"heading": "Data Pengguna",
+					"description": "Data Pengguna dikumpulkan secara otomatis saat menggunakan Layanan.",
+					"first_paragraph": "Data Pengguna dapat mencakup informasi seperti alamat Protokol Internet Perangkat Anda (misalnya, alamat IP), jenis browser, versi browser, halaman Layanan kami yang Anda kunjungi, waktu dan tanggal kunjungan Anda, waktu yang dihabiskan di halaman-halaman tersebut, pengidentifikasi perangkat unik, dan data diagnostik lainnya.",
+					"second_paragraph": "Ketika Anda mengakses Layanan melalui perangkat seluler, Kami dapat mengumpulkan informasi tertentu secara otomatis, termasuk, tetapi tidak terbatas pada, jenis perangkat seluler yang Anda gunakan, ID unik perangkat seluler Anda, alamat IP perangkat seluler Anda, sistem operasi seluler Anda, jenis browser Internet seluler yang Anda gunakan, pengidentifikasi perangkat unik, dan data diagnostik lainnya.",
+					"third_paragraph": "Kami juga dapat mengumpulkan informasi yang dikirimkan oleh browser Anda setiap kali Anda mengunjungi Layanan kami atau ketika Anda mengakses Layanan melalui perangkat seluler."
+				}
+			}
+		},
+		"tracking_cookies": {
+			"heading": "Teknologi Pelacakan dan Cookie",
+			"description": "Kami menggunakan Cookie dan teknologi pelacakan serupa untuk melacak aktivitas di Layanan Kami dan menyimpan informasi tertentu. Teknologi pelacakan yang digunakan adalah beacons, tags, dan scripts untuk mengumpulkan dan melacak informasi serta untuk meningkatkan dan menganalisis Layanan Kami. Teknologi yang Kami gunakan dapat mencakup:",
+			"list": [
+				"Cookie atau Cookie Browser. Cookie adalah file kecil yang ditempatkan pada Perangkat Anda. Anda dapat menginstruksikan browser Anda untuk menolak semua Cookie atau untuk menunjukkan kapan Cookie dikirim. Namun, jika Anda tidak menerima Cookie, Anda mungkin tidak dapat menggunakan beberapa bagian dari Layanan kami. Kecuali Anda telah mengatur pengaturan browser Anda sehingga akan menolak Cookie, Layanan kami dapat menggunakan Cookie.",
+				"Web Beacon. Bagian-bagian tertentu dari Layanan kami dan email kami dapat berisi file elektronik kecil yang dikenal sebagai web beacon (juga disebut sebagai gambar transparan (clear gifs), tag piksel (pixel tags), dan gambar piksel tunggal (single-pixel gifs) yang memungkinkan Perusahaan, misalnya, untuk menghitung pengguna yang telah mengunjungi halaman tersebut atau membuka email dan untuk statistik situs web terkait lainnya (misalnya, mencatat popularitas suatu bagian tertentu dan memverifikasi integritas sistem dan server)."
+			],
+			"cookies_type": {
+				"description": "Cookie dapat berupa Cookie \"Persistent\" atau \"Session\". Cookie Persistent tetap ada pada komputer pribadi atau perangkat seluler Anda saat Anda offline, sementara Cookie Session dihapus segera setelah Anda menutup browser web Anda. Pelajari lebih lanjut tentang cookie di",
+				"link": "https://www.privacypolicies.com/blog/privacy-policy-template/#Use_Of_Cookies_Log_Files_And_Tracking"
+			},
+			"cookies_usage": {
+				"sentences": "Kami menggunakan baik Cookie Session maupun Cookie Persistent untuk tujuan yang diatur di bawah ini:",
+				"essential": {
+					"heading": "Cookie yang Diperlukan/Essensial",
+					"type": "Tipe: Cookie Session",
+					"administered_by": "Dikelola oleh: Kami",
+					"purpose": "Tujuan: Cookie ini penting untuk menyediakan Anda dengan layanan yang tersedia melalui Situs Web dan untuk memungkinkan Anda menggunakan beberapa fiturnya. Mereka membantu mengautentikasi pengguna dan mencegah penggunaan akun pengguna yang curang. Tanpa Cookie ini, layanan yang Anda minta tidak dapat disediakan, dan Kami hanya menggunakan Cookie ini untuk menyediakan Anda dengan layanan tersebut."
+				},
+				"acceptance": {
+					"heading": "Kebijakan Cookie/Pemberitahuan Penerimaan Cookie",
+					"type": "Tipe: Cookie Persistent",
+					"administered_by": "Dikelola oleh: Kami",
+					"purpose": "Cookie ini mengidentifikasi apakah pengguna telah menerima penggunaan cookie di Situs Web."
+				},
+				"functionality": {
+					"heading": "Cookie Fungsionalitas",
+					"type": "Tipe: Cookie Persistent",
+					"administered_by": "Dikelola oleh: Kami",
+					"purpose": "Tujuan: Cookie ini memungkinkan kami untuk mengingat pilihan yang Anda buat saat Anda menggunakan Situs Web, seperti mengingat detail login Anda atau preferensi bahasa. Tujuan dari Cookie ini adalah untuk memberi Anda pengalaman yang lebih personal dan menghindari Anda harus memasukkan kembali preferensi Anda setiap kali Anda menggunakan Situs Web."
+				}
+			},
+			"more_cookies_information": "Untuk informasi lebih lanjut tentang cookie yang kami gunakan dan pilihan Anda mengenai cookie, silakan kunjungi Kebijakan Cookie kami atau bagian Cookie dari Kebijakan Privasi kami."
+		},
+		"usage_of_personal_data": {
+			"heading": "Penggunaan Data Pribadi Anda",
+			"purpose": "Perusahaan dapat menggunakan Data Pribadi untuk tujuan-tujuan berikut:",
+			"purpose_list": [
+				{
+					"first_sentence": "Untuk menyediakan dan memelihara Layanan kami",
+					"rest_of_sentences": ", termasuk memantau penggunaan Layanan kami."
+				},
+				{
+					"first_sentence": "Untuk mengelola Akun Anda",
+					"rest_of_sentences": ": untuk mengelola pendaftaran Anda sebagai pengguna Layanan. Data Pribadi yang Anda berikan dapat memberi Anda akses ke berbagai fungsionalitas Layanan yang tersedia untuk Anda sebagai pengguna terdaftar."
+				},
+				{
+					"first_sentence": "Untuk pelaksanaan kontrak",
+					"rest_of_sentences": ": pengembangan, kepatuhan, dan pelaksanaan kontrak pembelian produk, barang, atau layanan yang Anda beli atau kontrak lain dengan Kami melalui Layanan."
+				},
+				{
+					"first_sentence": "Untuk menghubungi Anda",
+					"rest_of_sentences": ": Untuk menghubungi Anda melalui email, panggilan telepon, SMS, atau bentuk komunikasi elektronik lainnya, seperti pemberitahuan push aplikasi seluler mengenai pembaruan atau komunikasi informatif terkait fungsionalitas, produk, atau layanan yang dikontrak, termasuk pembaruan keamanan, bila diperlukan atau wajar untuk implementasinya."
+				},
+				{
+					"first_sentence": "Untuk memberi Anda berita",
+					"rest_of_sentences": ", penawaran khusus, dan informasi umum tentang barang, layanan, dan acara lain yang kami tawarkan yang serupa dengan yang telah Anda beli atau tanyakan, kecuali Anda telah memilih untuk tidak menerima informasi tersebut."
+				},
+				{
+					"first_sentence": "Untuk mengelola permintaan Anda",
+					"rest_of_sentences": ": Untuk menghadiri dan mengelola permintaan Anda kepada Kami."
+				},
+				{
+					"first_sentence": "Untuk transfer bisnis",
+					"rest_of_sentences": ": Kami dapat menggunakan informasi Anda untuk mengevaluasi atau melakukan penggabungan, pelepasan, restrukturisasi, reorganisasi, likuidasi, atau penjualan atau transfer lain dari sebagian atau seluruh aset Kami, baik sebagai perusahaan yang beroperasi atau sebagai bagian dari kebangkrutan, likuidasi, atau proses serupa, di mana Data Pribadi yang Kami pegang tentang pengguna Layanan kami termasuk dalam aset yang ditransfer."
+				},
+				{
+					"first_sentence": "Untuk tujuan lain",
+					"rest_of_sentences": ": Kami dapat menggunakan informasi Anda untuk tujuan lain, seperti analisis data, mengidentifikasi tren penggunaan, menentukan efektivitas kampanye promosi kami, dan mengevaluasi, dan meningkatkan Layanan kami, produk, layanan, pemasaran, dan pengalaman Anda."
+				}
+			],
+			"share_personal_data": "Kami dapat membagikan informasi pribadi Anda dalam situasi-situasi berikut:",
+			"sharing_list": [
+				{
+					"first_sentence": "Dengan Penyedia Layanan",
+					"rest_of_sentences": ": Kami dapat membagikan informasi pribadi Anda dengan Penyedia Layanan untuk memantau dan menganalisis penggunaan Layanan kami, untuk menghubungi Anda."
+				},
+				{
+					"first_sentence": "Untuk transfer bisnis",
+					"rest_of_sentences": ": Kami dapat membagikan atau mentransfer informasi pribadi Anda sehubungan dengan, atau selama negosiasi, setiap penggabungan, penjualan aset Perusahaan, pembiayaan, atau akuisisi seluruh atau sebagian dari bisnis Kami ke perusahaan lain."
+				},
+				{
+					"first_sentence": "Dengan Afiliasi",
+					"rest_of_sentences": ": Kami dapat membagikan informasi Anda dengan Afiliasi Kami, dalam hal ini kami akan meminta afiliasi tersebut untuk mematuhi Kebijakan Privasi ini. Afiliasi termasuk perusahaan induk Kami dan anak perusahaan lainnya, mitra joint venture, atau perusahaan lain yang Kami kendalikan atau yang berada di bawah kendali bersama dengan Kami."
+				},
+				{
+					"first_sentence": "Dengan mitra bisnis",
+					"rest_of_sentences": ": Kami dapat membagikan informasi Anda dengan mitra bisnis Kami untuk menawarkan kepada Anda produk, layanan, atau promosi tertentu."
+				},
+				{
+					"first_sentence": "Dengan pengguna lain",
+					"rest_of_sentences": ": ketika Anda berbagi informasi pribadi atau berinteraksi di area publik dengan pengguna lain, informasi tersebut dapat dilihat oleh semua pengguna dan dapat didistribusikan secara publik."
+				},
+				{
+					"first_sentence": "Dengan persetujuan Anda",
+					"rest_of_sentences": ": Kami dapat mengungkapkan informasi pribadi Anda untuk tujuan lain dengan persetujuan Anda."
+				}
+			]
+		},
+		"retention": {
+			"heading": "Pertahankan Data Pribadi Anda",
+			"first_paragraph": "Perusahaan akan menyimpan Data Pribadi Anda hanya selama yang diperlukan untuk tujuan-tujuan yang diatur dalam Kebijakan Privasi ini. Kami akan menyimpan dan menggunakan Data Pribadi Anda sejauh yang diperlukan untuk mematuhi kewajiban hukum kami (misalnya, jika kami diwajibkan untuk menyimpan data Anda untuk mematuhi hukum yang berlaku), menyelesaikan sengketa, dan menegakkan perjanjian hukum dan kebijakan kami.",
+			"second_paragraph": "Perusahaan juga akan menyimpan Data Pengguna untuk tujuan analisis internal. Data Pengguna umumnya disimpan untuk periode yang lebih singkat, kecuali ketika data ini digunakan untuk memperkuat keamanan atau meningkatkan fungsionalitas Layanan Kami, atau kami diwajibkan secara hukum untuk menyimpan data ini untuk periode yang lebih lama."
+		},
+		"transfer_data": {
+			"heading": "Transfer Data Pribadi Anda",
+			"first_paragraph": "Informasi Anda, termasuk Data Pribadi, diproses di kantor operasional Perusahaan dan di tempat-tempat lain di mana pihak yang terlibat dalam pemrosesan berlokasi. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those from Your jurisdiction.",
+			"second_paragraph": "Persetujuan Anda terhadap Kebijakan Privasi ini yang diikuti dengan pengiriman informasi tersebut mewakili persetujuan Anda terhadap transfer tersebut.",
+			"third_paragraph": "Perusahaan akan mengambil semua langkah yang wajar diperlukan untuk memastikan bahwa data Anda diperlakukan secara aman dan sesuai dengan Kebijakan Privasi ini dan tidak akan ada transfer Data Pribadi Anda ke organisasi atau negara kecuali ada kontrol yang memadai yang diterapkan termasuk keamanan data Anda dan informasi pribadi lainnya."
+		},
+		"delete_data": {
+			"heading": "Hapus Data Pribadi Anda",
+			"first_paragraph": "Anda memiliki hak untuk menghapus atau meminta agar Kami membantu dalam menghapus Data Pribadi yang telah Kami kumpulkan tentang Anda.",
+			"second_paragraph": "Layanan Kami mungkin memberi Anda kemampuan untuk menghapus beberapa informasi tentang Anda dari dalam Layanan.",
+			"third_paragraph": "Anda dapat memperbarui, mengubah, atau menghapus informasi Anda kapan saja dengan masuk ke Akun Anda, jika Anda memiliki satu, dan mengunjungi bagian pengaturan akun yang memungkinkan Anda mengelola informasi pribadi Anda. Anda juga dapat menghubungi Kami untuk meminta akses, koreksi, atau penghapusan informasi pribadi yang telah Anda berikan kepada Kami.",
+			"fourth_paragraph": "Namun, perlu diingat bahwa Kami mungkin perlu menyimpan beberapa informasi ketika kami memiliki kewajiban hukum atau dasar hukum untuk melakukannya."
+		},
+		"disclosure_data": {
+			"heading": "Pengungkapan Data Pribadi Anda",
+			"business_transactions": {
+				"heading": "Transaksi Bisnis",
+				"description": "Jika Perusahaan terlibat dalam penggabungan, akuisisi, atau penjualan aset, Data Pribadi Anda dapat ditransfer. Kami akan memberi pemberitahuan sebelum Data Pribadi Anda ditransfer dan menjadi subjek Kebijakan Privasi yang berbeda."
+			},
+			"law_enforcement": {
+				"heading": "Penegakan Hukum",
+				"description": "Dalam keadaan tertentu, Perusahaan mungkin diwajibkan untuk mengungkapkan Data Pribadi Anda jika diwajibkan oleh hukum atau sebagai respons terhadap permintaan yang sah oleh otoritas publik (misalnya pengadilan atau lembaga pemerintah)."
+			},
+			"other_requirements": {
+				"heading": "Persyaratan Hukum Lainnya",
+				"description": "Perusahaan dapat mengungkapkan Data Pribadi Anda dengan keyakinan yang baik bahwa tindakan tersebut diperlukan untuk:",
+				"list": [
+					"Mematuhi kewajiban hukum",
+					"Melindungi dan mempertahankan hak atau properti Perusahaan",
+					"Mencegah atau menyelidiki tindakan yang salah terkait dengan Layanan",
+					"Melindungi keselamatan pribadi Pengguna Layanan atau masyarakat",
+					"Melindungi dari tanggung jawab hukum"
+				]
+			}
+		},
+		"security_data": {
+			"heading": "Keamanan Data Pribadi Anda",
+			"description": "Keamanan Data Pribadi Anda penting bagi Kami, namun ingat bahwa tidak ada metode transmisi melalui Internet, atau metode penyimpanan elektronik yang 100% aman. Meskipun Kami berusaha menggunakan cara yang dapat diterima secara komersial untuk melindungi Data Pribadi Anda, Kami tidak dapat menjamin keamanan mutlaknya."
+		},
+		"children_privacy": {
+			"heading": "Privasi Anak-Anak",
+			"first_paragraph": "Layanan Kami tidak ditujukan untuk siapa pun di bawah usia 13 tahun. Kami tidak sengaja mengumpulkan informasi yang dapat diidentifikasi secara pribadi dari siapa pun di bawah usia 13 tahun. Jika Anda adalah orang tua atau wali dan Anda menyadari bahwa anak Anda telah memberi Kami Data Pribadi, silakan hubungi Kami. Jika Kami menyadari bahwa Kami telah mengumpulkan Data Pribadi dari siapa pun di bawah usia 13 tahun tanpa verifikasi persetujuan orang tua, Kami akan mengambil langkah-langkah untuk menghapus informasi tersebut dari server Kami.",
+			"second_paragraph": "Jika Kami perlu mengandalkan persetujuan sebagai dasar hukum untuk memproses informasi Anda dan negara Anda memerlukan persetujuan dari orang tua, Kami mungkin memerlukan persetujuan orang tua Anda sebelum Kami mengumpulkan dan menggunakan informasi tersebut."
+		},
+		"links_other_websites": {
+			"heading": "Tautan ke Situs Web Lain",
+			"first_paragraph": "Layanan Kami mungkin berisi tautan ke situs web lain yang tidak dioperasikan oleh Kami. Jika Anda mengklik tautan pihak ketiga, Anda akan diarahkan ke situs pihak ketiga tersebut. Kami sangat menyarankan Anda untuk meninjau Kebijakan Privasi setiap situs yang Anda kunjungi.",
+			"second_paragraph": "Kami tidak memiliki kontrol atas dan tidak bertanggung jawab atas konten, kebijakan privasi, atau praktik dari situs atau layanan pihak ketiga."
+		},
+		"changes_policy": {
+			"heading": "Perubahan pada Kebijakan Privasi ini",
+			"first_paragraph": "Kami dapat memperbarui Kebijakan Privasi Kami dari waktu ke waktu. Kami akan memberi tahu Anda tentang setiap perubahan dengan memposting Kebijakan Privasi baru di halaman ini.",
+			"second_paragraph": "Kami akan memberi tahu Anda melalui email dan/atau pemberitahuan yang menonjol di Layanan Kami, sebelum perubahan tersebut mulai berlaku dan memperbarui tanggal \"Terakhir diperbarui\" di bagian atas Kebijakan Privasi ini.",
+			"third_paragraph": "Anda disarankan untuk secara berkala meninjau Kebijakan Privasi ini untuk setiap perubahan. Perubahan pada Kebijakan Privasi ini efektif saat diposting di halaman ini."
+		},
+		"contact_us": {
+			"heading": "Hubungi Kami",
+			"description": "Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, Anda dapat menghubungi kami:",
+			"by_email": "Melalui email:",
+			"link": "contact@hubnusantara.com"
+		}
 	}
 }

@@ -95,7 +95,7 @@ const Navbar = ({
 
 	return (
 		// <header className="relative">
-		<nav className={`w-full fixed lg:absolute left-0 top-0 z-10`}>
+		<nav className={`w-full fixed lg:absolute left-0 top-0 z-20`}>
 			{/* Desktop screen */}
 			{/* <div className="max-w-[1312px] mx-auto"> */}
 			<div

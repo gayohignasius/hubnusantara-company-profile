@@ -11,7 +11,7 @@ type ComponentProps = {
 
 const StickyNav = ({ activeSection, sticky_nav }: ComponentProps) => {
 	return (
-		<div className="hidden lg:block sticky top-20 lg:left-4 xl:left-18 bg-primary-200 rounded-lg mt-8">
+		<div className="hidden lg:block sticky top-20 lg:left-4 xl:left-18 bg-primary-200 rounded-lg mt-2">
 			<ul className="flex flex-col px-6 py-4 gap-y-4">
 				<li className="flex flex-row items-center">
 					<div
@@ -23,7 +23,7 @@ const StickyNav = ({ activeSection, sticky_nav }: ComponentProps) => {
 					/>
 					<Link
 						href="#visionmission"
-						className={`text-sm xl:text-[16px]font-helvetica font-bold ${
+						className={`text-sm xl:text-[16px] font-helvetica font-bold ${
 							activeSection === "visionmission"
 								? "text-secondary-400"
 								: "text-primary-400"
@@ -42,7 +42,7 @@ const StickyNav = ({ activeSection, sticky_nav }: ComponentProps) => {
 					/>
 					<Link
 						href="#milestone"
-						className={`text-sm xl:text-[16px]font-helvetica font-bold ${
+						className={`text-sm xl:text-[16px] font-helvetica font-bold ${
 							activeSection === "milestone"
 								? "text-secondary-400"
 								: "text-primary-400"
@@ -61,7 +61,7 @@ const StickyNav = ({ activeSection, sticky_nav }: ComponentProps) => {
 					/>
 					<Link
 						href="#value"
-						className={`text-sm xl:text-[16px]font-helvetica font-bold ${
+						className={`text-sm xl:text-[16px] font-helvetica font-bold ${
 							activeSection === "value"
 								? "text-secondary-400"
 								: "text-primary-400"
@@ -80,7 +80,7 @@ const StickyNav = ({ activeSection, sticky_nav }: ComponentProps) => {
 					/>
 					<Link
 						href="#management"
-						className={`text-sm xl:text-[16px]font-helvetica font-bold ${
+						className={`text-sm xl:text-[16px] font-helvetica font-bold ${
 							activeSection === "management"
 								? "text-secondary-400"
 								: "text-primary-400"
