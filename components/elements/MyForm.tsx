@@ -10,6 +10,8 @@ import PhoneInput, { CountryData } from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { z } from "zod";
 import { TLanguageProps } from "@/types";
+import ReCAPTCHA from "react-google-recaptcha";
+import CustomLink from "./CustomLink";
 
 export type TFormProps = {
 	// form: {
@@ -23,17 +25,25 @@ export type TFormProps = {
 		phone: string;
 		file: string;
 		tnc: string;
+		statement: {
+			first: string;
+			second: string;
+			third: string;
+			fourth: string;
+			fifth: string;
+		};
 	};
 	placeholder: {
 		fullname: string;
 		company: string;
 		email: string;
-		file: {
-			first: string;
-			second: string;
-			third: string;
-			fourth: string;
-		};
+		file: string;
+		// file: {
+		// 	first: string;
+		// 	second: string;
+		// 	third: string;
+		// 	fourth: string;
+		// };
 	};
 	error_message: {
 		fullname: string;
@@ -46,11 +56,11 @@ export type TFormProps = {
 		phone: {
 			validity: string;
 		};
-		file: {
-			validity: string;
-			size: string;
-			type: string;
-		};
+		// file: {
+		// 	validity: string;
+		// 	size: string;
+		// 	type: string;
+		// };
 		tnc: string;
 	};
 	submit_button: string;
@@ -64,6 +74,7 @@ const MAX_FILE_SIZE = 3 * 1024 * 1024;
 const ACCEPTED_FILE_TYPES = ["application/pdf", "application/msword"];
 
 const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
+	const captchaRef = useRef<ReCAPTCHA>(null);
 	const contactFormSchema = z.object({
 		fullName: z.string().min(1, `${form.error_message.fullname}`),
 		businessType: z
@@ -83,21 +94,23 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 				message: `${form.error_message.phone.validity}`,
 			})
 			.max(15, { message: `${form.error_message.phone.validity}` }),
-		files: z
-			.custom<File[]>()
-			.refine((files) => {
-				return Array.from(files ?? []).length !== 0;
-			}, `${form.error_message.file.validity}`)
-			.refine((files) => {
-				return Array.from(files ?? []).every(
-					(file) => file.size <= MAX_FILE_SIZE
-				);
-			}, `${form.error_message.file.size}`)
-			.refine((files) => {
-				return Array.from(files ?? []).every((file) =>
-					ACCEPTED_FILE_TYPES.includes(file.type)
-				);
-			}, `${form.error_message.file.type}`),
+		files: z.string(),
+		// hide this dropzone file until backend could provide uploading method file
+		// files: z
+		// 	.custom<File[]>()
+		// 	.refine((files) => {
+		// 		return Array.from(files ?? []).length !== 0;
+		// 	}, `${form.error_message.file.validity}`)
+		// 	.refine((files) => {
+		// 		return Array.from(files ?? []).every(
+		// 			(file) => file.size <= MAX_FILE_SIZE
+		// 		);
+		// 	}, `${form.error_message.file.size}`)
+		// 	.refine((files) => {
+		// 		return Array.from(files ?? []).every((file) =>
+		// 			ACCEPTED_FILE_TYPES.includes(file.type)
+		// 		);
+		// 	}, `${form.error_message.file.type}`),
 		// files: z
 		// 	.any()
 		// 	.refine((files) => files?.length >= 1, {
@@ -137,7 +150,7 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 			company: "",
 			email: "",
 			phone: lang == "id" ? "+62" : "44",
-			files: undefined,
+			files: "", // using undefined if the backend could provide uploading method file
 			tnc: false,
 		},
 		resolver: zodResolver(contactFormSchema),
@@ -145,8 +158,23 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 
 	const onSubmit = async (data: ContactFormSchema) => {
 		// await new Promise((resolve) => setTimeout(resolve, 1000));
-
-		console.log(data);
+		await fetch("https://dev.hubnusantara.com/form-hubnusantarav2/sendmail", {
+			method: "POST",
+			body: JSON.stringify({
+				fullName: data.fullName,
+				businessType: data.businessType,
+				company: data.company,
+				email: data.email,
+				phone: data.phone,
+				files: data.files,
+			}),
+		}).then((response) => {
+			if (!response.ok) {
+				console.log("gagal");
+			} else {
+				console.log("true");
+			}
+		});
 		reset();
 		setUploadedFiles([]);
 	};
@@ -187,13 +215,13 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 		return isValid;
 	};
 
-	const removeFile = (index: number) => {
-		const uploadedFilesCopy = uploadedFiles.filter((item, i) => i !== index);
-		setUploadedFiles([...uploadedFilesCopy]);
-		setValue("files", uploadedFilesCopy, {
-			shouldValidate: true,
-		});
-	};
+	// const removeFile = (index: number) => {
+	// 	const uploadedFilesCopy = uploadedFiles.filter((item, i) => i !== index);
+	// 	setUploadedFiles([...uploadedFilesCopy]);
+	// 	setValue("files", uploadedFilesCopy, {
+	// 		shouldValidate: true,
+	// 	});
+	// };
 
 	const handleOnChange = (value: string, inputData: CountryData) => {
 		setValue("phone", value, { shouldValidate: isSubmitted });
@@ -388,6 +416,18 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 						</div>
 					</div>
 					<div>
+						<label
+							className="label [&>span:nth-child(odd)]:text-error-300 [&>span:nth-child(even)]:italic"
+							dangerouslySetInnerHTML={{ __html: form.label.file }}
+						></label>
+						<textarea
+							{...register("files")}
+							className="field"
+							placeholder={form.placeholder.file}
+						/>
+					</div>
+					{/* hide this dropzone file until backend could provide uploading method file */}
+					{/* <div>
 						<label className="label">{form.label.file}</label>
 						<Controller
 							control={control}
@@ -489,21 +529,6 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 														{form.placeholder.file.fourth}
 													</p>
 												)}
-
-												{/* {acceptedFiles.length > 0 ? (
-													acceptedFiles.map((e) => (
-														<p
-															className="text-[10px] lg:text-sm font-poppins font-normal text-primary-300"
-															key={e.name}
-														>
-															{e.name}
-														</p>
-													))
-												) : (
-													<p className="error-msg">
-														{form.placeholder.file.fourth}
-													</p>
-												)} */}
 											</div>
 										)}
 									</Dropzone>
@@ -513,26 +538,51 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 						{errors.files && (
 							<p className="error-msg">{errors.files.message?.toString()}</p>
 						)}
-					</div>
+					</div> */}
 					<div>
-						<div className="flex items-start justify-start ">
+						<div className="flex items-center justify-start">
 							<input
 								type="checkbox"
 								{...register("tnc")}
 								className="checkbox"
 							/>
-							<label
-								className="label &>span:nth-child]:text-secondary-300"
+							<label className="text-sm text-primary-300">
+								<span>{form.label.statement.first}</span>
+								<CustomLink href={"/tnc"} lang={lang} target="_blank" passHref>
+									<span className="text-secondary-300 underline cursor-pointer">
+										{form.label.statement.second}
+									</span>
+								</CustomLink>
+								<span>{form.label.statement.third}</span>
+								<CustomLink
+									href={"/privacy-policy"}
+									lang={lang}
+									target="_blank"
+									passHref
+								>
+									<span className="text-secondary-300 underline cursor-pointer">
+										{form.label.statement.fourth}
+									</span>
+								</CustomLink>
+								<span>{form.label.statement.fifth}</span>
+							</label>
+							{/* <label
+								className="label [&>span]:text-secondary-300 label [&>span]:underline"
 								dangerouslySetInnerHTML={{ __html: form.label.tnc }}
-							>
-								{/* Saya setuju dengan{" "}
+							></label> */}
+							{/* Saya setuju dengan{" "}
 								<span className="text-secondary-300 no-underline hover:underline hover:cursor-pointer">
 									Syarat dan Ketentuan
 								</span>{" "}
 								yang dikeluarkan oleh Hubnusantara */}
-							</label>
 						</div>
 						{errors.tnc && <p className="error-msg">{errors.tnc.message}</p>}
+					</div>
+					<div className="flex items-center justify-center">
+						<ReCAPTCHA
+							ref={captchaRef}
+							sitekey={process.env.NEXT_PUBLIC_CAPTCHA_CLIENT_SIDE_KEY!}
+						/>
 					</div>
 
 					<div className="flex items-center justify-center my-4">

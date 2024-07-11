@@ -15,41 +15,46 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 						src="/images/hubnusantara_logo_text.svg"
 						alt="HubNusantara logo"
 						className="object-contain mb-2"
-						priority={true}
 						width={223}
 						height={36}
 					/>
-					<div className="flex flex-row items-center justify-start gap-x-2">
-						<span className="text-primary-900">
-							<MdWhatsapp />
-						</span>
-						<p className="text-[16px] font-poppins font-normal text-primary-900">
-							+6281299381120 (Satrio)
-						</p>
-					</div>
-					<div className="flex flex-row items-center justify-start gap-x-2">
-						<span className="text-primary-900">
-							<MdOutlineMailOutline />
-						</span>
-						<p className="text-[16px] font-poppins font-normal text-primary-900">
-							contact@hubnusantara.com
-						</p>
-					</div>
+					<Link
+						href={"https://api.whatsapp.com/send?phone=6281299381120&text="}
+					>
+						{/* "https://api.whatsapp.com/send?phone=6281299381120&text=Send20%a20%quote" */}
+						<div className="flex flex-row items-center justify-start gap-x-2">
+							<span className="text-primary-900">
+								<MdWhatsapp />
+							</span>
+							<p className="text-[16px] font-poppins font-normal text-primary-900">
+								+6281299381120 (Satrio)
+							</p>
+						</div>
+					</Link>
+					<Link href={"mailto:contact@hubnusantara.com"}>
+						<div className="flex flex-row items-center justify-start gap-x-2">
+							<span className="text-primary-900">
+								<MdOutlineMailOutline />
+							</span>
+							<p className="text-[16px] font-poppins font-normal text-primary-900">
+								contact@hubnusantara.com
+							</p>
+						</div>
+					</Link>
 				</div>
 				<div className="flex flex-col gap-y-2">
 					<iframe
-						src="https://maps.google.com/maps?q=Jalan%20Bintaro%20Raya%20No.8,%20RW.10,%20North%20Kebayoran%20Lama,%20South%20Jakarta%20City,%20Jakarta&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d695.5841673076369!2d106.77633802475356!3d-6.253282073729614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f103f5278aa5%3A0x9661d8fe63a2458c!2sEnablerspace.id!5e0!3m2!1sen!2sus!4v1715542556632!5m2!1sen!2sus"
 						style={{ width: "380px", height: "180px" }}
 					></iframe>
+					<p className="text-sm font-poppins font-normal text-primary-300">
+						Enablerspace.id
+					</p>
 					<p className="text-sm font-poppins font-normal text-primary-300">
 						Jl. Bintaro Raya No.8, RT.2/RW.10, Kby. Lama Utara, Kec. <br />
 						Kby. Lama, Kota Jakarta Selatan, Daerah Khusus <br />
 						Ibukota Jakarta 12240
 					</p>
-					{/* <p className="text-sm font-poppins font-normal text-primary-300">
-								Kby. Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
-								12240
-							</p> */}
 				</div>
 				<div className="flex flex-col gap-y-2">
 					<p className="text-[16px] font-poppins font-bold text-primary-300 mb-2">
@@ -57,7 +62,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 					</p>
 					<div>
 						<p className="text-[16px] font-poppins font-normal text-primary-900">
-							Bikinkapal
+							BIKINKAPAL
 						</p>
 					</div>
 					<div>
@@ -70,7 +75,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 					<p className="text-[16px] font-poppins font-bold text-primary-300 mb-2">
 						{footer.social_media}
 					</p>
-					<div className="grid lg:grid-rows lg:gap-y-5 xl:grid-cols-2 xl:gap-x-5">
+					<div className="grid lg:grid-rows lg:gap-y-5 xl:grid-cols-2 xl:gap-x-12">
 						<div className="flex flex-col gap-y-2">
 							<Link
 								href={
@@ -82,7 +87,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<AiFillInstagram />
 									</span>
 									<p className="text-[16px] font-poppins font-normal text-primary-900">
-										Bikinkapal
+										@bikinkapal.indonesia
 									</p>
 								</div>
 							</Link>
@@ -94,7 +99,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<IoLogoFacebook />
 									</span>
 									<p className="text-[16px] font-poppins font-normal text-primary-900">
-										Bikinkapal
+										BIKINKAPAL
 									</p>
 								</div>
 							</Link>
@@ -104,7 +109,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<IoLogoLinkedin />
 									</span>
 									<p className="text-[16px] font-poppins font-normal text-primary-900">
-										Bikinkapal
+										BIKINKAPAL
 									</p>
 								</div>
 							</Link>
@@ -120,7 +125,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<AiFillInstagram />
 									</span>
 									<p className="text-[16px] font-poppins font-normal text-primary-900">
-										Laboon
+										@laboon.app
 									</p>
 								</div>
 							</Link>
@@ -144,7 +149,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<IoLogoLinkedin />
 									</span>
 									<p className="text-[16px] font-poppins font-normal text-primary-900">
-										Laboon
+										Laboon Indonesia
 									</p>
 								</div>
 							</Link>
@@ -169,10 +174,13 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 				/>
 				<div className="max-w-sm w-full">
 					<iframe
-						src="https://maps.google.com/maps?q=Jalan%20Bintaro%20Raya%20No.8,%20RW.10,%20North%20Kebayoran%20Lama,%20South%20Jakarta%20City,%20Jakarta&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d695.5841673076369!2d106.77633802475356!3d-6.253282073729614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f103f5278aa5%3A0x9661d8fe63a2458c!2sEnablerspace.id!5e0!3m2!1sen!2sus!4v1715542556632!5m2!1sen!2sus"
 						style={{ width: "100%", height: "199.78px" }}
 					></iframe>
 				</div>
+				<p className="text-[10px] font-poppins font-normal text-primary-300">
+					Enablerspace.id
+				</p>
 				<p className="text-[10px] font-poppins font-normal text-primary-300">
 					Jl. Bintaro Raya No.8, RT.2/RW.10, Kby. Lama Utara, Kec. Kby. Lama,
 					Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12240
@@ -187,7 +195,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 							</div>
 							<div>
 								<p className="text-[12px] font-poppins font-normal text-primary-900">
-									Bikinkapal
+									BIKINKAPAL
 								</p>
 							</div>
 							<div>
@@ -203,24 +211,32 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								</p>
 							</div>
 							<div className="flex flex-col">
-								<div className="flex flex-row items-center justify-start gap-x-2">
-									<span className="text-primary-900">
-										<MdWhatsapp />
-									</span>
-									<p className="text-[12px] font-poppins font-normal text-primary-900">
-										+628129938120 (Satrio)
-									</p>
-								</div>
+								<Link
+									href={
+										"https://api.whatsapp.com/send?phone=6281299381120&text="
+									}
+								>
+									<div className="flex flex-row items-center justify-start gap-x-2">
+										<span className="text-primary-900">
+											<MdWhatsapp />
+										</span>
+										<p className="text-[12px] font-poppins font-normal text-primary-900">
+											+628129938120 (Satrio)
+										</p>
+									</div>
+								</Link>
 							</div>
 							<div className="flex flex-col">
-								<div className="flex flex-row items-center justify-start gap-x-2">
-									<span className="text-primary-900">
-										<MdOutlineMailOutline />
-									</span>
-									<p className="text-[12px] font-poppins font-normal text-primary-900">
-										contact@hubnusantara.com
-									</p>
-								</div>
+								<Link href={"mailto:contact@hubnusantara.com"}>
+									<div className="flex flex-row items-center justify-start gap-x-2">
+										<span className="text-primary-900">
+											<MdOutlineMailOutline />
+										</span>
+										<p className="text-[12px] font-poppins font-normal text-primary-900">
+											contact@hubnusantara.com
+										</p>
+									</div>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -240,8 +256,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 									<span className="text-primary-900">
 										<AiFillInstagram />
 									</span>
-									<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-										Bikinkapal
+									<p className="text-[12px] font-poppins font-normal text-primary-900">
+										@bikinkapal.indonesia
 									</p>
 								</div>
 							</Link>
@@ -252,8 +268,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 									<span className="text-primary-900">
 										<IoLogoFacebook />
 									</span>
-									<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-										Bikinkapal
+									<p className="text-[12px] font-poppins font-normal text-primary-900">
+										BIKINKAPAL
 									</p>
 								</div>
 							</Link>
@@ -262,8 +278,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 									<span className="text-primary-900">
 										<IoLogoLinkedin />
 									</span>
-									<p className="text-[12px] font-poppins font-normal text-primary-900 uppercase">
-										Bikinkapal
+									<p className="text-[12px] font-poppins font-normal text-primary-900">
+										BIKINKAPAL
 									</p>
 								</div>
 							</Link>
@@ -279,7 +295,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<AiFillInstagram />
 									</span>
 									<p className="text-[12px] font-poppins font-normal text-primary-900">
-										Laboon
+										@laboon.app
 									</p>
 								</div>
 							</Link>
@@ -303,7 +319,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 										<IoLogoLinkedin />
 									</span>
 									<p className="text-[12px] font-poppins font-normal text-primary-900">
-										Laboon
+										Laboon Indonesia
 									</p>
 								</div>
 							</Link>

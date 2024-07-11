@@ -14,7 +14,7 @@
 }
 
 .overlay-connect {
-	@apply absolute bottom-0 w-full h-[520px] bg-linear-gradient-3;
+	@apply absolute -bottom-[0.05rem] w-full h-[520px] bg-linear-gradient-3;
 }
 
 .overlay-connect-mobile {

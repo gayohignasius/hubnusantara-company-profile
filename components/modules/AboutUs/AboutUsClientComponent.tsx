@@ -15,15 +15,18 @@ const AboutUsClientComponent = ({ intl }: TIntlProps) => {
 
 	useEffect(() => {
 		//create new instance and pass a callback function
-		observer.current = new IntersectionObserver((entries) => {
-			const visibleSection = entries.find(
-				(entry) => entry.isIntersecting
-			)?.target;
-			//Update state with the visible section ID
-			if (visibleSection) {
-				setActiveSection(visibleSection.id);
-			}
-		});
+		observer.current = new IntersectionObserver(
+			(entries) => {
+				const visibleSection = entries.find(
+					(entry) => entry.isIntersecting
+				)?.target;
+				//Update state with the visible section ID
+				if (visibleSection) {
+					setActiveSection(visibleSection.id);
+				}
+			},
+			{ threshold: 1.0 }
+		);
 
 		//Get custom attribute data-section from all sections
 		const sections = document.querySelectorAll("section");
