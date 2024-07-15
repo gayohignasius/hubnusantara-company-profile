@@ -581,7 +581,7 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 					<div className="flex items-center justify-center">
 						<ReCAPTCHA
 							ref={captchaRef}
-							sitekey={process.env.NEXT_PUBLIC_CAPTCHA_CLIENT_SIDE_KEY!}
+							sitekey={process.env.NEXT_PUBLIC_VERCEL_CAPTCHA_CLIENT_SIDE_KEY!}
 						/>
 					</div>
 
