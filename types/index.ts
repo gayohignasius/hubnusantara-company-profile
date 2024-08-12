@@ -377,6 +377,12 @@ export type TVisionMissionTwoProps = {
 
 export type TMilestoneProps = {
 	title: string;
+	items: {
+		year: number;
+		image: string;
+		title: string;
+		description: string[];
+	}[];
 };
 
 export type TValuePropProps = Partial<TWhyUsProps> & {

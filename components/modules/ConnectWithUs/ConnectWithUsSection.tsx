@@ -17,7 +17,7 @@ const ConnectWithUsSection = async ({
 				<div className="max-w-[1312px] mx-auto">
 					<div className="flex flex-row lg:flex-col justify-between h-3/4 py-20">
 						<div className="flex flex-col lg:flex-row w-full justify-between px-6 xl:px-0">
-							<div className="flex flex-col gap-y-4">
+							<div className="flex flex-col gap-y-4 py-8 lg:py-0">
 								<div>
 									<h1 className="title text-[32px] lg:text-[48px] hero-spacing text-primary-900 font-bold">
 										{intl.connect.title}
@@ -40,11 +40,13 @@ const ConnectWithUsSection = async ({
 									<h3 className="text-primary-900 font-bold text-lg">
 										{intl.connect.howTo.title}
 									</h3>
-									{intl.connect.howTo.steps.map((step, index) => (
-										<li key={index} className="list-none text-primary-900">
-											<p>{step}</p>
-										</li>
-									))}
+									<ol className="list-decimal px-4">
+										{intl.connect.howTo.steps.map((step, index) => (
+											<li key={index} className="text-primary-900">
+												<p>{step}</p>
+											</li>
+										))}
+									</ol>
 								</div>
 								{/* <div className="flex flex-col gap-y-6 text-primary-900">
 									<p>{intl.connect.first_desc}</p>
