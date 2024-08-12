@@ -12,6 +12,7 @@ import { z } from "zod";
 import { TLanguageProps } from "@/types";
 import ReCAPTCHA from "react-google-recaptcha";
 import CustomLink from "./CustomLink";
+import { useRouter } from "next/navigation";
 
 export type TFormProps = {
 	// form: {
@@ -62,6 +63,7 @@ export type TFormProps = {
 		// 	type: string;
 		// };
 		tnc: string;
+		captcha: string;
 	};
 	submit_button: string;
 	// };
@@ -74,6 +76,7 @@ const MAX_FILE_SIZE = 3 * 1024 * 1024;
 const ACCEPTED_FILE_TYPES = ["application/pdf", "application/msword"];
 
 const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
+	const router = useRouter();
 	const captchaRef = useRef<ReCAPTCHA>(null);
 	const contactFormSchema = z.object({
 		fullName: z.string().min(1, `${form.error_message.fullname}`),
@@ -128,6 +131,7 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 			},
 			{ message: `${form.error_message.tnc}` }
 		),
+		captcha: z.string().min(1, `${form.error_message.captcha}`),
 	});
 
 	type ContactFormSchema = z.infer<typeof contactFormSchema>;
@@ -152,6 +156,7 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 			phone: lang == "id" ? "+62" : "44",
 			files: "", // using undefined if the backend could provide uploading method file
 			tnc: false,
+			captcha: "",
 		},
 		resolver: zodResolver(contactFormSchema),
 	});
@@ -167,16 +172,20 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 				email: data.email,
 				phone: data.phone,
 				files: data.files,
+				captchaToken: data.captcha,
 			}),
 		}).then((response) => {
+			console.log(response);
 			if (!response.ok) {
-				console.log("gagal");
+				console.log("failed");
 			} else {
-				console.log("true");
+				console.log("success");
+				router.push("/connect-with-us");
+				reset();
+				captchaRef.current?.reset();
+				// setUploadedFiles([]);
 			}
 		});
-		reset();
-		setUploadedFiles([]);
 	};
 
 	const onInvalid = async (errors: any) => {
@@ -578,11 +587,23 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 						</div>
 						{errors.tnc && <p className="error-msg">{errors.tnc.message}</p>}
 					</div>
-					<div className="flex items-center justify-center">
-						<ReCAPTCHA
-							ref={captchaRef}
-							sitekey={process.env.NEXT_PUBLIC_VERCEL_CAPTCHA_CLIENT_SIDE_KEY!}
-						/>
+					<div className="flex flex-col w-full">
+						<div className="flex justify-center items-center">
+							<ReCAPTCHA
+								ref={captchaRef}
+								sitekey={
+									process.env.NEXT_PUBLIC_VERCEL_CAPTCHA_CLIENT_SIDE_KEY!
+								}
+								onChange={(token) => {
+									console.log(token);
+									setValue("captcha", token || "");
+								}}
+							/>
+						</div>
+						{/* Display error message if any */}
+						{errors.captcha && (
+							<p className="error-msg">{errors.captcha.message}</p>
+						)}
 					</div>
 
 					<div className="flex items-center justify-center my-4">
