@@ -89,23 +89,36 @@
 		"items": [
 			{
 				"year": 2020,
-				"image": "",
-				"description": "Riset Market"
+				"image": "/images/milestones/Milestone 2020.jpg",
+				"title": "Riset Market",
+				"description": []
 			},
 			{
 				"year": 2021,
-				"image": "",
-				"description": "Potensi Pengembangan Kemitraan: Galangan kapal untuk pembuatan kapal dan pemilik kapal untuk jasa wisata bahari"
+				"image": "/images/milestones/Milestone 2021.jpg",
+				"title": "Potensi Pengembangan Kemitraan:",
+				"description": [
+					"Galangan kapal untuk pembuatan kapal",
+					"Pemilik kapal untuk jasa wisata bahari"
+				]
 			},
 			{
 				"year": 2022,
-				"image": "",
-				"description": "Pengembangan Tim, Klien pertama BIKINKAPAL"
+				"image": "/images/milestones/Milestone 2022.jpg",
+				"title": "",
+				"description": [
+					"Pengembangan Tim", 
+					"Klien pertama BIKINKAPAL"
+				]
 			},
 			{
 				"year": 2023,
-				"image": "",
-				"description": "Perkenalan Web-apps Laboon, Customer pertama Laboon"
+				"image": "/images/milestones/Milestone 2023.jpg",
+				"title": "",
+				"description": [
+					"Perkenalan Web-apps Laboon", 
+					"Customer pertama Laboon"
+				]
 			}
 		]
 	},
@@ -118,7 +131,7 @@
 	},
 	"connect": {
 		"title": "Terima Kasih Atas Kepercayaan Anda Kepada Hubnusantara",
-		"description": "Hubnusantara menawarkan marine expertise dalam bidang desain dan pengawasan pembangunan kapal, serta platform digital untuk pemesanan & pengelolaan kapal, bagi klien/mitra individu maupun korporat.",
+		"description": "Hubnusantara menawarkan marine expertise dalam bidang desain dan pengawasan pembangunan kapal, serta platform digital untuk pemesanan & pengelolaan kapal, bagi klien dan mitra individu maupun korporat.",
 		"whyUs": {
 			"title": "Mengapa Anda Harus Berkolaborasi dengan Hubnusantara:",
 			"items": [
@@ -174,7 +187,8 @@
 			"phone": {
 				"validity": "Nomor telepon tidak valid"
 			},
-			"tnc": "Anda harus menyetujui Syarat dan Ketentuan"
+			"tnc": "Anda harus menyetujui Syarat dan Ketentuan",
+			"captcha": "Captcha harus diisi"
 		},
 		"submit_button": "Hubungi Kami"
 	},

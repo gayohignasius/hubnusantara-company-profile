@@ -24,6 +24,7 @@ const Navbar = ({
 	const [showBackground, setShowBackground] = useState(false);
 
 	useEffect(() => {
+		console.log(pathName);
 		const handleScroll = () => {
 			if (window.scrollY >= TOP_OFFSET) {
 				setShowBackground(true);
@@ -95,11 +96,11 @@ const Navbar = ({
 
 	return (
 		// <header className="relative">
-		<nav className={`w-full fixed lg:absolute left-0 top-0 z-20`}>
+		<nav className={`w-full fixed lg:absolute z-20`}>
 			{/* Desktop screen */}
 			{/* <div className="max-w-[1312px] mx-auto"> */}
 			<div
-				className={`hidden lg:flex w-full fixed justify-between items-center py-4 px-6 xl:px-0 ${
+				className={`hidden overflow-hidden lg:flex w-full fixed justify-between items-center py-4 px-6 xl:px-0 ${
 					showBackground ? "bg-primary-100 opacity-90" : "bg-transparent"
 				} `}
 			>
@@ -130,8 +131,11 @@ const Navbar = ({
 						<CustomLink
 							href="/#business"
 							lang={lang}
-							className={nonActiveLinkStyle}
-							scroll
+							className={
+								pathName === "/#business" || pathName === `/${lang}#business`
+									? activeStyle
+									: nonActiveLinkStyle
+							}
 						>
 							{navigation.business}
 						</CustomLink>

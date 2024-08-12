@@ -89,23 +89,36 @@
 		"items": [
 			{
 				"year": 2020,
-				"image": "",
-				"description": "Market Research"
+				"image": "/images/milestones/Milestone 2020.jpg",
+				"title": "Market Research",
+				"description": []
 			},
 			{
 				"year": 2021,
-				"image": "",
-				"description": "Potential Partnership Development: Shipyards for shipbuilding and shipowners for marine tourism services"
+				"image": "/images/milestones/Milestone 2021.jpg",
+				"title": "Potential Partnership Development:",
+				"description": [
+					"Shipyards for shipbuilding",
+					"Boat owners for marine tourism services"
+				]
 			},
 			{
 				"year": 2022,
-				"image": "",
-				"description": "Team Development, BIKINKAPAL's first client"
+				"image": "/images/milestones/Milestone 2022.jpg",
+				"title": "",
+				"description": [
+					"Team Development", 
+					"BIKINKAPAL's first client"
+				]
 			},
 			{
 				"year": 2023,
-				"image": "",
-				"description": "Introduction to Laboon Web-apps, Laboon's first customer"
+				"image": "/images/milestones/Milestone 2023.jpg",
+				"title": "",
+				"description": [
+					"Introduction to Laboon Web-apps", 
+					"Laboon's first customer"
+				]
 			}
 		]
 	},
@@ -118,7 +131,7 @@
 	},
 	"connect": {
 		"title": "Thank You for Your Trust in Hubnusantara",
-		"description": "Hubnusantara offers individual and corporate clients/partners our marine expertise in boat design and building supervision, as well as a digital platform for boat booking & management.",
+		"description": "Hubnusantara offers individual or corporate clients and partners our marine expertise in boat design and building supervision, as well as a digital platform for boat booking & management.",
 		"whyUs": {
 			"title": "Why You Should Collaborate with Hubnusantara",
 			"items": [
@@ -131,10 +144,10 @@
 		"howTo": {
 			"title": "Steps to Collaborate",
 			"steps": [
-				"1. Submit your Details through our “Connect with Us” form",
-				"2. Discuss with Us",
-				"3. Finalize with Non-Disclosure and Partnership Agreement",
-				"4. Testing and Go-live"
+				"Submit your Details through our “Connect with Us” form",
+				"Discuss with Us",
+				"Finalize with Non-Disclosure and Partnership Agreement",
+				"Testing and Go-live"
 			]
 		}
 	},
@@ -174,7 +187,8 @@
 			"phone": {
 				"validity": "Please enter a valid Phone Number"
 			},
-			"tnc": "You must accept the Terms and Conditions"
+			"tnc": "You must accept the Terms and Conditions",
+			"captcha": "You must fill in the captcha"
 		},
 		"submit_button": "Contact Us"
 	},
