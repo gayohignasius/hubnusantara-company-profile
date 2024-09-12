@@ -9,7 +9,7 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 	return (
 		<footer className="w-full bg-primary-100 h-full border-t border-primary-300">
 			{/* Desktop screen */}
-			<div className="hidden lg:flex flex-row max-w-[1312px] mx-auto w-full lg:gap-x-5 xl:gap-x-[72px] gap-y-9 py-9 lg:px-6">
+			<div className="hidden lg:flex flex-row max-w-[1312px] mx-auto w-full lg:gap-x-5 xl:gap-x-12 gap-y-9 py-9 lg:px-6">
 				<div className="flex flex-col gap-y-2">
 					<Image
 						src="/images/hubnusantara_logo_text.svg"

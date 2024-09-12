@@ -15,7 +15,9 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
 				<HeroSection hero={intl.hero} />
 				<CoreBusinessSection business={intl.business} />
 				<WhyChooseUsSection whyUs={intl.whyUs} />
-				<ClientSection client_section={intl.client_section} />
+				<ClientSection
+					partners_clients_section={intl.partners_clients_section}
+				/>
 				<ConnectWithUsSection params={params} />
 			</main>
 			<WhatsappButton />

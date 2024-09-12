@@ -24,6 +24,7 @@ const CoreBusinessSection = ({ business }: { business: TBusinessProps }) => {
 									image,
 									text_button,
 									text_button_hover,
+									hyperlink,
 								},
 								index
 							) => {
@@ -37,6 +38,7 @@ const CoreBusinessSection = ({ business }: { business: TBusinessProps }) => {
 										image={image}
 										textButton={text_button}
 										textButtonHover={text_button_hover}
+										hyperlink={hyperlink}
 									/>
 								);
 							}

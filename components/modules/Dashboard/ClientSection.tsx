@@ -1,28 +1,54 @@
-import { TClientProps } from "@/types";
-import client from "@/dummy/client.json";
+import ClientBoatConsultation from "@/components/elements/ClientBoatConsultation";
+import MarinetTourismKpSeribu from "@/components/elements/MarineTourismKpSeribu";
+import MarineTourismLB from "@/components/elements/MarineTourismLB";
+import MarineTourismNatuna from "@/components/elements/MarineTourismNatuna";
+import MarineTourismRajaAmpat from "@/components/elements/MarineTourismRajaAmpat";
+import ShipyardClassification from "@/components/elements/ShipyardClassification";
+import { TPartnerClientProps } from "@/types";
 import Marquee from "react-fast-marquee";
 
 const ClientSection = ({
-	client_section,
+	partners_clients_section,
 }: {
-	client_section: TClientProps;
+	partners_clients_section: TPartnerClientProps;
 }) => {
 	return (
-		<section className="w-full h-full lg:h-[425px] bg-primary-100">
-			<div className="max-w-[1312px] mx-auto py-16">
-				<h2 className="text-center text-primary-900 text-2xl lg:text-4xl font-helvetica font-bold">
-					{client_section.title_section}
+		<section className="w-full h-full bg-primary-100">
+			<div className="max-w-[1312px] mx-auto pt-2 pb-16">
+				<h2 className="text-center text-primary-900 text-2xl lg:text-4xl font-helvetica font-bold mb-10">
+					{partners_clients_section.title_section}
 				</h2>
-				<Marquee>
-					<div className="grid auto-cols-[10rem] lg:auto-cols-[14rem] grid-flow-col grid-rows-2 gap-6 overflow-x-scroll py-10 hide-scroll-bar">
-						{client.map((item, index) => (
-							<div className="inline-block px-3" key={index.toString()}>
-								<div className="w-40 h-14" key={item.id}>
-									<img src={item.image} alt={item.logo} />
-								</div>
-							</div>
-						))}
-					</div>
+				<Marquee
+					speed={100}
+					pauseOnHover={true}
+					gradient={true}
+					gradientColor="rgba(41, 41, 38, 0.8)"
+					gradientWidth={100}
+				>
+					<ClientBoatConsultation
+						boat_consultation_props={
+							partners_clients_section.boat_consultation_props
+						}
+					/>
+					<ShipyardClassification
+						shipyard_classification_props={
+							partners_clients_section.shipyard_classification_props
+						}
+					/>
+					<MarineTourismLB
+						labuan_bajo_props={partners_clients_section.labuan_bajo_props}
+					/>
+					<MarinetTourismKpSeribu
+						kepulauan_seribu_props={
+							partners_clients_section.kepulauan_seribu_props
+						}
+					/>
+					<MarineTourismNatuna
+						natuna_props={partners_clients_section.natuna_props}
+					/>
+					<MarineTourismRajaAmpat
+						raja_ampat_props={partners_clients_section.raja_ampat_props}
+					/>
 				</Marquee>
 			</div>
 		</section>
