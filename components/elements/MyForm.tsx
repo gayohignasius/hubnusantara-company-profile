@@ -256,7 +256,7 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 
 	return (
 		<div className="bg-primary-900 border rounded-lg">
-			<h1 className="title font-bold text-xl lg:text-[32px] text-center pt-6 pb-2">
+			<h1 className="title font-bold text-xl lg:text-[28px] xl:text-[32px] text-center pt-6 pb-2">
 				{form.title}
 			</h1>
 			<p className="font-poppins text-[12px] font-normal text-primary-100 text-center px-4">

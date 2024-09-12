@@ -1,28 +1,25 @@
-import shipyard from "@/dummy/shipyard.json";
-import { TShipyardAndClassificationProps } from "@/types";
+import boat_consultation from "@/dummy/boat_consultation.json";
+import { TBoatConsultationProps } from "@/types";
 import Image from "next/image";
 import { Fragment } from "react";
 
-const ShipyardClassification = ({
-	shipyard_classification_props,
+const ClientBoatConsultation = ({
+	boat_consultation_props,
 }: {
-	shipyard_classification_props: TShipyardAndClassificationProps;
+	boat_consultation_props: TBoatConsultationProps;
 }) => {
 	return (
 		<Fragment>
 			<div className="w-full grid auto-cols-max lg:auto-cols-[20rem] grid-flow-col grid-rows-2 gap-4 overflow-x-scroll hide-scroll-bar place-items-center">
 				<div className="font-bebas_neue text-xl font-bold leading-none">
 					<h1 className="text-tertiary-500">
-						{shipyard_classification_props.category}
-					</h1>
-					<h1 className="text-tertiary-500">
-						{shipyard_classification_props.first_title}
+						{boat_consultation_props.category}
 					</h1>
 					<h1 className="text-secondary-300">
-						{shipyard_classification_props.second_title}
+						{boat_consultation_props.first_title}
 					</h1>
 				</div>
-				{shipyard.map((item, index) => (
+				{boat_consultation.map((item, index) => (
 					<Image
 						key={item.id}
 						src={item.image}
@@ -37,4 +34,4 @@ const ShipyardClassification = ({
 	);
 };
 
-export default ShipyardClassification;
+export default ClientBoatConsultation;
