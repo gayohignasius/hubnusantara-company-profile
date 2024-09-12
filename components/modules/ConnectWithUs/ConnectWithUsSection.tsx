@@ -16,8 +16,8 @@ const ConnectWithUsSection = async ({
 			<div className="w-full h-full relative">
 				<div className="max-w-[1312px] mx-auto">
 					<div className="flex flex-row lg:flex-col justify-between h-3/4 py-20">
-						<div className="flex flex-col lg:flex-row w-full justify-between px-6 xl:px-0">
-							<div className="flex flex-col gap-y-4 py-8 lg:py-0">
+						<div className="flex flex-col lg:flex-row w-full justify-between px-5 xl:px-0">
+							<div className="flex flex-col gap-y-4 py-8 lg:pr-8 xl:pr-20 lg:py-0">
 								<div>
 									<h1 className="title text-[32px] lg:text-[48px] hero-spacing text-primary-900 font-bold">
 										{intl.connect.title}

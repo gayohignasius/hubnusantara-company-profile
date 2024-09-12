@@ -59,8 +59,38 @@
 			}
 		]
 	},
-	"client_section": {
-		"title_section": "Mitra & Klien"
+	"partners_clients_section": {
+		"title_section": "Mitra & Klien",
+		"boat_consultation_props": {
+			"category": "Klien",
+			"first_title": "Konsultasi Kapal",
+			"second_title": ""
+		},
+		"shipyard_classification_props": {
+			"category": "Mitra",
+			"first_title": "Galangan Kapal dan",
+			"second_title": "Badan Klasifikasi"
+		},
+		"labuan_bajo_props": {
+			"category": "Mitra",
+			"first_title": "Wisata Bahari",
+			"second_title": "Labuan Bajo"
+		},
+		"kepulauan_seribu_props": {
+			"category": "Mitra",
+			"first_title": "Wisata Bahari",
+			"second_title": "Kepulauan Seribu"
+		},
+		"natuna_props": {
+			"category": "Mitra",
+			"first_title": "Wisata Bahari",
+			"second_title": "Natuna"
+		},
+		"raja_ampat_props": {
+			"category": "Mitra",
+			"first_title": "Wisata Bahari",
+			"second_title": "Raja Ampat"
+		}
 	},
 	"about": {
 		"title": "Tentang Hubnusantara",
@@ -146,10 +176,10 @@
 		"howTo": {
 			"title": "Langkah-Langkah Berkolaborasi dengan Hubnusantara:",
 			"steps": [
-				"1. Kirimkan Detail Anda melalui formulir “Connect with Us”",
-				"2. Kenali produk/layanan kami dan sampaikan kebutuhan Anda",
-				"3. Ikat kemitraan dengan kami melalui perjanjian dan susun program yang diusulkan",
-				"4. Pengujian dan Go-Live!"
+				"Kirimkan Detail Anda melalui formulir “Connect with Us”",
+				"Kenali produk/layanan kami dan sampaikan kebutuhan Anda",
+				"Ikat kemitraan dengan kami melalui perjanjian dan susun program yang diusulkan",
+				"Pengujian dan Go-Live!"
 			]
 		}
 	},

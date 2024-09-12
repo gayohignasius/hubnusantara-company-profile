@@ -19,7 +19,7 @@ export interface TIntlProps {
 		footer?: TFooterProps;
 		hero?: THeroProps;
 		business?: TBusinessProps;
-		client?: TClientProps;
+		partners_clients_section?: TPartnerClientProps;
 		about?: TAboutUsProps;
 		whyUs?: TWhyUsProps;
 		vision_mission?: TVisionMissionTwoProps;
@@ -336,8 +336,50 @@ export type TBusinessProps = {
 	}[];
 };
 
-export type TClientProps = {
+export type TPartnerClientProps = {
 	title_section: string;
+	boat_consultation_props: TBoatConsultationProps;
+	shipyard_classification_props: TShipyardAndClassificationProps;
+	labuan_bajo_props: TLabuanBajoProps;
+	kepulauan_seribu_props: TKepulauanSeribuProps;
+	natuna_props: TNatunaProps;
+	raja_ampat_props: TRajaAmpatProps;
+};
+
+export type TBoatConsultationProps = {
+	category: string;
+	first_title: string;
+	second_title?: string;
+};
+
+export type TShipyardAndClassificationProps = {
+	category: string;
+	first_title: string;
+	second_title: string;
+};
+
+export type TLabuanBajoProps = {
+	category: string;
+	first_title: string;
+	second_title: string;
+};
+
+export type TKepulauanSeribuProps = {
+	category: string;
+	first_title: string;
+	second_title: string;
+};
+
+export type TNatunaProps = {
+	category: string;
+	first_title: string;
+	second_title: string;
+};
+
+export type TRajaAmpatProps = {
+	category: string;
+	first_title: string;
+	second_title: string;
 };
 
 export type TAboutUsProps = {

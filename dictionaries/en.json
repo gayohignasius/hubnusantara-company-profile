@@ -59,8 +59,38 @@
 			}
 		]
 	},
-	"client_section": {
-		"title_section": "Partner & Client"
+	"partners_clients_section": {
+		"title_section": "Partners & Clients",
+		"boat_consultation_props": {
+			"category": "Clients In",
+			"first_title": "Boat Consultation",
+			"second_title": ""
+		},
+		"shipyard_classification_props": {
+			"category": "Partners In",
+			"first_title": "Shipyard and",
+			"second_title": "Classification"
+		},
+		"labuan_bajo_props": {
+			"category": "Partners In",
+			"first_title": "Marine Tourism",
+			"second_title": "Labuan Bajo"
+		},
+		"kepulauan_seribu_props": {
+			"category": "Partners In",
+			"first_title": "Marine Tourism",
+			"second_title": "Kepulauan Seribu"
+		},
+		"natuna_props": {
+			"category": "Partners In",
+			"first_title": "Marine Tourism",
+			"second_title": "Natuna"
+		},
+		"raja_ampat_props": {
+			"category": "Partners In",
+			"first_title": "Marine Tourism",
+			"second_title": "Raja Ampat"
+		}
 	},
 	"about": {
 		"title": "About Hubnusantara",

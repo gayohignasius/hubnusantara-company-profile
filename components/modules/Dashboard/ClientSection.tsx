@@ -1,27 +1,22 @@
-import { TClientProps } from "@/types";
-import shipyard from "@/dummy/shipyard.json";
-import labuan_bajo from "@/dummy/labuan_bajo.json";
-import kepulauan_seribu from "@/dummy/kepulauan_seribu.json";
-import natuna from "@/dummy/natuna.json";
-import raja_ampat from "@/dummy/raja_ampat.json";
-import Marquee from "react-fast-marquee";
-import Image from "next/image";
-import ShipyardClassification from "@/components/elements/ShipyardClassification";
-import MarineTourismLB from "@/components/elements/MarineTourismLB";
+import ClientBoatConsultation from "@/components/elements/ClientBoatConsultation";
 import MarinetTourismKpSeribu from "@/components/elements/MarineTourismKpSeribu";
+import MarineTourismLB from "@/components/elements/MarineTourismLB";
 import MarineTourismNatuna from "@/components/elements/MarineTourismNatuna";
 import MarineTourismRajaAmpat from "@/components/elements/MarineTourismRajaAmpat";
+import ShipyardClassification from "@/components/elements/ShipyardClassification";
+import { TPartnerClientProps } from "@/types";
+import Marquee from "react-fast-marquee";
 
 const ClientSection = ({
-	client_section,
+	partners_clients_section,
 }: {
-	client_section: TClientProps;
+	partners_clients_section: TPartnerClientProps;
 }) => {
 	return (
 		<section className="w-full h-full bg-primary-100">
 			<div className="max-w-[1312px] mx-auto pt-2 pb-16">
 				<h2 className="text-center text-primary-900 text-2xl lg:text-4xl font-helvetica font-bold mb-10">
-					{client_section.title_section}
+					{partners_clients_section.title_section}
 				</h2>
 				<Marquee
 					speed={100}
@@ -30,11 +25,30 @@ const ClientSection = ({
 					gradientColor="rgba(41, 41, 38, 0.8)"
 					gradientWidth={100}
 				>
-					<ShipyardClassification />
-					<MarineTourismLB />
-					<MarinetTourismKpSeribu />
-					<MarineTourismNatuna />
-					<MarineTourismRajaAmpat />
+					<ClientBoatConsultation
+						boat_consultation_props={
+							partners_clients_section.boat_consultation_props
+						}
+					/>
+					<ShipyardClassification
+						shipyard_classification_props={
+							partners_clients_section.shipyard_classification_props
+						}
+					/>
+					<MarineTourismLB
+						labuan_bajo_props={partners_clients_section.labuan_bajo_props}
+					/>
+					<MarinetTourismKpSeribu
+						kepulauan_seribu_props={
+							partners_clients_section.kepulauan_seribu_props
+						}
+					/>
+					<MarineTourismNatuna
+						natuna_props={partners_clients_section.natuna_props}
+					/>
+					<MarineTourismRajaAmpat
+						raja_ampat_props={partners_clients_section.raja_ampat_props}
+					/>
 				</Marquee>
 			</div>
 		</section>
