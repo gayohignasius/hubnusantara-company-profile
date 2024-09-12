@@ -35,7 +35,7 @@ const ValuePropositionSection = ({
 										<div className="flex flex-col gap-4">
 											<span>
 												<img
-													srcSet={item.icon}
+													src={item.icon}
 													width={52}
 													height={52}
 													alt={item.icon}

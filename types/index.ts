@@ -8,6 +8,7 @@ export type TCardProps = {
 	description_hover?: string[];
 	textButton: string;
 	textButtonHover: string;
+	hyperlink: string;
 };
 
 export type TLanguageProps = Locale;
@@ -331,6 +332,7 @@ export type TBusinessProps = {
 		image: string;
 		text_button: string;
 		text_button_hover: string;
+		hyperlink: string;
 	}[];
 };
 
