@@ -20,9 +20,10 @@
 					"Boat Marketplace"
 				],
 				"bgImage": "/images/bikin_kapal_card.png",
-				"image": "/images/bikinkapal_logo.png",
+				"image": "/images/bikinkapal_bright.png",
 				"text_button": "Read more",
-				"text_button_hover": "Check it out"
+				"text_button_hover": "Check it out",
+				"hyperlink": "https://bikinkapal.com/"
 			},
 			{
 				"title": "Laboon",
@@ -33,9 +34,10 @@
 					"Providing tour ship business analysis services"
 				],
 				"bgImage": "/images/laboon_card.png",
-				"image": "/images/laboon-white.png",
+				"image": "/images/laboon_bright.png",
 				"text_button": "Read more",
-				"text_button_hover": "Check it out"
+				"text_button_hover": "Check it out",
+				"hyperlink": "https://laboon.app/"
 			}
 		]
 	},

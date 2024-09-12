@@ -34,7 +34,7 @@
 }
 
 .card-description {
-	@apply text-[16px] lg:text-[24px];
+	@apply text-[18px] lg:text-[28px];
 }
 
 .card-description-hover {

@@ -1,6 +1,16 @@
 import { TClientProps } from "@/types";
-import client from "@/dummy/client.json";
+import shipyard from "@/dummy/shipyard.json";
+import labuan_bajo from "@/dummy/labuan_bajo.json";
+import kepulauan_seribu from "@/dummy/kepulauan_seribu.json";
+import natuna from "@/dummy/natuna.json";
+import raja_ampat from "@/dummy/raja_ampat.json";
 import Marquee from "react-fast-marquee";
+import Image from "next/image";
+import ShipyardClassification from "@/components/elements/ShipyardClassification";
+import MarineTourismLB from "@/components/elements/MarineTourismLB";
+import MarinetTourismKpSeribu from "@/components/elements/MarineTourismKpSeribu";
+import MarineTourismNatuna from "@/components/elements/MarineTourismNatuna";
+import MarineTourismRajaAmpat from "@/components/elements/MarineTourismRajaAmpat";
 
 const ClientSection = ({
 	client_section,
@@ -8,21 +18,23 @@ const ClientSection = ({
 	client_section: TClientProps;
 }) => {
 	return (
-		<section className="w-full h-full lg:h-[425px] bg-primary-100">
-			<div className="max-w-[1312px] mx-auto py-16">
-				<h2 className="text-center text-primary-900 text-2xl lg:text-4xl font-helvetica font-bold">
+		<section className="w-full h-full bg-primary-100">
+			<div className="max-w-[1312px] mx-auto pt-2 pb-16">
+				<h2 className="text-center text-primary-900 text-2xl lg:text-4xl font-helvetica font-bold mb-10">
 					{client_section.title_section}
 				</h2>
-				<Marquee>
-					<div className="grid auto-cols-[10rem] lg:auto-cols-[14rem] grid-flow-col grid-rows-2 gap-6 overflow-x-scroll py-10 hide-scroll-bar">
-						{client.map((item, index) => (
-							<div className="inline-block px-3" key={index.toString()}>
-								<div className="w-40 h-14" key={item.id}>
-									<img src={item.image} alt={item.logo} />
-								</div>
-							</div>
-						))}
-					</div>
+				<Marquee
+					speed={100}
+					pauseOnHover={true}
+					gradient={true}
+					gradientColor="rgba(41, 41, 38, 0.8)"
+					gradientWidth={100}
+				>
+					<ShipyardClassification />
+					<MarineTourismLB />
+					<MarinetTourismKpSeribu />
+					<MarineTourismNatuna />
+					<MarineTourismRajaAmpat />
 				</Marquee>
 			</div>
 		</section>

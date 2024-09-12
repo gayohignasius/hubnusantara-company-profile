@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"logo": "bidadari island",
+		"image": "/logo/white/Laboon-KepSeribu_1_White.png"
+	},
+	{
+		"id": 2,
+		"logo": "asha",
+		"image": "/logo/white/Laboon-KepSeribu_2_White.png"
+	},
+	{
+		"id": 3,
+		"logo": "genteng island",
+		"image": "/logo/white/Laboon-KepSeribu_3_White.png"
+	},
+	{
+		"id": 4,
+		"logo": "desa laguna",
+		"image": "/logo/white/Laboon-KepSeribu_4_White.png"
+	},
+	{
+		"id": 5,
+		"logo": "macan island",
+		"image": "/logo/white/Laboon-KepSeribu_5_White.png"
+	},
+	{
+		"id": 6,
+		"logo": "sea leader marine",
+		"image": "/logo/white/Laboon-KepSeribu_6_White.png"
+	}
+]

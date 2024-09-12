@@ -1,0 +1,27 @@
+[
+	{
+		"id": 1,
+		"logo": "bki",
+		"image": "/logo/white/BK-Partner_1_White.png"
+	},
+	{
+		"id": 2,
+		"logo": "mutiara fibrindo",
+		"image": "/logo/white/BK-Partner_2_White.png"
+	},
+	{
+		"id": 3,
+		"logo": "royal advanced fiber",
+		"image": "/logo/white/BK-Partner_3_White.png"
+	},
+	{
+		"id": 4,
+		"logo": "bbs",
+		"image": "/logo/white/BK-Partner_4_White.png"
+	},
+	{
+		"id": 5,
+		"logo": "wahana astika fiberglass",
+		"image": "/logo/white/BK-Partner_5_White.png"
+	}
+]

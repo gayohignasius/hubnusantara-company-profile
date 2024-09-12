@@ -11,7 +11,8 @@ module.exports = {
 			display: ["group-hover"],
 			fontFamily: {
 				helvetica: ["Helvetica, sans-serif"],
-				poppins: ["Poppins", "sans-serif"],
+				poppins: ["var(--poppins)"],
+				bebas_neue: ["var(--bebas_neue)"],
 			},
 			colors: {
 				primary: {
