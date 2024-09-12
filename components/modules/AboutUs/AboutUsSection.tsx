@@ -14,7 +14,7 @@ const AboutUsSection = ({ about }: { about: TAboutUsProps }) => {
 					<div className="flex flex-col w-full justify-between px-6 gap-y-8 lg:px-0">
 						<div className="flex flex-col px-2 gap-y-8 lg:gap-y-10">
 							<p
-								className="font-poppins font-normal text-lg lg:text-[32px] text-primary-900 text-center [&>span]:text-secondary-400"
+								className="leading-snug font-poppins font-normal text-lg lg:text-[32px] text-primary-900 text-center [&>span]:text-secondary-400"
 								dangerouslySetInnerHTML={{ __html: about.first_paragraph }}
 							>
 								{/* Hubnusantara merupakan{" "}
@@ -25,7 +25,7 @@ const AboutUsSection = ({ about }: { about: TAboutUsProps }) => {
 								menjalankan aktivitas bisnis kemaritiman di Indonesia. */}
 							</p>
 							<p
-								className="font-poppins font-normal  text-lg lg:text-[32px] text-primary-900 text-center [&>span]:text-secondary-400"
+								className="leading-snug font-poppins font-normal  text-lg lg:text-[32px] text-primary-900 text-center [&>span]:text-secondary-400"
 								dangerouslySetInnerHTML={{ __html: about.second_paragraph }}
 							>
 								{/* Hubnusantara memberikan solusi berupa{" "}
