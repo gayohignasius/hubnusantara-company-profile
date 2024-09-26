@@ -20,6 +20,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 					/>
 					<Link
 						href={"https://api.whatsapp.com/send?phone=6281299381120&text="}
+						target="_blank"
+						rel="noopener noreferer"
 					>
 						{/* "https://api.whatsapp.com/send?phone=6281299381120&text=Send20%a20%quote" */}
 						<div className="flex flex-row items-center justify-start gap-x-2">
@@ -31,7 +33,11 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 							</p>
 						</div>
 					</Link>
-					<Link href={"mailto:contact@hubnusantara.com"}>
+					<Link
+						href={"mailto:contact@hubnusantara.com"}
+						target="_blank"
+						rel="noopener noreferer"
+					>
 						<div className="flex flex-row items-center justify-start gap-x-2">
 							<span className="text-primary-900">
 								<MdOutlineMailOutline />
@@ -61,14 +67,26 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 						{footer.product}
 					</p>
 					<div>
-						<p className="text-[16px] font-poppins font-normal text-primary-900">
-							BIKINKAPAL
-						</p>
+						<Link
+							href={"https://bikinkapal.com"}
+							target="_blank"
+							rel="noopener noreferer"
+						>
+							<p className="text-[16px] font-poppins font-normal text-primary-900">
+								BIKINKAPAL
+							</p>
+						</Link>
 					</div>
 					<div>
-						<p className="text-[16px] font-poppins font-normal text-primary-900">
-							Laboon
-						</p>
+						<Link
+							href={"https://laboon.app"}
+							target="_blank"
+							rel="noopener noreferer"
+						>
+							<p className="text-[16px] font-poppins font-normal text-primary-900">
+								Laboon
+							</p>
+						</Link>
 					</div>
 				</div>
 				<div className="flex flex-col gap-y-2 grow">
@@ -81,6 +99,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								href={
 									"https://www.instagram.com/bikinkapal.indonesia?igsh=NnBtcGwxYjgzNGpr"
 								}
+								target="_blank"
+								rel="noopener noreferer"
 							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
@@ -93,6 +113,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 							</Link>
 							<Link
 								href={"https://www.facebook.com/bikinkapal?mibextid=ZbWKwL"}
+								target="_blank"
+								rel="noopener noreferer"
 							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
@@ -103,7 +125,11 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 									</p>
 								</div>
 							</Link>
-							<Link href={"https://www.linkedin.com/company/bikinkapal/"}>
+							<Link
+								href={"https://www.linkedin.com/company/bikinkapal/"}
+								target="_blank"
+								rel="noopener noreferer"
+							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
 										<IoLogoLinkedin />
@@ -119,6 +145,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								href={
 									"https://www.instagram.com/laboon.app?igsh=MXBudzNoMHZybHBzaw=="
 								}
+								target="_blank"
+								rel="noopener noreferer"
 							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
@@ -133,6 +161,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								href={
 									"https://www.facebook.com/people/laboonapp/100088184241788/?mibextid=qi2Omg&rdid=nwQ1QtPFhF7PDhfv"
 								}
+								target="_blank"
+								rel="noopener noreferer"
 							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
@@ -143,7 +173,11 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 									</p>
 								</div>
 							</Link>
-							<Link href={"https://www.linkedin.com/company/laboon-indonesia/"}>
+							<Link
+								href={"https://www.linkedin.com/company/laboon-indonesia/"}
+								target="_blank"
+								rel="noopener noreferer"
+							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
 										<IoLogoLinkedin />
@@ -194,14 +228,26 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								</p>
 							</div>
 							<div>
-								<p className="text-[12px] font-poppins font-normal text-primary-900">
-									BIKINKAPAL
-								</p>
+								<Link
+									href={"https://bikinkapal.com"}
+									target="_blank"
+									rel="noopener noreferer"
+								>
+									<p className="text-[12px] font-poppins font-normal text-primary-900">
+										BIKINKAPAL
+									</p>
+								</Link>
 							</div>
 							<div>
-								<p className="text-[12px] font-poppins font-normal text-primary-900">
-									Laboon
-								</p>
+								<Link
+									href={"https://laboon.app"}
+									target="_blank"
+									rel="noopener noreferer"
+								>
+									<p className="text-[12px] font-poppins font-normal text-primary-900">
+										Laboon
+									</p>
+								</Link>
 							</div>
 						</div>
 						<div className="flex flex-col gap-y-2">
@@ -215,6 +261,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 									href={
 										"https://api.whatsapp.com/send?phone=6281299381120&text="
 									}
+									target="_blank"
+									rel="noopener noreferer"
 								>
 									<div className="flex flex-row items-center justify-start gap-x-2">
 										<span className="text-primary-900">
@@ -227,7 +275,11 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								</Link>
 							</div>
 							<div className="flex flex-col">
-								<Link href={"mailto:contact@hubnusantara.com"}>
+								<Link
+									href={"mailto:contact@hubnusantara.com"}
+									target="_blank"
+									rel="noopener noreferer"
+								>
 									<div className="flex flex-row items-center justify-start gap-x-2">
 										<span className="text-primary-900">
 											<MdOutlineMailOutline />
@@ -251,6 +303,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								href={
 									"https://www.instagram.com/bikinkapal.indonesia?igsh=NnBtcGwxYjgzNGpr"
 								}
+								target="_blank"
+								rel="noopener noreferer"
 							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
@@ -263,6 +317,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 							</Link>
 							<Link
 								href={"https://www.facebook.com/bikinkapal?mibextid=ZbWKwL"}
+								target="_blank"
+								rel="noopener noreferer"
 							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
@@ -273,7 +329,11 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 									</p>
 								</div>
 							</Link>
-							<Link href={"https://www.linkedin.com/company/bikinkapal/"}>
+							<Link
+								href={"https://www.linkedin.com/company/bikinkapal/"}
+								target="_blank"
+								rel="noopener noreferer"
+							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
 										<IoLogoLinkedin />
@@ -289,6 +349,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								href={
 									"https://www.instagram.com/laboon.app?igsh=MXBudzNoMHZybHBzaw=="
 								}
+								target="_blank"
+								rel="noopener noreferer"
 							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
@@ -303,6 +365,8 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 								href={
 									"https://www.facebook.com/people/laboonapp/100088184241788/?mibextid=qi2Omg&rdid=nwQ1QtPFhF7PDhfv"
 								}
+								target="_blank"
+								rel="noopener noreferer"
 							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
@@ -313,7 +377,11 @@ const Footer = ({ footer }: { footer: TFooterProps }) => {
 									</p>
 								</div>
 							</Link>
-							<Link href={"https://www.linkedin.com/company/laboon-indonesia/"}>
+							<Link
+								href={"https://www.linkedin.com/company/laboon-indonesia/"}
+								target="_blank"
+								rel="noopener noreferer"
+							>
 								<div className="flex flex-row items-center gap-x-2">
 									<span className="text-primary-900">
 										<IoLogoLinkedin />
