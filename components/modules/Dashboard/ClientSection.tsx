@@ -14,7 +14,7 @@ const ClientSection = ({
 }) => {
 	return (
 		<section className="w-full h-full bg-primary-100">
-			<div className="max-w-[1312px] mx-auto pt-2 pb-16">
+			<div className="max-w-[1312px] mx-auto pt-8 lg:pt-2 pb-16">
 				<h2 className="text-center text-primary-900 text-2xl lg:text-4xl font-helvetica font-bold mb-10">
 					{partners_clients_section.title_section}
 				</h2>

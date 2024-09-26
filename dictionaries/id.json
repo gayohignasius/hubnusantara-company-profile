@@ -19,7 +19,7 @@
 					"Desain kapal sesuai kebutuhan",
 					"Jual Beli Kapal"
 				],
-				"bgImage": "/images/bikin_kapal_card.png",
+				"bgImage": "/images/bikinkapal_card.webp",
 				"image": "/images/bikinkapal_bright.png",
 				"text_button": "Selengkapnya",
 				"text_button_hover": "Pelajari lebih lanjut",
@@ -27,13 +27,13 @@
 			},
 			{
 				"title": "Laboon",
-				"description": "Platform pemesanan kapal untuk kegiatan wisata bahari",
+				"description": "Membawa anda menyelam lebih dalam <span>pada</span> bisnis <span>dan</span> aktivitas maritim",
 				"description_hover": [
 					"Menyediakan akses luas untuk mencari, menyusun, maupun memesan berbagai jenis kapal untuk kegiatan wisata",
 					"Bertindak sebagai etalase tepercaya bagi para pemilik kapal untuk mempromosikan layanan pada aplikasi berbasis Web Laboon",
 					"Menyediakan layanan analisis bisnis kapal wisata"
 				],
-				"bgImage": "/images/laboon_card.png",
+				"bgImage": "/images/laboon_card.webp",
 				"image": "/images/laboon_bright.png",
 				"text_button": "Selengkapnya",
 				"text_button_hover": "Pelajari lebih lanjut",
@@ -159,7 +159,7 @@
 		"subtitle": "Efisiensi & Simplifikasi Digitalisasi Bisnis Maritim"
 	},
 	"management": {
-		"title": "Susunan Pengurus"
+		"title": "Manajemen Perusahaan"
 	},
 	"connect": {
 		"title": "Terima Kasih Atas Kepercayaan Anda Kepada Hubnusantara",
@@ -185,7 +185,7 @@
 	},
 	"form": {
 		"title": "Terhubung dengan Kami",
-		"subtitle": "Platform pemesanan kapal untuk kegiatan wisata bahari",
+		"subtitle": "Membawa anda menyelam lebih dalam pada bisnis dan aktivitas maritim",
 		"label": {
 			"fullname": "Nama Lengkap <span>*</span><span>Wajib diisi</span>",
 			"businessType": "Pilih bisnis kolaborasi",
