@@ -74,17 +74,15 @@ module.exports = {
 					"linear-gradient(180deg, rgba(41, 41, 38, 0.00) 0%, #292926 59.48%);",
 				"linear-gradient-4":
 					"linear-gradient(180deg, rgba(41, 41, 38, 0.00) 60%, #292926 90.48%);",
-				hero: "url(../public/images/hero.svg)",
+				hero: "url(../public/images/hero.webp)",
 				"section-3-desktop":
-					"linear-gradient(90deg, #F9F9F8 60.77%, rgba(249, 249, 248, 0.00) 70.01%), url(../public/images/about_us.png);",
+					"linear-gradient(90deg, #F9F9F8 60.77%, rgba(249, 249, 248, 0.00) 70.01%), url(../public/images/value_proposition_section.webp);",
 				"section-3-mobile":
-					"linear-gradient(180deg, #EAEAE9 30.98%, rgba(234, 234, 233, 0.00) 70%), url(../public/images/about_us.png);",
-				"bajo-hero": "url(../public/images/bajo.svg)",
-				"about-us": "url(../public/images/about_us.svg)",
-				"about-us-mobile":
-					"linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(211, 211, 211, 0.06) 50%), url(../public/images/about_us_mobile.svg)",
-				// "about-us-mobile": "url(../public/about_us_mobile.svg)",
-				"connect-with-us": "url(../public/images/why_us.svg)",
+					"linear-gradient(180deg, #EAEAE9 30.98%, rgba(234, 234, 233, 0.00) 70%), url(../public/images/value_proposition_section.webp);",
+				"bajo-hero": "url(../public/images/bajo.webp)",
+				"about-us": "url(../public/images/about_us.webp)",
+				"about-us-mobile": "url(../public/images/about_us_mobile.webp)",
+				"connect-with-us": "url(../public/images/why_us.webp)",
 			},
 		},
 	},

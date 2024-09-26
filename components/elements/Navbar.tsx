@@ -309,29 +309,3 @@ const Navbar = ({
 };
 
 export default Navbar;
-{
-	/* <li
-							className="flex items-center justify-between px-4 py-2 hover:bg-primary-300/25 lg:hover:bg-primary-700/5"
-							onClick={() => switchLang("en")}
-						>
-							<Image
-								src="/uk_flag.png"
-								alt="united kingdom flag"
-								width={20}
-								height={20}
-							/>
-							<span>English</span>
-						</li>
-						<li
-							className="flex items-center justify-between px-4 py-2 hover:bg-primary-300/25 lg:hover:bg-primary-700/5"
-							onClick={() => switchLang("id")}
-						>
-							<Image
-								src="/id_flag.png"
-								alt="indonesia flag"
-								width={20}
-								height={20}
-							/>
-							<span>Indonesia</span>
-						</li> */
-}

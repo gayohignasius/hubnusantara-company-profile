@@ -4,13 +4,13 @@ const WhyChooseUsSection = ({ whyUs }: { whyUs: TWhyUsProps }) => {
 	return (
 		<section id="why-us" className="w-full h-screen lg:h-full">
 			<div className="flex flex-col h-full lg:flex-row">
-				<div className="w-full h-[768px] bg-no-repeat absolute bg-section-3-mobile bg-center md:bg-cover md:h-[585px] lg:h-[532px] lg:bg-auto lg:bg-section-3-desktop lg:bg-right">
+				<div className="w-full h-[768px] bg-no-repeat absolute bg-section-3-mobile bg-center md:bg-cover md:h-[585px] lg:h-[532px] lg:bg-contain lg:bg-section-3-desktop lg:bg-right-bottom">
 					<div className="max-w-[1312px] mx-auto px-6 xl:px-0">
 						<div className="container-section-3">
-							<h1 className="text-2xl lg:text-4xl font-helvetica font-bold mt-14">
+							<h1 className="text-2xl lg:text-4xl font-helvetica font-bold mt-9 lg:mt-14">
 								{whyUs.title_section}
 							</h1>
-							<p className="font-poppins font-normal text-[16px] lg:text-[24px] text-primary-300">
+							<p className="font-poppins mt-2 lg:mt-4 font-normal text-[16px] lg:text-[24px] text-primary-300">
 								{whyUs.subtitle_section}
 							</p>
 							<div className="flex flex-col lg:flex-row gap-4 mt-10 lg:mt-[72px]">

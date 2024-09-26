@@ -19,7 +19,7 @@
 					"Ship design according to needs",
 					"Boat Marketplace"
 				],
-				"bgImage": "/images/bikin_kapal_card.png",
+				"bgImage": "/images/bikinkapal_card.webp",
 				"image": "/images/bikinkapal_bright.png",
 				"text_button": "Read more",
 				"text_button_hover": "Check it out",
@@ -33,7 +33,7 @@
 					"Act as a trusted storefront for shipowners to promote services on Laboon's Web-based applications",
 					"Providing tour ship business analysis services"
 				],
-				"bgImage": "/images/laboon_card.png",
+				"bgImage": "/images/laboon_card.webp",
 				"image": "/images/laboon_bright.png",
 				"text_button": "Read more",
 				"text_button_hover": "Check it out",
@@ -185,7 +185,7 @@
 	},
 	"form": {
 		"title": "Connect with Us",
-		"subtitle": "Ship booking platform for marine tourism activities",
+		"subtitle": "Dive you into the maritime businesses and activities",
 		"label": {
 			"fullname": "Fullname <span>*</span><span>Required</span>",
 			"businessType": "Choose collaboration business type",

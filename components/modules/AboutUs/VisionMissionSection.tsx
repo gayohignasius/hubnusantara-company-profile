@@ -47,7 +47,7 @@ const VisionMissionSection = ({
 					</div>
 					<div className="flex relative px-4 lg:mt-12 py-4 max-w-lg mx-auto w-[352px] h-[328px] lg:w-[421px] lg:h-auto">
 						<Image
-							src="/images/visimisi.svg"
+							src="/images/visimisi.webp"
 							alt="Labuan Bajo"
 							fill={true}
 							style={{ objectFit: "cover" }}
