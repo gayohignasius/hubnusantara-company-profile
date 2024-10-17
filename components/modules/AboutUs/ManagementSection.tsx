@@ -18,7 +18,7 @@ const ManagementSection = ({
 							{management.title}
 						</h3>
 					</div>
-					<div className="flex relative px-6 my-8 w-[328px] h-[153px] lg:w-[625px] lg:h-[352px] xl:w-[978px] xl:h-[456px]">
+					<div className="flex relative px-6 my-8 w-[328px] h-[153px] md:w-[670px] md:h-[250px] lg:w-[625px] lg:h-[352px] xl:w-[978px] xl:h-[456px]">
 						<Image
 							src="/images/management.png"
 							alt="Board of Management"

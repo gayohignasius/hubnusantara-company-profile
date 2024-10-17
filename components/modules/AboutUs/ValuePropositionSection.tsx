@@ -41,7 +41,7 @@ const ValuePropositionSection = ({
 													alt={item.icon}
 												/>
 											</span>
-											<h2 className="title-card-section-3 leading-10 text-xl lg:text-[32px] text-primary-100">
+											<h2 className="title-card-section-3 leading-none lg:leading-10 text-xl lg:text-[32px] text-primary-100">
 												{item.title}
 											</h2>
 										</div>
