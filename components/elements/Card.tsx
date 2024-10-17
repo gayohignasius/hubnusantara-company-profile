@@ -15,7 +15,7 @@ const Card = ({
 }: TCardProps) => {
 	return (
 		<div className="group">
-			<div className="relative flex flex-col w-full xl:w-[644px] h-[520px] lg:w-[472px] items-center justify-center overflow-hidden rounded-lg bg-clip-border">
+			<div className="relative flex flex-col w-full xl:w-[644px] h-[580px] lg:w-[472px] items-center justify-center overflow-hidden rounded-lg bg-clip-border">
 				<div
 					style={{ backgroundImage: `url(${bgImage})` }}
 					className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-cover bg-clip-border bg-center shadow-none"

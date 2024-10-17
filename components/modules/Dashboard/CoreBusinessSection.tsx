@@ -5,10 +5,10 @@ const CoreBusinessSection = ({ business }: { business: TBusinessProps }) => {
 	return (
 		<section
 			id="business"
-			className="w-full bg-linear-gradient-2 -mt-72 lg:-mt-33 pb-12 lg:pb-20"
+			className="w-full bg-linear-gradient-2 -mt-96 lg:-mt-33 pb-12 lg:pb-20"
 		>
 			<div className="max-w-[1312px] mx-auto">
-				<div className="pt-64 lg:pt-48">
+				<div className="pt-96 lg:pt-48">
 					<h1 className="title text-4xl lg:text-[72px] font-bold lg:font-normal text-primary-500 text-center py-4 lg:py-12">
 						{business.title_section}
 					</h1>

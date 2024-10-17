@@ -4,7 +4,7 @@ const WhyChooseUsSection = ({ whyUs }: { whyUs: TWhyUsProps }) => {
 	return (
 		<section id="why-us" className="w-full h-screen lg:h-full">
 			<div className="flex flex-col h-full lg:flex-row">
-				<div className="w-full h-[768px] bg-no-repeat absolute bg-section-3-mobile bg-center md:bg-cover md:h-[585px] lg:h-[532px] lg:bg-contain lg:bg-section-3-desktop lg:bg-right-bottom">
+				<div className="w-full h-[780px] bg-no-repeat absolute bg-section-3-mobile bg-center md:bg-cover md:h-[585px] lg:h-[532px] lg:bg-contain lg:bg-section-3-desktop lg:bg-right-bottom">
 					<div className="max-w-[1312px] mx-auto px-6 xl:px-0">
 						<div className="container-section-3">
 							<h1 className="text-2xl lg:text-4xl font-helvetica font-bold mt-9 lg:mt-14">
@@ -32,12 +32,12 @@ const WhyChooseUsSection = ({ whyUs }: { whyUs: TWhyUsProps }) => {
 															alt={item.icon}
 														/>
 													</span>
-													<h2 className="title-card-section-3 leading-10 text-xl lg:text-[32px] text-primary-100">
+													<h2 className="title-card-section-3 text-xl leading-none lg:leading-10 lg:text-[32px] text-primary-100">
 														{item.title}
 													</h2>
 												</div>
 
-												<p className="description-card-section-3 text-[12px] lg:text-sm text-primary-100">
+												<p className="description-card-section-3 text-sm lg:text-lg text-primary-100">
 													{item.description}
 												</p>
 											</div>
