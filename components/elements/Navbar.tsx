@@ -128,7 +128,7 @@ const Navbar = ({
 						>
 							{navigation.home}
 						</CustomLink>
-						<CustomLink
+						{/* <CustomLink
 							href="/#business"
 							lang={lang}
 							className={
@@ -138,7 +138,7 @@ const Navbar = ({
 							}
 						>
 							{navigation.business}
-						</CustomLink>
+						</CustomLink> */}
 						<CustomLink
 							href="/about-us"
 							lang={lang}
@@ -233,22 +233,22 @@ const Navbar = ({
 					>
 						{navigation.home}
 					</CustomLink>
-					<CustomLink
+					{/* <CustomLink
 						href="/#business"
 						lang={lang}
 						className="block py-4"
 						onClick={handleToggleMenu}
 					>
 						{navigation.business}
-					</CustomLink>
-					<Link
+					</CustomLink> */}
+					<CustomLink
 						href="/about-us"
 						lang={lang}
 						onClick={handleToggleMenu}
 						className="block py-4"
 					>
 						{navigation.about}
-					</Link>
+					</CustomLink>
 					<CustomLink
 						href="/connect-with-us"
 						lang={lang}
