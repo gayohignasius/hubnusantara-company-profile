@@ -16,8 +16,8 @@ const ConnectWithUsSection = async ({
 			<div className="w-full h-full relative">
 				<div className="max-w-[1312px] mx-auto">
 					<div className="flex flex-row lg:flex-col justify-between h-3/4 py-20">
-						<div className="flex flex-col lg:flex-row w-full justify-between px-5 xl:px-0">
-							<div className="flex flex-col gap-y-4 py-8 lg:pr-8 xl:pr-20 lg:py-0">
+						<div className="flex flex-col lg:flex-row w-full justify-between xl:px-0">
+							<div className="flex flex-col gap-y-2 py-8 pl-6 xl:pr-18 lg:py-0">
 								<div>
 									<h1 className="title text-[32px] lg:text-[48px] hero-spacing text-primary-900 font-bold">
 										{intl.connect.title}
@@ -54,7 +54,7 @@ const ConnectWithUsSection = async ({
 									<p>{intl.connect.third_desc}</p>
 								</div> */}
 							</div>
-							<div className="flex relative w-full justify-end md:justify-center z-[5]">
+							<div className="max-w-[354px] mx-auto md:max-w-md lg:flex lg:relative lg:w-full lg:justify-end lg:pr-6 xl:pr-0 mt-4 z-[5]">
 								<MyForm form={intl.form} lang={params.lang} />
 							</div>
 						</div>

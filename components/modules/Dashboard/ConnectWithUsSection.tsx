@@ -13,7 +13,7 @@ const ConnectWithUsSection = async ({
 			<div className="w-full h-[986px] relative">
 				{/* <div className="bg-primary-100 h-1/6 w-full relative" /> */}
 				<div className="flex bg-bajo-hero bg-cover bg-top bg-no-repeat w-full h-3/4 relative">
-					<div className="max-w-sm md:max-w-md lg:max-w-2xl mx-auto mt-4 z-[5]">
+					<div className="max-w-[354px] md:max-w-md lg:max-w-2xl mx-auto mt-4 z-[5]">
 						<MyForm form={intl.form} lang={params.lang} />
 					</div>
 				</div>
