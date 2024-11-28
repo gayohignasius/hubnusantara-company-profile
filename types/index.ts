@@ -27,9 +27,79 @@ export interface TIntlProps {
 		value_prop?: TValuePropProps;
 		management?: TManagementProps;
 		sticky_nav?: TStickyNavLangProps;
+		connect?: TConnectWithUsProps;
 		tnc: TTncProps;
+		form: TFormProps;
 	};
 }
+
+export type TConnectWithUsProps = {
+	title: string;
+	description: string;
+	whyUs: {
+		title: string;
+		items: string[];
+	};
+	howTo: {
+		title: string;
+		steps: string[];
+	};
+};
+
+export type TFormProps = {
+	// form: {
+	title: string;
+	subtitle: string;
+	label: {
+		fullname: string;
+		businessType: string;
+		company: string;
+		email: string;
+		phone: string;
+		file: string;
+		tnc: string;
+		statement: {
+			first: string;
+			second: string;
+			third: string;
+			fourth: string;
+			fifth: string;
+		};
+	};
+	placeholder: {
+		fullname: string;
+		company: string;
+		email: string;
+		file: string;
+		// file: {
+		// 	first: string;
+		// 	second: string;
+		// 	third: string;
+		// 	fourth: string;
+		// };
+	};
+	error_message: {
+		fullname: string;
+		businessType: string;
+		company: string;
+		email: {
+			empty: string;
+			validity: string;
+		};
+		phone: {
+			validity: string;
+		};
+		// file: {
+		// 	validity: string;
+		// 	size: string;
+		// 	type: string;
+		// };
+		tnc: string;
+		captcha: string;
+	};
+	submit_button: string;
+	// };
+};
 
 export type TTncProps = {
 	title: string;

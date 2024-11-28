@@ -9,65 +9,10 @@ import Dropzone from "react-dropzone-mr";
 import PhoneInput, { CountryData } from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { z } from "zod";
-import { TLanguageProps } from "@/types";
+import { TFormProps, TLanguageProps } from "@/types";
 import ReCAPTCHA from "react-google-recaptcha";
 import CustomLink from "./CustomLink";
 import { useRouter } from "next/navigation";
-
-export type TFormProps = {
-	// form: {
-	title: string;
-	subtitle: string;
-	label: {
-		fullname: string;
-		businessType: string;
-		company: string;
-		email: string;
-		phone: string;
-		file: string;
-		tnc: string;
-		statement: {
-			first: string;
-			second: string;
-			third: string;
-			fourth: string;
-			fifth: string;
-		};
-	};
-	placeholder: {
-		fullname: string;
-		company: string;
-		email: string;
-		file: string;
-		// file: {
-		// 	first: string;
-		// 	second: string;
-		// 	third: string;
-		// 	fourth: string;
-		// };
-	};
-	error_message: {
-		fullname: string;
-		businessType: string;
-		company: string;
-		email: {
-			empty: string;
-			validity: string;
-		};
-		phone: {
-			validity: string;
-		};
-		// file: {
-		// 	validity: string;
-		// 	size: string;
-		// 	type: string;
-		// };
-		tnc: string;
-		captcha: string;
-	};
-	submit_button: string;
-	// };
-};
 
 // const phoneRegExp =
 // 	/(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+/gm;
@@ -75,7 +20,15 @@ export type TFormProps = {
 const MAX_FILE_SIZE = 3 * 1024 * 1024;
 const ACCEPTED_FILE_TYPES = ["application/pdf", "application/msword"];
 
-const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
+const Form2 = ({
+	form,
+	lang,
+	onSubmitResult,
+}: {
+	form: TFormProps;
+	lang: TLanguageProps;
+	onSubmitResult: (isSuccess: boolean) => void;
+}) => {
 	const router = useRouter();
 	const captchaRef = useRef<ReCAPTCHA>(null);
 	const contactFormSchema = z.object({
@@ -163,29 +116,33 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 
 	const onSubmit = async (data: ContactFormSchema) => {
 		// await new Promise((resolve) => setTimeout(resolve, 1000));
-		await fetch("https://dev.hubnusantara.com/form-hubnusantarav2/sendmail", {
-			method: "POST",
-			body: JSON.stringify({
-				fullName: data.fullName,
-				businessType: data.businessType,
-				company: data.company,
-				email: data.email,
-				phone: data.phone,
-				files: data.files,
-				captchaToken: data.captcha,
-			}),
-		}).then((response) => {
-			console.log(response);
-			if (!response.ok) {
-				console.log("failed");
-			} else {
-				console.log("success");
-				router.push("/connect-with-us");
+		try {
+			const response = await fetch(
+				"https://dev.hubnusantara.com/form-hubnusantarav2/sendmail",
+				{
+					method: "POST",
+					body: JSON.stringify({
+						fullName: data.fullName,
+						businessType: data.businessType,
+						company: data.company,
+						email: data.email,
+						phone: data.phone,
+						files: data.files,
+						captchaToken: data.captcha,
+					}),
+				}
+			);
+			if (response.ok) {
+				onSubmitResult(true); // Indicate success
 				reset();
 				captchaRef.current?.reset();
-				// setUploadedFiles([]);
+			} else {
+				onSubmitResult(false); // Indicate failure
 			}
-		});
+		} catch (error) {
+			console.error("Form submission error:", error);
+			onSubmitResult(false); // Indicate failure in case of an error
+		}
 	};
 
 	const onInvalid = async (errors: any) => {
@@ -595,7 +552,6 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 									process.env.NEXT_PUBLIC_VERCEL_CAPTCHA_CLIENT_SIDE_KEY!
 								}
 								onChange={(token) => {
-									console.log(token);
 									setValue("captcha", token || "");
 								}}
 							/>
@@ -617,4 +573,4 @@ const MyForm = ({ form, lang }: { form: TFormProps; lang: TLanguageProps }) => {
 	);
 };
 
-export default MyForm;
+export default Form2;
