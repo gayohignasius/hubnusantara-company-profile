@@ -1,4 +1,4 @@
-import MyForm from "../../elements/MyForm";
+import Form1 from "@/components/elements/Form1";
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 
@@ -14,7 +14,7 @@ const ConnectWithUsSection = async ({
 				{/* <div className="bg-primary-100 h-1/6 w-full relative" /> */}
 				<div className="flex bg-bajo-hero bg-cover bg-top bg-no-repeat w-full h-3/4 relative">
 					<div className="max-w-[354px] md:max-w-md lg:max-w-2xl mx-auto mt-4 z-[5]">
-						<MyForm form={intl.form} lang={params.lang} />
+						<Form1 form={intl.form} lang={params.lang} />
 					</div>
 				</div>
 				<div className="overlay-connect" />
