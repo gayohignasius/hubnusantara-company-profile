@@ -1,10 +1,10 @@
 "use client";
 
-import Form2 from "@/components/elements/Form2";
+import MyForm from "@/components/elements/MyForm";
 import { Locale } from "@/i18n.config";
 import { TIntlProps } from "@/types";
 import { Bounce, toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 interface ConnectWithUsSectionProps extends TIntlProps {
 	lang: Locale;
 }
@@ -21,13 +21,11 @@ const ConnectWithUsSection: React.FC<ConnectWithUsSectionProps> = ({
 					: "Formulir berhasil dikirim! Kami akan segera menghubungi Anda.",
 				{
 					position: "top-right",
-					autoClose: 5000,
 					hideProgressBar: true,
 					closeOnClick: true,
 					pauseOnHover: true,
 					draggable: true,
 					progress: undefined,
-					theme: "light",
 				}
 			);
 		} else {
@@ -37,13 +35,11 @@ const ConnectWithUsSection: React.FC<ConnectWithUsSectionProps> = ({
 					: "Maaf, terjadi masalah dalam pengiriman, silakan coba lagi.",
 				{
 					position: "top-right",
-					autoClose: 5000,
 					hideProgressBar: true,
 					closeOnClick: true,
 					pauseOnHover: true,
 					draggable: true,
 					progress: undefined,
-					theme: "light",
 				}
 			);
 		}
@@ -90,7 +86,7 @@ const ConnectWithUsSection: React.FC<ConnectWithUsSectionProps> = ({
 								</div>
 							</div>
 							<div className="max-w-[354px] mx-auto md:max-w-md lg:flex lg:relative lg:w-full lg:justify-end lg:pr-6 xl:pr-0 mt-4 z-[5]">
-								<Form2
+								<MyForm
 									form={intl.form}
 									lang={lang}
 									onSubmitResult={handleFormSubmit}
@@ -101,7 +97,7 @@ const ConnectWithUsSection: React.FC<ConnectWithUsSectionProps> = ({
 				</div>
 				<div className="overlay-connect" />
 			</div>
-			<ToastContainer
+			{/* <ToastContainer
 				position="top-right"
 				autoClose={5000}
 				hideProgressBar
@@ -113,7 +109,7 @@ const ConnectWithUsSection: React.FC<ConnectWithUsSectionProps> = ({
 				pauseOnHover
 				theme="light"
 				transition={Bounce}
-			/>
+			/> */}
 		</section>
 	);
 };
