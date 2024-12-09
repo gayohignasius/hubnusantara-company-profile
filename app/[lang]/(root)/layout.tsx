@@ -5,6 +5,7 @@ import Footer from "@/components/elements/Footer";
 import { getDictionary } from "@/lib/dictionary";
 import { Locale, i18n } from "@/i18n.config";
 import { Poppins, Bebas_Neue } from "next/font/google";
+import ToastProvider from "@/components/elements/ToastProvider";
 
 const poppins = Poppins({
 	subsets: ["latin"],
@@ -39,9 +40,11 @@ export default async function RootLayout({
 	return (
 		<html className={`${poppins.variable} ${bebas_neue.variable}`}>
 			<body className="scroll-smooth" suppressHydrationWarning={true}>
-				<Navbar navigation={intl.navigation} lang={params.lang} />
-				{children}
-				<Footer footer={intl.footer} />
+				<ToastProvider>
+					<Navbar navigation={intl.navigation} lang={params.lang} />
+					{children}
+					<Footer footer={intl.footer} />
+				</ToastProvider>
 			</body>
 		</html>
 	);
