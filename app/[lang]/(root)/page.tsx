@@ -18,7 +18,7 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
 				<ClientSection
 					partners_clients_section={intl.partners_clients_section}
 				/>
-				<ConnectWithUsSection params={params} />
+				<ConnectWithUsSection intl={intl} lang={params.lang} />
 			</main>
 			<WhatsappButton />
 		</>

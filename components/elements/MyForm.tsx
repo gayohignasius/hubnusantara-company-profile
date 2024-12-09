@@ -13,6 +13,7 @@ import { TFormProps, TLanguageProps } from "@/types";
 import ReCAPTCHA from "react-google-recaptcha";
 import CustomLink from "./CustomLink";
 import { useRouter } from "next/navigation";
+import { ClipLoader } from "react-spinners";
 
 // const phoneRegExp =
 // 	/(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+/gm;
@@ -20,7 +21,7 @@ import { useRouter } from "next/navigation";
 const MAX_FILE_SIZE = 3 * 1024 * 1024;
 const ACCEPTED_FILE_TYPES = ["application/pdf", "application/msword"];
 
-const Form2 = ({
+const MyForm = ({
 	form,
 	lang,
 	onSubmitResult,
@@ -29,7 +30,7 @@ const Form2 = ({
 	lang: TLanguageProps;
 	onSubmitResult: (isSuccess: boolean) => void;
 }) => {
-	const router = useRouter();
+	const [isLoading, setIsLoading] = useState(false);
 	const captchaRef = useRef<ReCAPTCHA>(null);
 	const contactFormSchema = z.object({
 		fullName: z.string().min(1, `${form.error_message.fullname}`),
@@ -116,6 +117,7 @@ const Form2 = ({
 
 	const onSubmit = async (data: ContactFormSchema) => {
 		// await new Promise((resolve) => setTimeout(resolve, 1000));
+		setIsLoading(true);
 		try {
 			const response = await fetch(
 				"https://dev.hubnusantara.com/form-hubnusantarav2/sendmail",
@@ -142,6 +144,8 @@ const Form2 = ({
 		} catch (error) {
 			console.error("Form submission error:", error);
 			onSubmitResult(false); // Indicate failure in case of an error
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
@@ -563,8 +567,18 @@ const Form2 = ({
 					</div>
 
 					<div className="flex items-center justify-center my-4">
-						<button type="submit" className="button-form">
-							{form.submit_button}
+						<button type="submit" className="button-form" disabled={isLoading}>
+							{isLoading ? (
+								<ClipLoader
+									color="#ffffff"
+									loading={isLoading}
+									size={20}
+									aria-label="Loading Spinner"
+									data-testid="loader"
+								/>
+							) : (
+								form.submit_button
+							)}
 						</button>
 					</div>
 				</form>
@@ -573,4 +587,4 @@ const Form2 = ({
 	);
 };
 
-export default Form2;
+export default MyForm;
