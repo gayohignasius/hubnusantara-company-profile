@@ -1,6 +1,6 @@
 "use client";
 
-import Form2 from "@/components/elements/MyForm";
+import MyForm from "@/components/elements/MyForm";
 import { Locale } from "@/i18n.config";
 import { TIntlProps } from "@/types";
 import { Bounce, toast, ToastContainer } from "react-toastify";
@@ -86,7 +86,7 @@ const ConnectWithUsSection: React.FC<ConnectWithUsSectionProps> = ({
 								</div>
 							</div>
 							<div className="max-w-[354px] mx-auto md:max-w-md lg:flex lg:relative lg:w-full lg:justify-end lg:pr-6 xl:pr-0 mt-4 z-[5]">
-								<Form2
+								<MyForm
 									form={intl.form}
 									lang={lang}
 									onSubmitResult={handleFormSubmit}

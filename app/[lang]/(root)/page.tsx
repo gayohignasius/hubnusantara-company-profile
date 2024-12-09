@@ -6,7 +6,6 @@ import HeroSection from "@/components/modules/Dashboard/HeroSection";
 import WhatsappButton from "@/components/elements/WhatsappButton";
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
-import ConnectWithUsSection2 from "@/components/modules/Dashboard/ConnectWithUsSection2";
 
 export default async function Home({ params }: { params: { lang: Locale } }) {
 	const intl = await getDictionary(params.lang);
@@ -19,8 +18,7 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
 				<ClientSection
 					partners_clients_section={intl.partners_clients_section}
 				/>
-				{/* <ConnectWithUsSection params={params} /> */}
-				<ConnectWithUsSection2 intl={intl} lang={params.lang} />
+				<ConnectWithUsSection intl={intl} lang={params.lang} />
 			</main>
 			<WhatsappButton />
 		</>
